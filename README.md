@@ -1,2 +1,2 @@
 # GoingInCircles
-My experiments with Go
+My experiments with Learning Go , Python , Stocks etc
