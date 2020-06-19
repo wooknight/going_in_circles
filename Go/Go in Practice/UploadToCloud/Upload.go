@@ -13,7 +13,7 @@ import (
 	"google.golang.org/api/option"
 )
 
-var BACKUP_BUCKET = "mts-ramesh-sandbox"
+var BACKUP_BUCKET = "mts-ramesh-sandbox-1"
 
 func main() {
 	//create our backup bucket . this is where we will save all our files , inbound and outbound
@@ -33,12 +33,13 @@ func main() {
 		log.Printf("GCP UploadLocalToRemote failed . client not created\t%v", err)
 		return
 	}
-	// if err := mtsBackup.Bucket(BACKUP_BUCKET).Create(ctx, BACKUP_BUCKET, nil); err != nil {
-	// 	log.Printf("could not create bucket %v", err)
-	// 	// return
 
-	// 	// TODO: handle error.
-	// }
+	if err := mtsBackup.Bucket(BACKUP_BUCKET).Create(ctx, "ramesh-sandbox", nil); err != nil {
+		log.Printf("could not create bucket %v", err)
+		return
+
+		// TODO: handle error.
+	}
 	mtsBackupAllFiles := mtsBackup.Bucket(BACKUP_BUCKET) //bucket handle
 	l := "randi"
 	f, err := os.Open(l)
@@ -57,7 +58,7 @@ func main() {
 		return
 	}
 	if err := wc.Close(); err != nil {
-		log.Printf("failed to close file %s %v", l, err)
+		log.Printf("failed to close remote file %s %v", l, err)
 		return
 	}
 	return
