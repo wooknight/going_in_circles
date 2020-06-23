@@ -1,0 +1,24 @@
+version: "3.5"
+
+services:
+  mts:
+    build:
+      context: ./
+      dockerfile: docker/app/Dockerfile
+      target: dev
+      args:
+        - GITLAB_PROTOREPO_USER=$GITLAB_PROTOREPO_USER
+        - GITLAB_PROTOREPO_TOKEN=$GITLAB_PROTOREPO_TOKEN
+    env_file:
+      - .env-dev
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/go/src/gitlab.bstock.io/svc/message-transfer/config/ramesh-sandbox-81dfd482f50f.json
+    volumes:
+      - ./src:/go/src/gitlab.bstock.io/svc/message-transfer
+      - go-modules:/go/pkg/mod
+    ports:
+      - "5000:5000"
+      - "10101:10101"
+
+    working_dir: /go/src/gitlab.bstock.io/svc/message-transfer
+    restart: on-failure
