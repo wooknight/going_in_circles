@@ -15,10 +15,14 @@ const (
 	INT   = "INT"
 
 	//operators
-	ASSIGN = "="
-	PLUS   = "+"
-	MINUS  = "-"
-	DIVIDE = "/"
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	SLASH    = "/"
+	ASTERISK = "*"
+	BANG     = "!"
+	LT       = "<"
+	GT       = ">"
 
 	//Delimiters
 	SEMICOLON = ";"
