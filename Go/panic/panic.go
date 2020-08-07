@@ -2,11 +2,19 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"runtime"
+	"runtime/pprof"
 )
 
 func main() {
+	f, err := os.Create("cpuprofile")
+	if err != nil {
+		log.Fatal(err)
+	}
+	pprof.StartCPUProfile(f)
+	defer pprof.StopCPUProfile()
 	defer func() {
 		fmt.Println("Inside main defer")
 

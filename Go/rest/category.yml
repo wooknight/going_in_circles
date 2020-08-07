@@ -1,0 +1,40 @@
+openapi: "3.0.2"
+info:
+  title: "Category"
+  description: "Testing Category API"
+  version: "1.0.0"
+servers:
+  - url: https://localhost:8080/v1
+    description: Server description
+
+paths:
+  /fastest-mirror:
+    get:
+      description: "returns the fastest site available"
+      responses:
+        "200":
+          description: "Fastest mirror"
+  /:
+    get:
+      description: "Get Category information"
+      responses:
+        "200":
+          description: OK
+
+    post:
+      description: "Posting category"
+      responses:
+        "200":
+          description: OK
+
+    delete:
+      description: "Deleting category"
+      responses:
+        "200":
+          description: OK
+
+    patch:
+      description: "Patching a category"
+      responses:
+        "200":
+          description: OK

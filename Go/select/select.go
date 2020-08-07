@@ -3,8 +3,10 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
+	"runtime/pprof"
 )
 
 var netEnd chan int
@@ -12,6 +14,13 @@ var stdInEnd chan int
 var errorEnd chan int
 
 func main() {
+	f, err := os.Create("cpuprofile")
+	if err != nil {
+		log.Fatal(err)
+	}
+	pprof.StartCPUProfile(f)
+	defer pprof.StopCPUProfile()
+
 	netEnd = make(chan int, 2)   // interesting that I can change from unbuffered to buffered
 	stdInEnd = make(chan int, 2) // interesting that I can change from unbuffered to buffered
 	http.HandleFunc("/exit", exitServer)

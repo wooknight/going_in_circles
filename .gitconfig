@@ -1,8 +1,9 @@
+##https://about.gitlab.com/blog/2020/04/07/15-git-tips-improve-workflow/
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
 name = Ramesh Naidu
-email = ramesh@bstocksolutions.com
+email = rameshnaidu@gmail.com
 
 [color]
   ui = auto
