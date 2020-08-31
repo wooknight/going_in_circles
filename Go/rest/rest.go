@@ -86,17 +86,41 @@ func findFastest(urls []string) response {
 }
 
 func post() {
+	//add a new category
 	fmt.Printf("Posting")
 }
 
 func get() {
+	//retreive the category from mongo and return the object
 	fmt.Printf("Get")
 }
 
 func patch() {
+	//update the object
 	fmt.Printf("pathc")
 }
 
 func delete() {
+	//delete the object
+	fmt.Printf("delete")
+}
+
+func postTouchpoint(category string) {
+	//add a new category
+	fmt.Printf("Posting")
+}
+
+func getTouchpoints() {
+	//retreive the category from mongo and return the object
+	fmt.Printf("Get")
+}
+
+func patchTouchpoints() {
+	//update the object
+	fmt.Printf("pathc")
+}
+
+func delete() {
+	//delete the object
 	fmt.Printf("delete")
 }
