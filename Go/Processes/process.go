@@ -1,18 +1,22 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"os/exec"
 	"time"
 )
 
+var envVar string
 func main() {
 	defer  log.Println("Function end is coming",os.Getenv("WORKER"))
 	
 	if(len(os.Args) == 2) && (os.Args[1]=="outbound"){
 		log.Println("Inside the outbound process")
-		time.Sleep(1 * time.Second)
+		envVar = os.Args[1]
+		go getVar()
+		time.Sleep(2 * time.Second)
 
 	}else {
 	chln:= make(chan int)
@@ -38,8 +42,14 @@ func main() {
 		log.Printf("Command finished with output: %s", out)
 		
 	}(chln)
-	os.Setenv("WORKER","inbound")
+	envVar = "inbound"
+	os.Setenv("WORKER",envVar)
+	go getVar()
 	<-chln
 	}
 	log.Println("We are coming to the end of thread - ",os.Getenv("WORKER"))
+}
+
+func getVar (){
+	fmt.Println("my version of the variable is ",envVar)
 }
