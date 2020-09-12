@@ -54,5 +54,9 @@ func main (){
 	initial()
 	
 	traversal(root,level,channels)
-	fmt.Printf("Channels %v",channels)
+	fmt.Printf("Channels %v\n\n",channels)
+	for val,help := range channels{
+		fmt.Printf("Avg for Level %d is %d \n",val,help.sum/help.cnt)
+
+	}
 }
