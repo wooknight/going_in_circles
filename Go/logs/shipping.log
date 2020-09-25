@@ -1,0 +1,2819 @@
+2020-09-22T06:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007553030660.
+2020-09-22T06:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007553038322.
+2020-09-22T07:15:02+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007589025672.
+2020-09-22T07:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007589033582.
+2020-09-22T08:07:47+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007620678384.
+2020-09-22T08:07:48+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007620686222.
+2020-09-22T09:15:02+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007661023700.
+2020-09-22T09:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007661031298.
+2020-09-22T09:34:27+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 166837. Destination Zip 30040. Customer 8336. TransactionId sup16007672677463.
+2020-09-22T09:34:30+00:00 DEBUG (7): Shipping Params:
+2020-09-22T09:34:30+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1138689723
+    [bstockReqSvcId] => 6y4deubkvkfdri1jw
+    [distance] => 2226
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 396.99
+    [origin_rate] => 396.99
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.802
+    [subsidized_value] => 0
+    [markup_value] => 23.8194
+)
+
+2020-09-22T09:34:30+00:00 DEBUG (7): auction_id 341587, Applying markup: 23.8194 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T10:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007697036942.
+2020-09-22T10:15:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007697045516.
+2020-09-22T13:14:41+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 167166. Destination Zip 77083-3302. Customer 113886. TransactionId sup16007804819182.
+2020-09-22T13:14:45+00:00 DEBUG (7): Shipping Params:
+2020-09-22T13:14:45+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139096286
+    [bstockReqSvcId] => 6y4deubkvkfdzd9et
+    [distance] => 1516
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 401.73
+    [origin_rate] => 401.73
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.592
+    [subsidized_value] => 0
+    [markup_value] => 24.1038
+)
+
+2020-09-22T13:14:45+00:00 DEBUG (7): auction_id 341587, Applying markup: 24.1038 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T13:42:35+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 115079. Destination Zip 11223. Customer 77558. TransactionId sup16007821556480.
+2020-09-22T13:42:38+00:00 DEBUG (7): Shipping Params:
+2020-09-22T13:42:38+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139112572
+    [bstockReqSvcId] => 6y4deubkvkfe0d4u6
+    [distance] => 364
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1461.35
+    [origin_rate] => 1461.35
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.723
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T13:42:38+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T14:10:20+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 162654. Destination Zip 34997-4937. Customer 110567. TransactionId sup16007838209783.
+2020-09-22T14:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007841031804.
+2020-09-22T14:15:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007841044884.
+2020-09-22T14:17:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 162654. Destination Zip 34997-4937. Customer 110567. TransactionId sup16007842232570.
+2020-09-22T14:17:08+00:00 DEBUG (7): Shipping Params:
+2020-09-22T14:17:08+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139205112
+    [bstockReqSvcId] => 6y4deubkvkfe1lg68
+    [distance] => 2603
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 465.14
+    [origin_rate] => 465.14
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 4.933
+    [subsidized_value] => 0
+    [markup_value] => 27.9084
+)
+
+2020-09-22T14:17:08+00:00 DEBUG (7): auction_id 341587, Applying markup: 27.9084 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T14:37:27+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 166595. Destination Zip 78641-1866. Customer 113643. TransactionId sup16007854473919.
+2020-09-22T14:37:31+00:00 DEBUG (7): Shipping Params:
+2020-09-22T14:37:31+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139243775
+    [bstockReqSvcId] => 6y4deubkvkfe2bop7
+    [distance] => 1474
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2638.1
+    [origin_rate] => 2638.1
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.549
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T14:37:31+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T14:49:28+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 167695. Destination Zip 28217-5893. Customer 107119. TransactionId sup16007861682595.
+2020-09-22T14:49:35+00:00 DEBUG (7): Shipping Params:
+2020-09-22T14:49:35+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139399372
+    [bstockReqSvcId] => 6y4deubkvkfe2r4wp
+    [distance] => 2416
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 413.28
+    [origin_rate] => 413.28
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 6.72
+    [subsidized_value] => 0
+    [markup_value] => 24.7968
+)
+
+2020-09-22T14:49:35+00:00 DEBUG (7): auction_id 341587, Applying markup: 24.7968 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T14:55:48+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 138113. Destination Zip 00229. Customer 92975. TransactionId sup16007865484862.
+2020-09-22T15:15:02+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007877028446.
+2020-09-22T15:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007877036681.
+2020-09-22T15:25:30+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 144166. Destination Zip 91324. Customer 97057. TransactionId sup16007883304831.
+2020-09-22T15:25:34+00:00 DEBUG (7): Shipping Params:
+2020-09-22T15:25:34+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139466265
+    [bstockReqSvcId] => 6y4deubkvkfe41h8o
+    [distance] => 114
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 129.35
+    [origin_rate] => 129.35
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 4.085
+    [subsidized_value] => 0
+    [markup_value] => 7.761
+)
+
+2020-09-22T15:25:34+00:00 DEBUG (7): auction_id 341587, Applying markup: 7.761 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T15:36:08+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 128929. Destination Zip J4M1Y4. Customer 87182. TransactionId sup16007889682994.
+2020-09-22T15:51:50+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 148422. Destination Zip 81670010. Customer 100170. TransactionId sup16007899103073.
+2020-09-22T15:55:49+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 93521. Destination Zip 32828. Customer 61670. TransactionId sup16007901496870.
+2020-09-22T15:55:53+00:00 DEBUG (7): Shipping Params:
+2020-09-22T15:55:53+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139526390
+    [bstockReqSvcId] => 6y4deubkvkfe54gx5
+    [distance] => 1088
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1233.95
+    [origin_rate] => 1233.95
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.47
+    [subsidized_value] => 0
+    [markup_value] => 74.037
+)
+
+2020-09-22T15:55:53+00:00 DEBUG (7): auction_id 346366, Applying markup: 74.037 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T15:56:07+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 93521. Destination Zip 32828. Customer 61670. TransactionId sup16007901671122.
+2020-09-22T15:56:08+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 93521. Destination Zip 32828. Customer 61670. TransactionId sup16007901686416.
+2020-09-22T15:56:08+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 93521. Destination Zip 32828. Customer 61670. TransactionId sup16007901689372.
+2020-09-22T15:56:09+00:00 DEBUG (7): Shipping Params:
+2020-09-22T15:56:09+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139657307
+    [bstockReqSvcId] => 6y4deubkvkfe54ud8
+    [distance] => 526
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1843.26
+    [origin_rate] => 1843.26
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.783
+    [subsidized_value] => 0
+    [markup_value] => 110.5956
+)
+
+2020-09-22T15:56:09+00:00 DEBUG (7): auction_id 346369, Applying markup: 110.5956 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T15:56:09+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346367. Product 337895. Seller Zip 72761. Seller 3404. Destination Address 93521. Destination Zip 32828. Customer 61670. TransactionId sup16007901696788.
+2020-09-22T15:56:10+00:00 DEBUG (7): Shipping Params:
+2020-09-22T15:56:10+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139675405
+    [bstockReqSvcId] => 6y4deubkvkfe54vjs
+    [distance] => 1003
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 3226.34
+    [origin_rate] => 3226.34
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.751
+    [subsidized_value] => 0
+    [markup_value] => 193.5804
+)
+
+2020-09-22T15:56:10+00:00 DEBUG (7): auction_id 346375, Applying markup: 193.5804 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T15:56:12+00:00 DEBUG (7): Shipping Params:
+2020-09-22T15:56:12+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139526459
+    [bstockReqSvcId] => 6y4deubkvkfe54vro
+    [distance] => 516
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 268.61
+    [origin_rate] => 268.61
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.153
+    [subsidized_value] => 0
+    [markup_value] => 16.1166
+)
+
+2020-09-22T15:56:12+00:00 DEBUG (7): auction_id 346368, Applying markup: 16.1166 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T15:56:13+00:00 DEBUG (7): Shipping Params:
+2020-09-22T15:56:13+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139623432
+    [bstockReqSvcId] => 6y4deubkvkfe54wcl
+    [distance] => 1106
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 491.15
+    [origin_rate] => 491.15
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.256
+    [subsidized_value] => 0
+    [markup_value] => 29.469
+)
+
+2020-09-22T15:56:13+00:00 DEBUG (7): auction_id 346367, Applying markup: 29.469 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T15:57:34+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 165811. Destination Zip 95841-2950. Customer 113016. TransactionId sup16007902543186.
+2020-09-22T15:57:38+00:00 DEBUG (7): Shipping Params:
+2020-09-22T15:57:38+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139496677
+    [bstockReqSvcId] => 6y4deubkvkfe56pnh
+    [distance] => 471
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 161.85
+    [origin_rate] => 161.85
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.54
+    [subsidized_value] => 0
+    [markup_value] => 9.711
+)
+
+2020-09-22T15:57:38+00:00 DEBUG (7): auction_id 341587, Applying markup: 9.711 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T16:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007913030165.
+2020-09-22T16:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007913038178.
+2020-09-22T16:18:22+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 56497. Destination Zip 85037. Customer 30839. TransactionId sup16007915027403.
+2020-09-22T16:18:25+00:00 DEBUG (7): Shipping Params:
+2020-09-22T16:18:25+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139638277
+    [bstockReqSvcId] => 6y4deubkvkfe5xgwo
+    [distance] => 2385
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 3984.71
+    [origin_rate] => 3984.71
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.334
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T16:18:25+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T16:34:36+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 151680. Destination Zip 93012-9073. Customer 102408. TransactionId sup16007924766117.
+2020-09-22T16:34:40+00:00 DEBUG (7): Shipping Params:
+2020-09-22T16:34:40+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139776704
+    [bstockReqSvcId] => 6y4deubkvkfe6iccb
+    [distance] => 2748
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 3868.8
+    [origin_rate] => 3868.8
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.448
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T16:34:40+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T16:53:20+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 75756. Destination Zip 53022. Customer 47424. TransactionId sup16007936004918.
+2020-09-22T16:53:22+00:00 DEBUG (7): Shipping Params:
+2020-09-22T16:53:22+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139814623
+    [bstockReqSvcId] => 6y4deubkvkfe76fj2
+    [distance] => 1008
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2021.33
+    [origin_rate] => 2021.33
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.282
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T16:53:22+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T17:05:38+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 122993. Destination Zip 20301. Customer 83162. TransactionId sup16007943384462.
+2020-09-22T17:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007949038420.
+2020-09-22T17:15:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007949046444.
+2020-09-22T17:19:41+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 103018. Destination Zip 78046. Customer 68861. TransactionId sup16007951814582.
+2020-09-22T17:19:45+00:00 DEBUG (7): Shipping Params:
+2020-09-22T17:19:45+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1139879512
+    [bstockReqSvcId] => 6y4deubkvkfe84bcs
+    [distance] => 1476
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 289.25
+    [origin_rate] => 289.25
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 0
+    [execution_time] => 3.382
+    [subsidized_value] => 0
+    [markup_value] => 17.355
+)
+
+2020-09-22T17:19:45+00:00 DEBUG (7): auction_id 341587, Applying markup: 17.355 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T17:48:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16007968832396.
+2020-09-22T17:48:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16007968849706.
+2020-09-22T17:53:54+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 164450. Destination Zip N4v0a5. Customer 111947. TransactionId sup16007972343789.
+2020-09-22T18:06:50+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 158510. Destination Zip H4N 3B8. Customer 88078. TransactionId sup16007980103489.
+2020-09-22T18:06:53+00:00 DEBUG (7): Shipping Params:
+2020-09-22T18:06:53+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140094018
+    [bstockReqSvcId] => 6y4deubkvkfe9sy34
+    [distance] => 2847
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 682.64
+    [origin_rate] => 682.64
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.512
+    [subsidized_value] => 0
+    [markup_value] => 40.9584
+)
+
+2020-09-22T18:06:53+00:00 DEBUG (7): auction_id 341587, Applying markup: 40.9584 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T18:17:53+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 67776. Destination Zip 33025. Customer 40875. TransactionId sup16007986738381.
+2020-09-22T18:17:57+00:00 DEBUG (7): Shipping Params:
+2020-09-22T18:17:57+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140046867
+    [bstockReqSvcId] => 6y4deubkvkfea760q
+    [distance] => 2688
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 474.4
+    [origin_rate] => 474.4
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.488
+    [subsidized_value] => 0
+    [markup_value] => 28.464
+)
+
+2020-09-22T18:17:57+00:00 DEBUG (7): auction_id 341587, Applying markup: 28.464 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T18:26:43+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 158729. Destination Zip 32117-3361. Customer 107637. TransactionId sup16007992032484.
+2020-09-22T18:27:39+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 117594. Destination Zip 91606. Customer 52283. TransactionId sup16007992590438.
+2020-09-22T18:27:42+00:00 DEBUG (7): Shipping Params:
+2020-09-22T18:27:42+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140097608
+    [bstockReqSvcId] => 6y4deubkvkfeajpkj
+    [distance] => 101
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 122.88
+    [origin_rate] => 122.88
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 0
+    [execution_time] => 3.158
+    [subsidized_value] => 0
+    [markup_value] => 7.3728
+)
+
+2020-09-22T18:27:42+00:00 DEBUG (7): auction_id 341587, Applying markup: 7.3728 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T18:32:26+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 167529. Destination Zip 33166-4673. Customer 114305. TransactionId sup16007995465144.
+2020-09-22T18:32:28+00:00 DEBUG (7): Shipping Params:
+2020-09-22T18:32:28+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140098475
+    [bstockReqSvcId] => 6y4deubkvkfeapvdk
+    [distance] => 966
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2782.34
+    [origin_rate] => 2782.34
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.693
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T18:32:28+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T18:34:33+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 154179. Destination Zip 34249-2602. Customer 104246. TransactionId sup16007996737150.
+2020-09-22T18:34:36+00:00 DEBUG (7): Shipping Params:
+2020-09-22T18:34:36+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140124040
+    [bstockReqSvcId] => 6y4deubkvkfeaslip
+    [distance] => 2543
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 492.83
+    [origin_rate] => 492.83
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.71
+    [subsidized_value] => 0
+    [markup_value] => 29.5698
+)
+
+2020-09-22T18:34:36+00:00 DEBUG (7): auction_id 341587, Applying markup: 29.5698 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T18:42:53+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 155620. Destination Zip h3n1g3. Customer 105364. TransactionId sup16008001735267.
+2020-09-22T18:42:56+00:00 DEBUG (7): Shipping Params:
+2020-09-22T18:42:56+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140125367
+    [bstockReqSvcId] => 6y4deubkvkfeb3b65
+    [distance] => 2847
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 682.64
+    [origin_rate] => 682.64
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.677
+    [subsidized_value] => 0
+    [markup_value] => 40.9584
+)
+
+2020-09-22T18:42:56+00:00 DEBUG (7): auction_id 341587, Applying markup: 40.9584 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T18:49:28+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 160769. Destination Zip 77014-1603. Customer 109143. TransactionId sup16008005689404.
+2020-09-22T18:49:31+00:00 DEBUG (7): Shipping Params:
+2020-09-22T18:49:31+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140126558
+    [bstockReqSvcId] => 6y4deubkvkfebbs97
+    [distance] => 1372
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2696.75
+    [origin_rate] => 2696.75
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.969
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T18:49:31+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:09:33+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 133807. Destination Zip 60090-3208. Customer 90295. TransactionId sup16008017734491.
+2020-09-22T19:09:40+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:09:40+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140167381
+    [bstockReqSvcId] => 6y4deubkvkfec1ln0
+    [distance] => 941
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1007.08
+    [origin_rate] => 1007.08
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 7.332
+    [subsidized_value] => 0
+    [markup_value] => 60.4248
+)
+
+2020-09-22T19:09:40+00:00 DEBUG (7): auction_id 346366, Applying markup: 60.4248 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:17:40+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 345382. Product 336669. Seller Zip 23707. Seller 531. Destination Address 126914. Destination Zip 50023-1214. Customer 85886. TransactionId sup16008022603375.
+2020-09-22T19:17:44+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:17:44+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140337029
+    [bstockReqSvcId] => 6y4deubkvkfecc1bx
+    [distance] => 1185
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 550.38
+    [origin_rate] => 550.38
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 0
+    [execution_time] => 3.93
+    [subsidized_value] => 0
+    [markup_value] => 33.0228
+)
+
+2020-09-22T19:17:44+00:00 DEBUG (7): auction_id 345382, Applying markup: 33.0228 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:18:07+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 345382. Product 336669. Seller Zip 23707. Seller 531. Destination Address 126914. Destination Zip 50023-1214. Customer 85886. TransactionId sup16008022873907.
+2020-09-22T19:18:11+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:18:11+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140337090
+    [bstockReqSvcId] => 6y4deubkvkfeccm6y
+    [distance] => 1185
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 550.38
+    [origin_rate] => 550.38
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.777
+    [subsidized_value] => 0
+    [markup_value] => 33.0228
+)
+
+2020-09-22T19:18:11+00:00 DEBUG (7): auction_id 345382, Applying markup: 33.0228 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:23:05+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 150295. Destination Zip 44446. Customer 93816. TransactionId sup16008025858329.
+2020-09-22T19:23:08+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:23:08+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140360997
+    [bstockReqSvcId] => 6y4deubkvkfecj0gg
+    [distance] => 496
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1341.4
+    [origin_rate] => 1341.4
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.269
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T19:23:08+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:32:27+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 166211. Destination Zip 77092-1113. Customer 113317. TransactionId sup16008031476285.
+2020-09-22T19:32:30+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:32:30+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140409544
+    [bstockReqSvcId] => 6y4deubkvkfecv1y1
+    [distance] => 1039
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2406.14
+    [origin_rate] => 2406.14
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.372
+    [subsidized_value] => 0
+    [markup_value] => 144.3684
+)
+
+2020-09-22T19:32:30+00:00 DEBUG (7): auction_id 346375, Applying markup: 144.3684 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:35:55+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 126460. Destination Zip 10459. Customer 85566. TransactionId sup16008033553418.
+2020-09-22T19:35:57+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:35:57+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140339624
+    [bstockReqSvcId] => 6y4deubkvkfeczi7v
+    [distance] => 371
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1489.41
+    [origin_rate] => 1489.41
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.3
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T19:35:57+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:41:32+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 150295. Destination Zip 44446. Customer 93816. TransactionId sup16008036927833.
+2020-09-22T19:41:35+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:41:35+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140427283
+    [bstockReqSvcId] => 6y4deubkvkfed6qkw
+    [distance] => 324
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1281.8
+    [origin_rate] => 1281.8
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.831
+    [subsidized_value] => 0
+    [markup_value] => 76.908
+)
+
+2020-09-22T19:41:35+00:00 DEBUG (7): auction_id 346375, Applying markup: 76.908 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:47:05+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 107694. Destination Zip 94560. Customer 72193. TransactionId sup16008040254592.
+2020-09-22T19:47:09+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:47:09+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140411908
+    [bstockReqSvcId] => 6y4deubkvkfeddv9p
+    [distance] => 1717
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1410.82
+    [origin_rate] => 1410.82
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.708
+    [subsidized_value] => 0
+    [markup_value] => 84.6492
+)
+
+2020-09-22T19:47:09+00:00 DEBUG (7): auction_id 346366, Applying markup: 84.6492 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:49:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 166957. Destination Zip 08110-1201. Customer 112469. TransactionId sup16008041441790.
+2020-09-22T19:49:08+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:49:08+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140341733
+    [bstockReqSvcId] => 6y4deubkvkfedgev9
+    [distance] => 621
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 240.99
+    [origin_rate] => 240.99
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.82
+    [subsidized_value] => 0
+    [markup_value] => 14.4594
+)
+
+2020-09-22T19:49:08+00:00 DEBUG (7): auction_id 346368, Applying markup: 14.4594 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:49:59+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346367. Product 337895. Seller Zip 72761. Seller 3404. Destination Address 122600. Destination Zip 24017. Customer 24473. TransactionId sup16008041994853.
+2020-09-22T19:50:04+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:50:04+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140342018
+    [bstockReqSvcId] => 6y4deubkvkfedhlje
+    [distance] => 994
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 440.84
+    [origin_rate] => 440.84
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 4.342
+    [subsidized_value] => 0
+    [markup_value] => 26.4504
+)
+
+2020-09-22T19:50:04+00:00 DEBUG (7): auction_id 346367, Applying markup: 26.4504 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:51:09+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 122600. Destination Zip 24017. Customer 24473. TransactionId sup16008042694676.
+2020-09-22T19:51:14+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:51:14+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140412805
+    [bstockReqSvcId] => 6y4deubkvkfedj3j8
+    [distance] => 263
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 179.54
+    [origin_rate] => 179.54
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 4.606
+    [subsidized_value] => 0
+    [markup_value] => 10.7724
+)
+
+2020-09-22T19:51:14+00:00 DEBUG (7): auction_id 346368, Applying markup: 10.7724 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T19:53:12+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 142833. Destination Zip 110085. Customer 96081. TransactionId sup16008043925762.
+2020-09-22T19:53:39+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 162661. Destination Zip 76115-2711. Customer 110574. TransactionId sup16008044192791.
+2020-09-22T19:53:41+00:00 DEBUG (7): Shipping Params:
+2020-09-22T19:53:41+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140429427
+    [bstockReqSvcId] => 6y4deubkvkfedmb48
+    [distance] => 1379
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2528.74
+    [origin_rate] => 2528.74
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.92
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T19:53:41+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T20:03:26+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 157275. Destination Zip 33442. Customer 106598. TransactionId sup16008050063896.
+2020-09-22T20:03:28+00:00 DEBUG (7): Shipping Params:
+2020-09-22T20:03:28+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140414731
+    [bstockReqSvcId] => 6y4deubkvkfedyw51
+    [distance] => 923
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2658.58
+    [origin_rate] => 2658.58
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.736
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T20:03:28+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T20:10:25+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 125701. Destination Zip 79901. Customer 42637. TransactionId sup16008054255951.
+2020-09-22T20:10:27+00:00 DEBUG (7): Shipping Params:
+2020-09-22T20:10:27+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140511543
+    [bstockReqSvcId] => 6y4deubkvkfee7vkx
+    [distance] => 1593
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2683.5
+    [origin_rate] => 2683.5
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.667
+    [subsidized_value] => 0
+    [markup_value] => 161.01
+)
+
+2020-09-22T20:10:27+00:00 DEBUG (7): auction_id 346369, Applying markup: 161.01 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T20:13:02+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 156371. Destination Zip 27530-4159. Customer 105906. TransactionId sup16008055827903.
+2020-09-22T20:13:05+00:00 DEBUG (7): Shipping Params:
+2020-09-22T20:13:05+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140444914
+    [bstockReqSvcId] => 6y4deubkvkfeeb8vl
+    [distance] => 177
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 848.89
+    [origin_rate] => 848.89
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.467
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T20:13:05+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T20:15:06+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 85819. Destination Zip 91324. Customer 55467. TransactionId sup16008057062183.
+2020-09-22T20:15:10+00:00 DEBUG (7): Shipping Params:
+2020-09-22T20:15:10+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140540074
+    [bstockReqSvcId] => 6y4deubkvkfeedw44
+    [distance] => 2367
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 3717.22
+    [origin_rate] => 3717.22
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.881
+    [subsidized_value] => 0
+    [markup_value] => 223.0332
+)
+
+2020-09-22T20:15:10+00:00 DEBUG (7): auction_id 346369, Applying markup: 223.0332 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T20:20:54+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 151432. Destination Zip 1190. Customer 102236. TransactionId sup16008060545995.
+2020-09-22T20:22:20+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 136915. Destination Zip N8T 3B2. Customer 92234. TransactionId sup16008061400149.
+2020-09-22T20:22:23+00:00 DEBUG (7): Shipping Params:
+2020-09-22T20:22:23+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140524970
+    [bstockReqSvcId] => 6y4deubkvkfeen6th
+    [distance] => 1191
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1939.43
+    [origin_rate] => 1939.43
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 3.056
+    [subsidized_value] => 0
+    [markup_value] => 116.3658
+)
+
+2020-09-22T20:22:23+00:00 DEBUG (7): auction_id 346366, Applying markup: 116.3658 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T20:26:41+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 125701. Destination Zip 79901. Customer 42637. TransactionId sup16008064014255.
+2020-09-22T20:29:27+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346367. Product 337895. Seller Zip 72761. Seller 3404. Destination Address 125701. Destination Zip 79901. Customer 42637. TransactionId sup16008065676278.
+2020-09-22T20:52:16+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 149309. Destination Zip TX 77036. Customer 96962. TransactionId sup16008079367626.
+2020-09-22T20:53:59+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346033. Product 337402. Seller Zip 23707. Seller 531. Destination Address 128724. Destination Zip 24522-8035. Customer 87055. TransactionId sup16008080391117.
+2020-09-22T20:54:00+00:00 DEBUG (7): Shipping Params:
+2020-09-22T20:54:00+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140650580
+    [bstockReqSvcId] => 6y4deubkvkfefrw54
+    [distance] => 165
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 737.27
+    [origin_rate] => 737.27
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.685
+    [subsidized_value] => 0
+    [markup_value] => 0
+)
+
+2020-09-22T20:54:00+00:00 DEBUG (7): auction_id 346033, Applying markup: 0 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T20:55:26+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 132731. Destination Zip 14020-2232. Customer 89607. TransactionId sup16008081260357.
+2020-09-22T20:55:27+00:00 DEBUG (7): Shipping Params:
+2020-09-22T20:55:27+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140640427
+    [bstockReqSvcId] => 6y4deubkvkfeftr7y
+    [distance] => 515
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1831.85
+    [origin_rate] => 1831.85
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.584
+    [subsidized_value] => 0
+    [markup_value] => 109.911
+)
+
+2020-09-22T20:55:27+00:00 DEBUG (7): auction_id 346375, Applying markup: 109.911 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T20:55:38+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 161293. Destination Zip 14020-3555. Customer 89607. TransactionId sup16008081385343.
+2020-09-22T20:55:40+00:00 DEBUG (7): Shipping Params:
+2020-09-22T20:55:40+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140640429
+    [bstockReqSvcId] => 6y4deubkvkfefu0un
+    [distance] => 515
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1831.85
+    [origin_rate] => 1831.85
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.397
+    [subsidized_value] => 0
+    [markup_value] => 109.911
+)
+
+2020-09-22T20:55:40+00:00 DEBUG (7): auction_id 346375, Applying markup: 109.911 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:00:35+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346367. Product 337895. Seller Zip 72761. Seller 3404. Destination Address 163785. Destination Zip 95350-6024. Customer 111439. TransactionId sup16008084357537.
+2020-09-22T21:05:40+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 163785. Destination Zip 95350-6024. Customer 111439. TransactionId sup16008087406507.
+2020-09-22T21:05:43+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:05:43+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140651973
+    [bstockReqSvcId] => 6y4deubkvkfeg6xg0
+    [distance] => 1653
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1398.14
+    [origin_rate] => 1398.14
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.956
+    [subsidized_value] => 0
+    [markup_value] => 83.8884
+)
+
+2020-09-22T21:05:43+00:00 DEBUG (7): auction_id 346366, Applying markup: 83.8884 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:16:20+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 167457. Destination Zip 37217-1332. Customer 114254. TransactionId sup16008093800259.
+2020-09-22T21:16:24+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:16:24+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140622144
+    [bstockReqSvcId] => 6y4deubkvkfegkmrf
+    [distance] => 2010
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 370.67
+    [origin_rate] => 370.67
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 4.168
+    [subsidized_value] => 0
+    [markup_value] => 22.2402
+)
+
+2020-09-22T21:16:24+00:00 DEBUG (7): auction_id 341587, Applying markup: 22.2402 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:16:48+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 38952. Destination Zip 32290. Customer 22025. TransactionId sup16008094083765.
+2020-09-22T21:21:54+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 167215. Destination Zip 60491-6902. Customer 114101. TransactionId sup16008097148682.
+2020-09-22T21:21:59+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:21:59+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140622860
+    [bstockReqSvcId] => 6y4deubkvkfegrt5h
+    [distance] => 897
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1023.96
+    [origin_rate] => 1023.96
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 3.97
+    [subsidized_value] => 0
+    [markup_value] => 61.4376
+)
+
+2020-09-22T21:21:59+00:00 DEBUG (7): auction_id 346366, Applying markup: 61.4376 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:34:18+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 167752. Destination Zip 32164-5483. Customer 114478. TransactionId sup16008104580079.
+2020-09-22T21:34:21+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:34:21+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140723544
+    [bstockReqSvcId] => 6y4deubkvkfeh7qim
+    [distance] => 2450
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 428.49
+    [origin_rate] => 428.49
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 3.397
+    [subsidized_value] => 0
+    [markup_value] => 25.7094
+)
+
+2020-09-22T21:34:21+00:00 DEBUG (7): auction_id 341546, Applying markup: 25.7094 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:34:25+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 164450. Destination Zip N4v0a5. Customer 111947. TransactionId sup16008104653800.
+2020-09-22T21:34:28+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:34:28+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140666606
+    [bstockReqSvcId] => 6y4deubkvkfeh7w7j
+    [distance] => 2433
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 542.64
+    [origin_rate] => 542.64
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.72
+    [subsidized_value] => 0
+    [markup_value] => 32.5584
+)
+
+2020-09-22T21:34:28+00:00 DEBUG (7): auction_id 341587, Applying markup: 32.5584 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:37:38+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346367. Product 337895. Seller Zip 72761. Seller 3404. Destination Address 167752. Destination Zip 32164-5483. Customer 114478. TransactionId sup16008106582998.
+2020-09-22T21:37:42+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:37:42+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140645146
+    [bstockReqSvcId] => 6y4deubkvkfehc12b
+    [distance] => 1079
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 474.65
+    [origin_rate] => 474.65
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 3.54
+    [subsidized_value] => 0
+    [markup_value] => 28.479
+)
+
+2020-09-22T21:37:42+00:00 DEBUG (7): auction_id 346367, Applying markup: 28.479 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:43:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 162161. Destination Zip 46254-4860. Customer 110186. TransactionId sup16008109831049.
+2020-09-22T21:43:04+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:43:04+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140724348
+    [bstockReqSvcId] => 6y4deubkvkfehizoc
+    [distance] => 33
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 460.25
+    [origin_rate] => 460.25
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.69
+    [subsidized_value] => 0
+    [markup_value] => 27.615
+)
+
+2020-09-22T21:43:04+00:00 DEBUG (7): auction_id 346375, Applying markup: 27.615 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:45:24+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 132731. Destination Zip 14020-2232. Customer 89607. TransactionId sup16008111247221.
+2020-09-22T21:45:29+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:45:29+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140678701
+    [bstockReqSvcId] => 6y4deubkvkfehm0y7
+    [distance] => 1407
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1526.17
+    [origin_rate] => 1526.17
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 4.188
+    [subsidized_value] => 0
+    [markup_value] => 91.5702
+)
+
+2020-09-22T21:45:29+00:00 DEBUG (7): auction_id 346366, Applying markup: 91.5702 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:45:47+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346367. Product 337895. Seller Zip 72761. Seller 3404. Destination Address 132731. Destination Zip 14020-2232. Customer 89607. TransactionId sup16008111472469.
+2020-09-22T21:45:51+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:45:51+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140655866
+    [bstockReqSvcId] => 6y4deubkvkfehmiby
+    [distance] => 1131
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 477.86
+    [origin_rate] => 477.86
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.996
+    [subsidized_value] => 0
+    [markup_value] => 28.6716
+)
+
+2020-09-22T21:45:51+00:00 DEBUG (7): auction_id 346367, Applying markup: 28.6716 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:46:33+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346367. Product 337895. Seller Zip 72761. Seller 3404. Destination Address 161293. Destination Zip 14020-3555. Customer 89607. TransactionId sup16008111934386.
+2020-09-22T21:46:36+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:46:36+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140690640
+    [bstockReqSvcId] => 6y4deubkvkfehnhyk
+    [distance] => 1131
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 477.86
+    [origin_rate] => 477.86
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.995
+    [subsidized_value] => 0
+    [markup_value] => 28.6716
+)
+
+2020-09-22T21:46:36+00:00 DEBUG (7): auction_id 346367, Applying markup: 28.6716 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:47:53+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 132731. Destination Zip 14020-2232. Customer 89607. TransactionId sup16008112732012.
+2020-09-22T21:47:56+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:47:56+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140613772
+    [bstockReqSvcId] => 6y4deubkvkfehp7ii
+    [distance] => 758
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 289.69
+    [origin_rate] => 289.69
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.285
+    [subsidized_value] => 0
+    [markup_value] => 17.3814
+)
+
+2020-09-22T21:47:56+00:00 DEBUG (7): auction_id 346368, Applying markup: 17.3814 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:55:05+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 75756. Destination Zip 53022. Customer 47424. TransactionId sup16008117053559.
+2020-09-22T21:55:07+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:55:07+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140656483
+    [bstockReqSvcId] => 6y4deubkvkfehygya
+    [distance] => 1008
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 410.34
+    [origin_rate] => 410.34
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.111
+    [subsidized_value] => 0
+    [markup_value] => 24.6204
+)
+
+2020-09-22T21:55:07+00:00 DEBUG (7): auction_id 346689, Applying markup: 24.6204 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:59:02+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 112416. Destination Zip 72601. Customer 75642. TransactionId sup16008119429908.
+2020-09-22T21:59:06+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:59:06+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140668805
+    [bstockReqSvcId] => 6y4deubkvkfei3kaz
+    [distance] => 405
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 757.58
+    [origin_rate] => 757.58
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.883
+    [subsidized_value] => 0
+    [markup_value] => 45.4548
+)
+
+2020-09-22T21:59:06+00:00 DEBUG (7): auction_id 346366, Applying markup: 45.4548 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:59:37+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346367. Product 337895. Seller Zip 72761. Seller 3404. Destination Address 112416. Destination Zip 72601. Customer 75642. TransactionId sup16008119775542.
+2020-09-22T21:59:40+00:00 DEBUG (7): Shipping Params:
+2020-09-22T21:59:40+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140691799
+    [bstockReqSvcId] => 6y4deubkvkfei4az2
+    [distance] => 97
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 155.79
+    [origin_rate] => 155.79
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.25
+    [subsidized_value] => 0
+    [markup_value] => 9.3474
+)
+
+2020-09-22T21:59:40+00:00 DEBUG (7): auction_id 346367, Applying markup: 9.3474 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T21:59:56+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 143244. Destination Zip 29582. Customer 96394. TransactionId sup16008119963734.
+2020-09-22T22:03:24+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 112416. Destination Zip 72601. Customer 75642. TransactionId sup16008122046508.
+2020-09-22T22:03:26+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:03:26+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140749592
+    [bstockReqSvcId] => 6y4deubkvkfei9678
+    [distance] => 822
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1961.98
+    [origin_rate] => 1961.98
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.859
+    [subsidized_value] => 0
+    [markup_value] => 117.7188
+)
+
+2020-09-22T22:03:26+00:00 DEBUG (7): auction_id 346369, Applying markup: 117.7188 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:04:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 112416. Destination Zip 72601. Customer 75642. TransactionId sup16008122440628.
+2020-09-22T22:04:07+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:04:07+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140794857
+    [bstockReqSvcId] => 6y4deubkvkfeia0mf
+    [distance] => 821
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 279.22
+    [origin_rate] => 279.22
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.124
+    [subsidized_value] => 0
+    [markup_value] => 16.7532
+)
+
+2020-09-22T22:04:07+00:00 DEBUG (7): auction_id 346368, Applying markup: 16.7532 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:11:08+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 147418. Destination Zip 32773-7017. Customer 99477. TransactionId sup16008126688284.
+2020-09-22T22:11:12+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:11:12+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140778524
+    [bstockReqSvcId] => 6y4deubkvkfeij4cw
+    [distance] => 2476
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 446.62
+    [origin_rate] => 446.62
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.497
+    [subsidized_value] => 0
+    [markup_value] => 26.7972
+)
+
+2020-09-22T22:11:12+00:00 DEBUG (7): auction_id 341587, Applying markup: 26.7972 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:11:21+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 158456. Destination Zip 30067-8930. Customer 107439. TransactionId sup16008126812137.
+2020-09-22T22:11:24+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:11:24+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140778536
+    [bstockReqSvcId] => 6y4deubkvkfeijdwo
+    [distance] => 787
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 867.95
+    [origin_rate] => 867.95
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.823
+    [subsidized_value] => 0
+    [markup_value] => 52.077
+)
+
+2020-09-22T22:11:24+00:00 DEBUG (7): auction_id 346366, Applying markup: 52.077 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:13:12+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 167634. Destination Zip 32773-6323. Customer 99477. TransactionId sup16008127923339.
+2020-09-22T22:13:15+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:13:15+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140681214
+    [bstockReqSvcId] => 6y4deubkvkfeilrna
+    [distance] => 2476
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 446.62
+    [origin_rate] => 446.62
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.057
+    [subsidized_value] => 0
+    [markup_value] => 26.7972
+)
+
+2020-09-22T22:13:15+00:00 DEBUG (7): auction_id 341587, Applying markup: 26.7972 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16008129037810.
+2020-09-22T22:15:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16008129045533.
+2020-09-22T22:15:08+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 152659. Destination Zip 60626. Customer 103169. TransactionId sup16008129088229.
+2020-09-22T22:15:12+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:15:12+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140750550
+    [bstockReqSvcId] => 6y4deubkvkfeio9ix
+    [distance] => 929
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1028.01
+    [origin_rate] => 1028.01
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 0
+    [execution_time] => 3.867
+    [subsidized_value] => 0
+    [markup_value] => 61.6806
+)
+
+2020-09-22T22:15:12+00:00 DEBUG (7): auction_id 346366, Applying markup: 61.6806 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:15:59+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 140799. Destination Zip 73801. Customer 94628. TransactionId sup16008129592933.
+2020-09-22T22:16:02+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:16:02+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140692971
+    [bstockReqSvcId] => 6y4deubkvkfeipch1
+    [distance] => 343
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 643.57
+    [origin_rate] => 643.57
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.009
+    [subsidized_value] => 0
+    [markup_value] => 38.6142
+)
+
+2020-09-22T22:16:02+00:00 DEBUG (7): auction_id 346366, Applying markup: 38.6142 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:16:07+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 147418. Destination Zip 32773-7017. Customer 99477. TransactionId sup16008129677818.
+2020-09-22T22:16:10+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:16:10+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140681490
+    [bstockReqSvcId] => 6y4deubkvkfeipj0x
+    [distance] => 2476
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 416.98
+    [origin_rate] => 416.98
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.996
+    [subsidized_value] => 0
+    [markup_value] => 25.0188
+)
+
+2020-09-22T22:16:10+00:00 DEBUG (7): auction_id 341546, Applying markup: 25.0188 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:18:40+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 166035. Destination Zip 24019. Customer 113194. TransactionId sup16008131209480.
+2020-09-22T22:18:43+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:18:43+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140727205
+    [bstockReqSvcId] => 6y4deubkvkfeist7e
+    [distance] => 1101
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1180.97
+    [origin_rate] => 1180.97
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.77
+    [subsidized_value] => 0
+    [markup_value] => 70.8582
+)
+
+2020-09-22T22:18:43+00:00 DEBUG (7): auction_id 346366, Applying markup: 70.8582 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:19:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 166035. Destination Zip 24019. Customer 113194. TransactionId sup16008131433753.
+2020-09-22T22:19:06+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:19:06+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140779120
+    [bstockReqSvcId] => 6y4deubkvkfeitaio
+    [distance] => 263
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 179.54
+    [origin_rate] => 179.54
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.599
+    [subsidized_value] => 0
+    [markup_value] => 10.7724
+)
+
+2020-09-22T22:19:06+00:00 DEBUG (7): auction_id 346368, Applying markup: 10.7724 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:19:24+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 148567. Destination Zip 25303-1026. Customer 100268. TransactionId sup16008131649089.
+2020-09-22T22:19:27+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:19:27+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140658338
+    [bstockReqSvcId] => 6y4deubkvkfeitr4f
+    [distance] => 1046
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1306.23
+    [origin_rate] => 1306.23
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.665
+    [subsidized_value] => 0
+    [markup_value] => 78.3738
+)
+
+2020-09-22T22:19:27+00:00 DEBUG (7): auction_id 346366, Applying markup: 78.3738 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:30:32+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341587. Product 332613. Seller Zip 92590. Seller 488. Destination Address 130353. Destination Zip 31326-5438. Customer 87866. TransactionId sup16008138320423.
+2020-09-22T22:30:32+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 130353. Destination Zip 31326-5438. Customer 87866. TransactionId sup16008138323427.
+2020-09-22T22:30:35+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:30:35+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140779805
+    [bstockReqSvcId] => 6y4deubkvkfej823w
+    [distance] => 1030
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 933.34
+    [origin_rate] => 933.34
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.955
+    [subsidized_value] => 0
+    [markup_value] => 56.0004
+)
+
+2020-09-22T22:30:35+00:00 DEBUG (7): auction_id 346366, Applying markup: 56.0004 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:30:35+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:30:35+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140809084
+    [bstockReqSvcId] => 6y4deubkvkfej81vo
+    [distance] => 2425
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 414.78
+    [origin_rate] => 414.78
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.409
+    [subsidized_value] => 0
+    [markup_value] => 24.8868
+)
+
+2020-09-22T22:30:35+00:00 DEBUG (7): auction_id 341587, Applying markup: 24.8868 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:33:54+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 113344. Destination Zip 06905. Customer 76316. TransactionId sup16008140349716.
+2020-09-22T22:33:59+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:33:59+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140715780
+    [bstockReqSvcId] => 6y4deubkvkfejcegj
+    [distance] => 1587
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1475.78
+    [origin_rate] => 1475.78
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.94
+    [subsidized_value] => 0
+    [markup_value] => 88.5468
+)
+
+2020-09-22T22:33:59+00:00 DEBUG (7): auction_id 346366, Applying markup: 88.5468 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:35:39+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 166035. Destination Zip 24019. Customer 113194. TransactionId sup16008141399932.
+2020-09-22T22:35:43+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:35:43+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140852065
+    [bstockReqSvcId] => 6y4deubkvkfejenh8
+    [distance] => 237
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 268.97
+    [origin_rate] => 268.97
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.108
+    [subsidized_value] => 0
+    [markup_value] => 16.1382
+)
+
+2020-09-22T22:35:43+00:00 DEBUG (7): auction_id 346689, Applying markup: 16.1382 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:36:15+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 130353. Destination Zip 31326-5438. Customer 87866. TransactionId sup16008141756621.
+2020-09-22T22:36:19+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:36:19+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140827804
+    [bstockReqSvcId] => 6y4deubkvkfejff0c
+    [distance] => 479
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 305
+    [origin_rate] => 305
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.305
+    [subsidized_value] => 0
+    [markup_value] => 18.3
+)
+
+2020-09-22T22:36:19+00:00 DEBUG (7): auction_id 346689, Applying markup: 18.3 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:44:57+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 45308. Destination Zip 97501. Customer 28327. TransactionId sup16008146972382.
+2020-09-22T22:45:00+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:45:00+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140728601
+    [bstockReqSvcId] => 6y4deubkvkfejqlgc
+    [distance] => 3041
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 713.88
+    [origin_rate] => 713.88
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.937
+    [subsidized_value] => 0
+    [markup_value] => 42.8328
+)
+
+2020-09-22T22:45:00+00:00 DEBUG (7): auction_id 346689, Applying markup: 42.8328 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:47:21+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 70903. Destination Zip 92553-7725. Customer 43433. TransactionId sup16008148419859.
+2020-09-22T22:48:35+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 56649. Destination Zip 95822. Customer 28327. TransactionId sup16008149158963.
+2020-09-22T22:48:38+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:48:38+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140828774
+    [bstockReqSvcId] => 6y4deubkvkfejva5h
+    [distance] => 2872
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 759.74
+    [origin_rate] => 759.74
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.847
+    [subsidized_value] => 0
+    [markup_value] => 45.5844
+)
+
+2020-09-22T22:48:38+00:00 DEBUG (7): auction_id 346689, Applying markup: 45.5844 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:52:21+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 95197. Destination Zip 33166. Customer 63021. TransactionId sup16008151413693.
+2020-09-22T22:52:23+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:52:23+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140853164
+    [bstockReqSvcId] => 6y4deubkvkfek044u
+    [distance] => 735
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2377.74
+    [origin_rate] => 2377.74
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.564
+    [subsidized_value] => 0
+    [markup_value] => 142.6644
+)
+
+2020-09-22T22:52:23+00:00 DEBUG (7): auction_id 346369, Applying markup: 142.6644 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T22:52:31+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 95197. Destination Zip 33166. Customer 63021. TransactionId sup16008151516516.
+2020-09-22T22:52:34+00:00 DEBUG (7): Shipping Params:
+2020-09-22T22:52:34+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140853184
+    [bstockReqSvcId] => 6y4deubkvkfek0c2d
+    [distance] => 1313
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1388.25
+    [origin_rate] => 1388.25
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.085
+    [subsidized_value] => 0
+    [markup_value] => 83.295
+)
+
+2020-09-22T22:52:34+00:00 DEBUG (7): auction_id 346366, Applying markup: 83.295 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T23:10:46+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 155577. Destination Zip 29108-1604. Customer 105331. TransactionId sup16008162469590.
+2020-09-22T23:10:48+00:00 DEBUG (7): Shipping Params:
+2020-09-22T23:10:48+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140718310
+    [bstockReqSvcId] => 6y4deubkvkfeknt6o
+    [distance] => 569
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1664.22
+    [origin_rate] => 1664.22
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.387
+    [subsidized_value] => 0
+    [markup_value] => 99.8532
+)
+
+2020-09-22T23:10:48+00:00 DEBUG (7): auction_id 346375, Applying markup: 99.8532 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T23:12:53+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 163958. Destination Zip 20000. Customer 111586. TransactionId sup16008163734176.
+2020-09-22T23:15:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16008165041845.
+2020-09-22T23:15:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16008165049475.
+2020-09-22T23:19:41+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 160153. Destination Zip 43542-9636. Customer 108701. TransactionId sup16008167815592.
+2020-09-22T23:19:44+00:00 DEBUG (7): Shipping Params:
+2020-09-22T23:19:44+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140843983
+    [bstockReqSvcId] => 6y4deubkvkfekz9ok
+    [distance] => 656
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 340.85
+    [origin_rate] => 340.85
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.939
+    [subsidized_value] => 0
+    [markup_value] => 20.451
+)
+
+2020-09-22T23:19:44+00:00 DEBUG (7): auction_id 346689, Applying markup: 20.451 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T23:32:50+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 158413. Destination Zip 22191. Customer 96979. TransactionId sup16008175704094.
+2020-09-22T23:32:53+00:00 DEBUG (7): Shipping Params:
+2020-09-22T23:32:53+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140784307
+    [bstockReqSvcId] => 6y4deubkvkfelg6c7
+    [distance] => 357
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 282.3
+    [origin_rate] => 282.3
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.485
+    [subsidized_value] => 0
+    [markup_value] => 16.938
+)
+
+2020-09-22T23:32:53+00:00 DEBUG (7): auction_id 346368, Applying markup: 16.938 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T23:37:35+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 167275. Destination Zip 77373. Customer 114149. TransactionId sup16008178555991.
+2020-09-22T23:37:39+00:00 DEBUG (7): Shipping Params:
+2020-09-22T23:37:39+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140801088
+    [bstockReqSvcId] => 6y4deubkvkfelmaes
+    [distance] => 218
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 540.78
+    [origin_rate] => 540.78
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.578
+    [subsidized_value] => 0
+    [markup_value] => 32.4468
+)
+
+2020-09-22T23:37:39+00:00 DEBUG (7): auction_id 346366, Applying markup: 32.4468 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T23:44:07+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 155194. Destination Zip 73501-5407. Customer 105050. TransactionId sup16008182473325.
+2020-09-22T23:44:10+00:00 DEBUG (7): Shipping Params:
+2020-09-22T23:44:10+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140870264
+    [bstockReqSvcId] => 6y4deubkvkfeluona
+    [distance] => 1459
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 556.74
+    [origin_rate] => 556.74
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.669
+    [subsidized_value] => 0
+    [markup_value] => 33.4044
+)
+
+2020-09-22T23:44:10+00:00 DEBUG (7): auction_id 346689, Applying markup: 33.4044 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T23:54:06+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 165871. Destination Zip 28752. Customer 113065. TransactionId sup16008188460344.
+2020-09-22T23:54:08+00:00 DEBUG (7): Shipping Params:
+2020-09-22T23:54:08+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140857243
+    [bstockReqSvcId] => 6y4deubkvkfem7ilc
+    [distance] => 369
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 308.81
+    [origin_rate] => 308.81
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.598
+    [subsidized_value] => 0
+    [markup_value] => 18.5286
+)
+
+2020-09-22T23:54:08+00:00 DEBUG (7): auction_id 346689, Applying markup: 18.5286 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-22T23:58:54+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 146026. Destination Zip L7R 3N8. Customer 98451. TransactionId sup16008191342863.
+2020-09-23T00:15:02+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16008201028928.
+2020-09-23T00:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16008201038546.
+2020-09-23T00:29:26+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 81077. Destination Zip 11420. Customer 51682. TransactionId sup16008209665902.
+2020-09-23T00:29:29+00:00 DEBUG (7): Shipping Params:
+2020-09-23T00:29:29+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140944597
+    [bstockReqSvcId] => 6y4deubkvkfengysl
+    [distance] => 385
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 409.78
+    [origin_rate] => 409.78
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.772
+    [subsidized_value] => 0
+    [markup_value] => 24.5868
+)
+
+2020-09-23T00:29:29+00:00 DEBUG (7): auction_id 346689, Applying markup: 24.5868 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T00:30:08+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 167790. Destination Zip 22204-1793. Customer 114501. TransactionId sup16008210082614.
+2020-09-23T00:30:11+00:00 DEBUG (7): Shipping Params:
+2020-09-23T00:30:11+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140834917
+    [bstockReqSvcId] => 6y4deubkvkfenhuyf
+    [distance] => 190
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 331.47
+    [origin_rate] => 331.47
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.994
+    [subsidized_value] => 0
+    [markup_value] => 19.8882
+)
+
+2020-09-23T00:30:11+00:00 DEBUG (7): auction_id 346689, Applying markup: 19.8882 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T00:32:45+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 155643. Destination Zip 29720-3667. Customer 105382. TransactionId sup16008211657854.
+2020-09-23T00:32:49+00:00 DEBUG (7): Shipping Params:
+2020-09-23T00:32:49+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140892428
+    [bstockReqSvcId] => 6y4deubkvkfenl8hh
+    [distance] => 1038
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 997.67
+    [origin_rate] => 997.67
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.875
+    [subsidized_value] => 0
+    [markup_value] => 59.8602
+)
+
+2020-09-23T00:32:49+00:00 DEBUG (7): auction_id 346366, Applying markup: 59.8602 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T00:40:01+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 91756. Destination Zip L4a 0S3. Customer 60323. TransactionId sup16008216013496.
+2020-09-23T00:42:05+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 76259. Destination Zip 32766. Customer 47829. TransactionId sup16008217257343.
+2020-09-23T00:42:08+00:00 DEBUG (7): Shipping Params:
+2020-09-23T00:42:08+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140872224
+    [bstockReqSvcId] => 6y4deubkvkfenx8j4
+    [distance] => 749
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 445
+    [origin_rate] => 445
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.932
+    [subsidized_value] => 0
+    [markup_value] => 26.7
+)
+
+2020-09-23T00:42:08+00:00 DEBUG (7): auction_id 346689, Applying markup: 26.7 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T00:43:13+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 91756. Destination Zip L4a 0S3. Customer 60323. TransactionId sup16008217930033.
+2020-09-23T00:44:16+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 91756. Destination Zip L4a 0S3. Customer 60323. TransactionId sup16008218560890.
+2020-09-23T00:45:58+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 91756. Destination Zip L4a 0S3. Customer 60323. TransactionId sup16008219587898.
+2020-09-23T00:46:01+00:00 DEBUG (7): Shipping Params:
+2020-09-23T00:46:01+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140816149
+    [bstockReqSvcId] => 6y4deubkvkfeo28cr
+    [distance] => 859
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 539.55
+    [origin_rate] => 539.55
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.07
+    [subsidized_value] => 0
+    [markup_value] => 32.373
+)
+
+2020-09-23T00:46:01+00:00 DEBUG (7): auction_id 346368, Applying markup: 32.373 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T00:46:24+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 91756. Destination Zip L4a 0S3. Customer 60323. TransactionId sup16008219848349.
+2020-09-23T00:46:27+00:00 DEBUG (7): Shipping Params:
+2020-09-23T00:46:27+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140816160
+    [bstockReqSvcId] => 6y4deubkvkfeo2sgf
+    [distance] => 1444
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 2329.96
+    [origin_rate] => 2329.96
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.503
+    [subsidized_value] => 0
+    [markup_value] => 139.7976
+)
+
+2020-09-23T00:46:27+00:00 DEBUG (7): auction_id 346366, Applying markup: 139.7976 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T00:48:40+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 132298. Destination Zip 48191-9767. Customer 89328. TransactionId sup16008221207247.
+2020-09-23T00:48:44+00:00 DEBUG (7): Shipping Params:
+2020-09-23T00:48:44+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140906191
+    [bstockReqSvcId] => 6y4deubkvkfeo5pat
+    [distance] => 663
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 252.29
+    [origin_rate] => 252.29
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 0
+    [execution_time] => 3.128
+    [subsidized_value] => 0
+    [markup_value] => 15.1374
+)
+
+2020-09-23T00:48:44+00:00 DEBUG (7): auction_id 346368, Applying markup: 15.1374 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T00:57:15+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 164839. Destination Zip 78758-5806. Customer 112276. TransactionId sup16008226350790.
+2020-09-23T00:57:17+00:00 DEBUG (7): Shipping Params:
+2020-09-23T00:57:17+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140816547
+    [bstockReqSvcId] => 6y4deubkvkfeogq69
+    [distance] => 1098
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 326.18
+    [origin_rate] => 326.18
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.63
+    [subsidized_value] => 0
+    [markup_value] => 19.5708
+)
+
+2020-09-23T00:57:17+00:00 DEBUG (7): auction_id 346368, Applying markup: 19.5708 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:06:49+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 79847. Destination Zip H2A 1K8. Customer 50691. TransactionId sup16008232095193.
+2020-09-23T01:06:53+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:06:53+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141000491
+    [bstockReqSvcId] => 6y4deubkvkfeot1e7
+    [distance] => 1746
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 2454.51
+    [origin_rate] => 2454.51
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.823
+    [subsidized_value] => 0
+    [markup_value] => 147.2706
+)
+
+2020-09-23T01:06:53+00:00 DEBUG (7): auction_id 346366, Applying markup: 147.2706 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:10:33+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 150254. Destination Zip 20904-5216. Customer 101415. TransactionId sup16008234335761.
+2020-09-23T01:10:35+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:10:35+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141000747
+    [bstockReqSvcId] => 6y4deubkvkfeoxua1
+    [distance] => 484
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1667.06
+    [origin_rate] => 1667.06
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.7
+    [subsidized_value] => 0
+    [markup_value] => 100.0236
+)
+
+2020-09-23T01:10:35+00:00 DEBUG (7): auction_id 346369, Applying markup: 100.0236 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:12:12+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346367. Product 337895. Seller Zip 72761. Seller 3404. Destination Address 150254. Destination Zip 20904-5216. Customer 101415. TransactionId sup16008235323758.
+2020-09-23T01:12:17+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:12:17+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140946366
+    [bstockReqSvcId] => 6y4deubkvkfeozyis
+    [distance] => 1165
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 567.14
+    [origin_rate] => 567.14
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 4.84
+    [subsidized_value] => 0
+    [markup_value] => 34.0284
+)
+
+2020-09-23T01:12:17+00:00 DEBUG (7): auction_id 346367, Applying markup: 34.0284 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16008237034353.
+2020-09-23T01:15:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16008237043812.
+2020-09-23T01:32:08+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 109407. Destination Zip 93711-6889. Customer 73448. TransactionId sup16008247287613.
+2020-09-23T01:32:12+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:32:12+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140908484
+    [bstockReqSvcId] => 6y4deubkvkfepplmq
+    [distance] => 305
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 143.67
+    [origin_rate] => 143.67
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 0
+    [execution_time] => 3.435
+    [subsidized_value] => 0
+    [markup_value] => 8.6202
+)
+
+2020-09-23T01:32:12+00:00 DEBUG (7): auction_id 341546, Applying markup: 8.6202 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:36:52+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 38578. Destination Zip 15084. Customer 21650. TransactionId sup16008250121419.
+2020-09-23T01:36:54+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:36:54+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141025888
+    [bstockReqSvcId] => 6y4deubkvkfepvoa1
+    [distance] => 362
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1585.86
+    [origin_rate] => 1585.86
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.702
+    [subsidized_value] => 0
+    [markup_value] => 95.1516
+)
+
+2020-09-23T01:36:54+00:00 DEBUG (7): auction_id 346375, Applying markup: 95.1516 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:39:27+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 32020. Destination Zip 77037-1247. Customer 16192. TransactionId sup16008251673219.
+2020-09-23T01:39:30+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:39:30+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140975163
+    [bstockReqSvcId] => 6y4deubkvkfepz00t
+    [distance] => 1358
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 594.56
+    [origin_rate] => 594.56
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 0
+    [execution_time] => 2.543
+    [subsidized_value] => 0
+    [markup_value] => 35.6736
+)
+
+2020-09-23T01:39:30+00:00 DEBUG (7): auction_id 346689, Applying markup: 35.6736 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:39:40+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 136635. Destination Zip 10456-2130. Customer 91023. TransactionId sup16008251801544.
+2020-09-23T01:39:42+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:39:42+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140975176
+    [bstockReqSvcId] => 6y4deubkvkfepz9wr
+    [distance] => 373
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 409.78
+    [origin_rate] => 409.78
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.579
+    [subsidized_value] => 0
+    [markup_value] => 24.5868
+)
+
+2020-09-23T01:39:42+00:00 DEBUG (7): auction_id 346689, Applying markup: 24.5868 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:42:09+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 163283. Destination Zip 02907-2891. Customer 111074. TransactionId sup16008253294549.
+2020-09-23T01:42:53+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 163283. Destination Zip 02907-2891. Customer 111074. TransactionId sup16008253738126.
+2020-09-23T01:46:33+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 167695. Destination Zip 28217-5893. Customer 107119. TransactionId sup16008255938147.
+2020-09-23T01:46:36+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:46:36+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140975716
+    [bstockReqSvcId] => 6y4deubkvkfeq8536
+    [distance] => 73
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 112.05
+    [origin_rate] => 112.05
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.615
+    [subsidized_value] => 0
+    [markup_value] => 6.723
+)
+
+2020-09-23T01:46:36+00:00 DEBUG (7): auction_id 346368, Applying markup: 6.723 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:46:59+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 167695. Destination Zip 28217-5893. Customer 107119. TransactionId sup16008256196867.
+2020-09-23T01:47:04+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:47:04+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140875871
+    [bstockReqSvcId] => 6y4deubkvkfeq8p1s
+    [distance] => 73
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 470.25
+    [origin_rate] => 470.25
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 4.375
+    [subsidized_value] => 0
+    [markup_value] => 28.215
+)
+
+2020-09-23T01:47:04+00:00 DEBUG (7): auction_id 346369, Applying markup: 28.215 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:49:42+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 167695. Destination Zip 28217-5893. Customer 107119. TransactionId sup16008257828062.
+2020-09-23T01:49:45+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:49:46+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140909870
+    [bstockReqSvcId] => 6y4deubkvkfeqc6x1
+    [distance] => 2416
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 385.85
+    [origin_rate] => 385.85
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.98
+    [subsidized_value] => 0
+    [markup_value] => 23.151
+)
+
+2020-09-23T01:49:46+00:00 DEBUG (7): auction_id 341546, Applying markup: 23.151 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:53:15+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 162942. Destination Zip 20105-5695. Customer 110808. TransactionId sup16008259952616.
+2020-09-23T01:53:19+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:53:19+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140948951
+    [bstockReqSvcId] => 6y4deubkvkfeqgquf
+    [distance] => 2638
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 468.31
+    [origin_rate] => 468.31
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 3.575
+    [subsidized_value] => 0
+    [markup_value] => 28.0986
+)
+
+2020-09-23T01:53:19+00:00 DEBUG (7): auction_id 341546, Applying markup: 28.0986 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:55:40+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 63285. Destination Zip 20785-4104. Customer 27565. TransactionId sup16008261404827.
+2020-09-23T01:55:43+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:55:43+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1140896803
+    [bstockReqSvcId] => 6y4deubkvkfeqjuw3
+    [distance] => 205
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 346.34
+    [origin_rate] => 346.34
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.642
+    [subsidized_value] => 0
+    [markup_value] => 20.7804
+)
+
+2020-09-23T01:55:43+00:00 DEBUG (7): auction_id 346689, Applying markup: 20.7804 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T01:56:38+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 162942. Destination Zip 20105-5695. Customer 110808. TransactionId sup16008261981545.
+2020-09-23T01:56:41+00:00 DEBUG (7): Shipping Params:
+2020-09-23T01:56:41+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141003593
+    [bstockReqSvcId] => 6y4deubkvkfeql3e0
+    [distance] => 200
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 335.19
+    [origin_rate] => 335.19
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 3.022
+    [subsidized_value] => 0
+    [markup_value] => 20.1114
+)
+
+2020-09-23T01:56:41+00:00 DEBUG (7): auction_id 346689, Applying markup: 20.1114 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T02:09:28+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 75337. Destination Zip 43219. Customer 47071. TransactionId sup16008269687654.
+2020-09-23T02:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16008273031887.
+2020-09-23T02:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16008273039541.
+2020-09-23T02:30:36+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 164561. Destination Zip K1G3B1. Customer 112045. TransactionId sup16008282365851.
+2020-09-23T02:30:38+00:00 DEBUG (7): Shipping Params:
+2020-09-23T02:30:38+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141078885
+    [bstockReqSvcId] => 6y4deubkvkferss7n
+    [distance] => 706
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 609.35
+    [origin_rate] => 609.35
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.101
+    [subsidized_value] => 0
+    [markup_value] => 36.561
+)
+
+2020-09-23T02:30:38+00:00 DEBUG (7): auction_id 346689, Applying markup: 36.561 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T02:30:57+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 152607. Destination Zip 41142. Customer 103128. TransactionId sup16008282578838.
+2020-09-23T02:31:01+00:00 DEBUG (7): Shipping Params:
+2020-09-23T02:31:01+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141124533
+    [bstockReqSvcId] => 6y4deubkvkfert8n8
+    [distance] => 972
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1111.66
+    [origin_rate] => 1111.66
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.741
+    [subsidized_value] => 0
+    [markup_value] => 66.6996
+)
+
+2020-09-23T02:31:01+00:00 DEBUG (7): auction_id 346366, Applying markup: 66.6996 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T02:32:33+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 152607. Destination Zip 41142. Customer 103128. TransactionId sup16008283538801.
+2020-09-23T02:32:37+00:00 DEBUG (7): Shipping Params:
+2020-09-23T02:32:37+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141079003
+    [bstockReqSvcId] => 6y4deubkvkfervapg
+    [distance] => 360
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1618.4
+    [origin_rate] => 1618.4
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.037
+    [subsidized_value] => 0
+    [markup_value] => 97.104
+)
+
+2020-09-23T02:32:37+00:00 DEBUG (7): auction_id 346369, Applying markup: 97.104 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T02:33:07+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 152607. Destination Zip 41142. Customer 103128. TransactionId sup16008283878424.
+2020-09-23T02:33:09+00:00 DEBUG (7): Shipping Params:
+2020-09-23T02:33:09+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141079082
+    [bstockReqSvcId] => 6y4deubkvkferw0x5
+    [distance] => 261
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1424.45
+    [origin_rate] => 1424.45
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.787
+    [subsidized_value] => 0
+    [markup_value] => 85.467
+)
+
+2020-09-23T02:33:09+00:00 DEBUG (7): auction_id 346375, Applying markup: 85.467 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T02:41:51+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 158066. Destination Zip 79756-0527. Customer 107162. TransactionId sup16008289112882.
+2020-09-23T02:41:54+00:00 DEBUG (7): Shipping Params:
+2020-09-23T02:41:54+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141007080
+    [bstockReqSvcId] => 6y4deubkvkfes78sx
+    [distance] => 1735
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 620.91
+    [origin_rate] => 620.91
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 90
+    [execution_time] => 2.615
+    [subsidized_value] => 0
+    [markup_value] => 37.2546
+)
+
+2020-09-23T02:41:54+00:00 DEBUG (7): auction_id 346689, Applying markup: 37.2546 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T02:43:43+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 143575. Destination Zip 77023-1453. Customer 90948. TransactionId sup16008290238464.
+2020-09-23T02:43:46+00:00 DEBUG (7): Shipping Params:
+2020-09-23T02:43:46+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141079669
+    [bstockReqSvcId] => 6y4deubkvkfes9nnl
+    [distance] => 240
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 630.07
+    [origin_rate] => 630.07
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.806
+    [subsidized_value] => 0
+    [markup_value] => 37.8042
+)
+
+2020-09-23T02:43:46+00:00 DEBUG (7): auction_id 346366, Applying markup: 37.8042 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T02:49:26+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 151680. Destination Zip 93012-9073. Customer 102408. TransactionId sup16008293665465.
+2020-09-23T02:49:29+00:00 DEBUG (7): Shipping Params:
+2020-09-23T02:49:29+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141080141
+    [bstockReqSvcId] => 6y4deubkvkfesh02p
+    [distance] => 140
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 123.04
+    [origin_rate] => 123.04
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.261
+    [subsidized_value] => 0
+    [markup_value] => 7.3824
+)
+
+2020-09-23T02:49:29+00:00 DEBUG (7): auction_id 341546, Applying markup: 7.3824 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T02:57:54+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 142800. Destination Zip 33013-3140. Customer 96053. TransactionId sup16008298742855.
+2020-09-23T02:57:57+00:00 DEBUG (7): Shipping Params:
+2020-09-23T02:57:57+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141114192
+    [bstockReqSvcId] => 6y4deubkvkfesrvud
+    [distance] => 960
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 488.54
+    [origin_rate] => 488.54
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 3.205
+    [subsidized_value] => 0
+    [markup_value] => 29.3124
+)
+
+2020-09-23T02:57:57+00:00 DEBUG (7): auction_id 346689, Applying markup: 29.3124 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:00:10+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 163636. Destination Zip 92019-4652. Customer 65104. TransactionId sup16008300101772.
+2020-09-23T03:00:12+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:00:12+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141032436
+    [bstockReqSvcId] => 6y4deubkvkfesusoz
+    [distance] => 2096
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 3862
+    [origin_rate] => 3862
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.235
+    [subsidized_value] => 0
+    [markup_value] => 231.72
+)
+
+2020-09-23T03:00:12+00:00 DEBUG (7): auction_id 346375, Applying markup: 231.72 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:01:06+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 159790. Destination Zip 07028-6612. Customer 108424. TransactionId sup16008300660296.
+2020-09-23T03:01:18+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 163636. Destination Zip 92019-4652. Customer 65104. TransactionId sup16008300783117.
+2020-09-23T03:01:21+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:01:21+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141152861
+    [bstockReqSvcId] => 6y4deubkvkfesw99d
+    [distance] => 1346
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 1223.23
+    [origin_rate] => 1223.23
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.981
+    [subsidized_value] => 0
+    [markup_value] => 73.3938
+)
+
+2020-09-23T03:01:21+00:00 DEBUG (7): auction_id 346366, Applying markup: 73.3938 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:02:11+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 159790. Destination Zip 07028-6612. Customer 108424. TransactionId sup16008301318831.
+2020-09-23T03:02:14+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:02:14+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141114456
+    [bstockReqSvcId] => 6y4deubkvkfesxel5
+    [distance] => 699
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2560.34
+    [origin_rate] => 2560.34
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.426
+    [subsidized_value] => 0
+    [markup_value] => 153.6204
+)
+
+2020-09-23T03:02:14+00:00 DEBUG (7): auction_id 346375, Applying markup: 153.6204 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:06:18+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 159074. Destination Zip 76084-4731. Customer 107873. TransactionId sup16008303784763.
+2020-09-23T03:06:21+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:06:21+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141172128
+    [bstockReqSvcId] => 6y4deubkvkfet2ov4
+    [distance] => 33
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 294.36
+    [origin_rate] => 294.36
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.235
+    [subsidized_value] => 0
+    [markup_value] => 17.6616
+)
+
+2020-09-23T03:06:21+00:00 DEBUG (7): auction_id 346366, Applying markup: 17.6616 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16008309035300.
+2020-09-23T03:15:04+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16008309043308.
+2020-09-23T03:21:18+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 157923. Destination Zip 07205. Customer 107056. TransactionId sup16008312784079.
+2020-09-23T03:21:20+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:21:20+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141129525
+    [bstockReqSvcId] => 6y4deubkvkfetlz8j
+    [distance] => 694
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2216.14
+    [origin_rate] => 2216.14
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.786
+    [subsidized_value] => 0
+    [markup_value] => 132.9684
+)
+
+2020-09-23T03:21:20+00:00 DEBUG (7): auction_id 346369, Applying markup: 132.9684 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:33:43+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 155643. Destination Zip 29720-3667. Customer 105382. TransactionId sup16008320233399.
+2020-09-23T03:33:45+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:33:45+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141156649
+    [bstockReqSvcId] => 6y4deubkvkfeu1y0p
+    [distance] => 605
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1718.87
+    [origin_rate] => 1718.87
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.725
+    [subsidized_value] => 0
+    [markup_value] => 103.1322
+)
+
+2020-09-23T03:33:45+00:00 DEBUG (7): auction_id 346375, Applying markup: 103.1322 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:42:44+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 90720. Destination Zip 31901-2126. Customer 59489. TransactionId sup16008325646545.
+2020-09-23T03:42:48+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:42:48+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141204009
+    [bstockReqSvcId] => 6y4deubkvkfeudjom
+    [distance] => 738
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 812.9
+    [origin_rate] => 812.9
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 90
+    [execution_time] => 3.406
+    [subsidized_value] => 0
+    [markup_value] => 48.774
+)
+
+2020-09-23T03:42:48+00:00 DEBUG (7): auction_id 346366, Applying markup: 48.774 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:44:12+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 90720. Destination Zip 31901-2126. Customer 59489. TransactionId sup16008326528984.
+2020-09-23T03:44:15+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:44:15+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141246301
+    [bstockReqSvcId] => 6y4deubkvkfeuffs1
+    [distance] => 673
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 357.88
+    [origin_rate] => 357.88
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 90
+    [execution_time] => 2.605
+    [subsidized_value] => 0
+    [markup_value] => 21.4728
+)
+
+2020-09-23T03:44:15+00:00 DEBUG (7): auction_id 346689, Applying markup: 21.4728 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:46:59+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 149222. Destination Zip 93313-6141. Customer 100747. TransactionId sup16008328193620.
+2020-09-23T03:47:04+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:47:04+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141176332
+    [bstockReqSvcId] => 6y4deubkvkfeuj07x
+    [distance] => 197
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 130.94
+    [origin_rate] => 130.94
+    [charge_type] => Mileage
+    [liftgate_fee] => 65
+    [residential_fee] => 90
+    [execution_time] => 5.222
+    [subsidized_value] => 0
+    [markup_value] => 7.8564
+)
+
+2020-09-23T03:47:04+00:00 DEBUG (7): auction_id 341546, Applying markup: 7.8564 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T03:59:56+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 92671. Destination Zip 07104. Customer 61023. TransactionId sup16008335965635.
+2020-09-23T03:59:58+00:00 DEBUG (7): Shipping Params:
+2020-09-23T03:59:58+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141133069
+    [bstockReqSvcId] => 6y4deubkvkfeuznwd
+    [distance] => 704
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 2578.64
+    [origin_rate] => 2578.64
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.685
+    [subsidized_value] => 0
+    [markup_value] => 154.7184
+)
+
+2020-09-23T03:59:58+00:00 DEBUG (7): auction_id 346375, Applying markup: 154.7184 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:13:21+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 167267. Destination Zip 40962. Customer 114141. TransactionId sup16008344013469.
+2020-09-23T04:13:25+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:13:25+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141206218
+    [bstockReqSvcId] => 6y4deubkvkfevgwus
+    [distance] => 886
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 935.75
+    [origin_rate] => 935.75
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.997
+    [subsidized_value] => 0
+    [markup_value] => 56.145
+)
+
+2020-09-23T04:13:25+00:00 DEBUG (7): auction_id 346366, Applying markup: 56.145 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:13:26+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 92671. Destination Zip 07104. Customer 61023. TransactionId sup16008344068957.
+2020-09-23T04:13:29+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:13:29+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141193000
+    [bstockReqSvcId] => 6y4deubkvkfevh14q
+    [distance] => 353
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 339.07
+    [origin_rate] => 339.07
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 90
+    [execution_time] => 2.641
+    [subsidized_value] => 0
+    [markup_value] => 20.3442
+)
+
+2020-09-23T04:13:29+00:00 DEBUG (7): auction_id 346689, Applying markup: 20.3442 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:15:02+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 333881. Product 313628. Seller Zip 85043. Seller 3404. Destination Address 158311. Destination Zip 33166. Customer 107324. TransactionId sup16008345029565.
+2020-09-23T04:15:03+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 334312. Product 322679. Seller Zip 12095. Seller 3404. Destination Address 163579. Destination Zip E1A 3E9. Customer 108093. TransactionId sup16008345037454.
+2020-09-23T04:15:19+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 167267. Destination Zip 40962. Customer 114141. TransactionId sup16008345198703.
+2020-09-23T04:15:22+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:15:22+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141159940
+    [bstockReqSvcId] => 6y4deubkvkfevjgbc
+    [distance] => 286
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1286.14
+    [origin_rate] => 1286.14
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.324
+    [subsidized_value] => 0
+    [markup_value] => 77.1684
+)
+
+2020-09-23T04:15:22+00:00 DEBUG (7): auction_id 346369, Applying markup: 77.1684 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:16:21+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 167267. Destination Zip 40962. Customer 114141. TransactionId sup16008345814187.
+2020-09-23T04:16:23+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:16:23+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141193154
+    [bstockReqSvcId] => 6y4deubkvkfevkrsi
+    [distance] => 269
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1468.05
+    [origin_rate] => 1468.05
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.915
+    [subsidized_value] => 0
+    [markup_value] => 88.083
+)
+
+2020-09-23T04:16:23+00:00 DEBUG (7): auction_id 346375, Applying markup: 88.083 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:24:13+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 160360. Destination Zip 60644. Customer 102275. TransactionId sup16008350534246.
+2020-09-23T04:24:15+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:24:15+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141312914
+    [bstockReqSvcId] => 6y4deubkvkfevuvzj
+    [distance] => 719
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1677.7
+    [origin_rate] => 1677.7
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.506
+    [subsidized_value] => 0
+    [markup_value] => 100.662
+)
+
+2020-09-23T04:24:15+00:00 DEBUG (7): auction_id 346369, Applying markup: 100.662 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:26:45+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346689. Product 337893. Seller Zip 23707. Seller 531. Destination Address 54612. Destination Zip 91402-5979. Customer 30571. TransactionId sup16008352059561.
+2020-09-23T04:26:48+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:26:48+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141193663
+    [bstockReqSvcId] => 6y4deubkvkfevy5ob
+    [distance] => 2717
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 725.85
+    [origin_rate] => 725.85
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.696
+    [subsidized_value] => 0
+    [markup_value] => 43.551
+)
+
+2020-09-23T04:26:48+00:00 DEBUG (7): auction_id 346689, Applying markup: 43.551 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:32:36+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 130043. Destination Zip 30236-8708. Customer 87916. TransactionId sup16008355566262.
+2020-09-23T04:32:38+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:32:38+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141219743
+    [bstockReqSvcId] => 6y4deubkvkfew5o90
+    [distance] => 192
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1019.6
+    [origin_rate] => 1019.6
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.937
+    [subsidized_value] => 0
+    [markup_value] => 61.176
+)
+
+2020-09-23T04:32:38+00:00 DEBUG (7): auction_id 346369, Applying markup: 61.176 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:47:18+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 116907. Destination Zip 33178-2508. Customer 70047. TransactionId sup16008364383847.
+2020-09-23T04:47:21+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:47:21+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141340860
+    [bstockReqSvcId] => 6y4deubkvkfewoklj
+    [distance] => 2705
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 442.91
+    [origin_rate] => 442.91
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.202
+    [subsidized_value] => 0
+    [markup_value] => 26.5746
+)
+
+2020-09-23T04:47:21+00:00 DEBUG (7): auction_id 341546, Applying markup: 26.5746 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:48:32+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 142286. Destination Zip 72114-4715. Customer 95718. TransactionId sup16008365121698.
+2020-09-23T04:48:35+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:48:35+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141340903
+    [bstockReqSvcId] => 6y4deubkvkfewq5j4
+    [distance] => 322
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 688.36
+    [origin_rate] => 688.36
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 2.796
+    [subsidized_value] => 0
+    [markup_value] => 41.3016
+)
+
+2020-09-23T04:48:35+00:00 DEBUG (7): auction_id 346366, Applying markup: 41.3016 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:48:39+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346366. Product 337892. Seller Zip 75237. Seller 3404. Destination Address 83909. Destination Zip 38860. Customer 53975. TransactionId sup16008365194253.
+2020-09-23T04:48:42+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:48:42+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141249864
+    [bstockReqSvcId] => 6y4deubkvkfewqb4u
+    [distance] => 580
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 795.77
+    [origin_rate] => 795.77
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.071
+    [subsidized_value] => 0
+    [markup_value] => 47.7462
+)
+
+2020-09-23T04:48:42+00:00 DEBUG (7): auction_id 346366, Applying markup: 47.7462 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:49:30+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346375. Product 337905. Seller Zip 46140. Seller 3404. Destination Address 110428. Destination Zip 60463. Customer 74194. TransactionId sup16008365702158.
+2020-09-23T04:49:32+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:49:32+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141340919
+    [bstockReqSvcId] => 6y4deubkvkfewrebp
+    [distance] => 200
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 746.76
+    [origin_rate] => 746.76
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.823
+    [subsidized_value] => 0
+    [markup_value] => 44.8056
+)
+
+2020-09-23T04:49:32+00:00 DEBUG (7): auction_id 346375, Applying markup: 44.8056 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:51:02+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346369. Product 337897. Seller Zip 29303. Seller 3404. Destination Address 83909. Destination Zip 38860. Customer 53975. TransactionId sup16008366628638.
+2020-09-23T04:51:04+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:51:04+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141340978
+    [bstockReqSvcId] => 6y4deubkvkfewtdsr
+    [distance] => 454
+    [distance_unitofmeasure] => Miles
+    [service_type] => TL
+    [rate] => 1270.88
+    [origin_rate] => 1270.88
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 1.794
+    [subsidized_value] => 0
+    [markup_value] => 76.2528
+)
+
+2020-09-23T04:51:04+00:00 DEBUG (7): auction_id 346369, Applying markup: 76.2528 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T04:58:42+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 166902. Destination Zip 12078-3731. Customer 113871. TransactionId sup16008371224278.
+2020-09-23T04:58:45+00:00 DEBUG (7): Shipping Params:
+2020-09-23T04:58:45+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141221111
+    [bstockReqSvcId] => 6y4deubkvkfex38e3
+    [distance] => 850
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 284.93
+    [origin_rate] => 284.93
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.309
+    [subsidized_value] => 0
+    [markup_value] => 17.0958
+)
+
+2020-09-23T04:58:45+00:00 DEBUG (7): auction_id 346368, Applying markup: 17.0958 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T05:01:52+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 341546. Product 332888. Seller Zip 92590. Seller 488. Destination Address 78167. Destination Zip 91342. Customer 49365. TransactionId sup16008373120777.
+2020-09-23T05:01:56+00:00 DEBUG (7): Shipping Params:
+2020-09-23T05:01:56+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141195524
+    [bstockReqSvcId] => 6y4deubkvkfex7aqu
+    [distance] => 109
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 120.54
+    [origin_rate] => 120.54
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 4.115
+    [subsidized_value] => 0
+    [markup_value] => 7.2324
+)
+
+2020-09-23T05:01:56+00:00 DEBUG (7): auction_id 341546, Applying markup: 7.2324 on top of quote , check (chrob_rate_debug.log) for more info.
+2020-09-23T05:02:49+00:00 DEBUG (7): Calling CH Robinson API for new quote. Auction 346368. Product 337896. Seller Zip 29303. Seller 3404. Destination Address 166576. Destination Zip 07026-3107. Customer 113625. TransactionId sup16008373697003.
+2020-09-23T05:02:53+00:00 DEBUG (7): Shipping Params:
+2020-09-23T05:02:53+00:00 DEBUG (7): Array
+(
+    [quote_id] => 1141250563
+    [bstockReqSvcId] => 6y4deubkvkfex8j73
+    [distance] => 712
+    [distance_unitofmeasure] => Miles
+    [service_type] => LTL
+    [rate] => 264.98
+    [origin_rate] => 264.98
+    [charge_type] => Mileage
+    [liftgate_fee] => 0
+    [residential_fee] => 0
+    [execution_time] => 3.237
+    [subsidized_value] => 0
+    [markup_value] => 15.8988
+)
+
+2020-09-23T05:02:53+00:00 DEBUG (7): auction_id 346368, Applying markup: 15.8988 on top of quote , check (chrob_rate_debug.log) for more info.
