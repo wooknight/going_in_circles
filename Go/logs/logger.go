@@ -46,7 +46,7 @@ Check:
 				values:= r.FindStringSubmatch(scanner.Text())
 				// h.Write(([]byte)(values[4]))
 				// fmt.Printf("\n%s \n%s \n",values[3],values[4])
-				key:= values[2]+"-"+values[4]
+				key:= values[3]+"-"+values[4]
 				if logMap[key].count == 0 {
 					logMap[key] = logData{log:values[4],datetime:values[1],count:1}
 				}else{
@@ -65,8 +65,12 @@ Check:
 		//open filec
 		// update maps for each line
 		// close file
+	for _, val := range logMap{
+		if val.count > 5{
+			fmt.Printf("Occurrio %v\n\n",val)
+		}
+	}
 
-	fmt.Printf("Mapper %v",logMap)
 	}
 }
 
