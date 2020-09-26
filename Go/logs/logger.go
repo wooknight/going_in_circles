@@ -81,3 +81,5 @@ func splitIntoAtoms(line string) (*regexp.Regexp) {
 		fmt.Printf("%#v\n", r.SubexpNames())
 		return r
 	}
+
+	
