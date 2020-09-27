@@ -24,6 +24,11 @@ type Program struct {
 	Statements []Statement //program is a series (array) of statements
 }
 
+type Boolean struct {
+	Token token.Token
+	Value bool
+}
+
 //TokenLiteral turns the array of statements into a Node!! to print
 func (p *Program) TokenLiteral() string {
 	if len(p.Statements) > 0 {
@@ -104,6 +109,16 @@ func (es *ExpressionStatement) String() string {
 	return ""
 }
 
+type BooleanLiteral struct {
+	Token token.Token
+	Value bool
+}
+
+func (bl *BooleanLiteral) expressionNode()      {}
+func (bl *BooleanLiteral) TokenLiteral() string { return bl.Token.Literal }
+func (bl *BooleanLiteral) String() string       { return bl.Token.Literal }
+
+
 type IntegerLiteral struct {
 	Token token.Token
 	Value int64
@@ -112,6 +127,8 @@ type IntegerLiteral struct {
 func (il *IntegerLiteral) expressionNode()      {}
 func (il *IntegerLiteral) TokenLiteral() string { return il.Token.Literal }
 func (il *IntegerLiteral) String() string       { return il.Token.Literal }
+
+
 
 type PrefixExpression struct {
 	Token    token.Token
@@ -152,4 +169,12 @@ func (ie *InfixExpression) String() string {
 	out.WriteString(ie.Right.String())
 	out.WriteString(")")
 	return out.String()
+}
+
+func (b *Boolean) expressionNode(){}
+func (b *Boolean) TokenLiteral() string {
+	return b.Token.Literal
+}
+func (b *Boolean) String() string {
+	return b.Token.Literal
 }
