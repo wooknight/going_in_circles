@@ -64,6 +64,7 @@ func New(lexerParam *lexer.Lexer) *Parser {
 	return p
 }
 func (p *Parser) parsePrefixExpression() ast.Expression {
+	defer untrace(trace("ParsePrefixExpression"))
 	expression := &ast.PrefixExpression{
 		Token:    p.curToken,
 		Operator: p.curToken.Literal,
@@ -87,6 +88,7 @@ func (p *Parser) peekError(t token.TokenType) {
 }
 
 func (p *Parser) parseIntegerLiteral() ast.Expression {
+	defer untrace(trace("ParseIntegerLiteral"))
 	lit := &ast.IntegerLiteral{Token: p.curToken}
 	value, err := strconv.ParseInt(p.curToken.Literal, 0, 64)
 	if err != nil {
@@ -112,6 +114,7 @@ func (p *Parser) NextToken() {
 }
 
 func (p *Parser) ParseExpression(precedence int) ast.Expression {
+	defer untrace(trace("ParseExpression"))
 	prefix := p.prefixParseFns[p.curToken.Type]
 	if prefix == nil {
 		p.noPrefixParseFnError(p.curToken.Type)
@@ -130,6 +133,7 @@ func (p *Parser) ParseExpression(precedence int) ast.Expression {
 }
 
 func (p *Parser) ParseProgram() *ast.Program {
+	defer untrace(trace("ParseProgram"))
 	program := &ast.Program{}
 	program.Statements = []ast.Statement{}
 	for p.curToken.Type != token.EOF {
@@ -235,6 +239,11 @@ func (p *Parser) parseInfixExpression(left ast.Expression) ast.Expression {
 	}
 	precedence := p.curPrecedence()
 	p.NextToken()
+	// if expression.Operator == "+"{
+	// 	expression.Right = p.ParseExpression(precedence-1)
+	// }else{
+	// 	expression.Right = p.ParseExpression(precedence)
+	// }
 	expression.Right = p.ParseExpression(precedence)
 	return expression
 }
