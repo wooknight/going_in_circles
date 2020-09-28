@@ -124,7 +124,6 @@ func TestOperatorPrecedenceParsing(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		fmt.Printf("\n\nProcessing %v",tt)
 		l := lexer.New(tt.input)
 		p := New(l)
 		program := p.ParseProgram()
@@ -185,31 +184,32 @@ func TestParsingInfixExpressions(t *testing.T) {
 }
 
 func TestLetStatement(t *testing.T) {
-	input := `
-	let x = 5;
-	let y  = 10;
-	let foobar=   838383;
-	`
-	l := lexer.New(input)
-	p := New(l)
-	program := p.ParseProgram()
-	checkParserErrors(t, p)
-	if program == nil {
-		t.Fatalf("ParseProgram() returned nil")
-	}
-	if len(program.Statements) != 3 {
-		t.Fatalf("Program.Statements does not contain 3 statements. got = %d", len(program.Statements))
-	}
 	tests := []struct {
+		input string
 		expectedIdentifier string
+		expectedValue 	interface{}
 	}{
-		{"x"},
-		{"y"},
-		{"foobar"},
+		{"let x = 5;","x",5},
+		{"let y  = 10;","y",10},
+		{"let foobar=   y;","foobar","y"},
 	}
-	for i, tt := range tests {
-		stmt := program.Statements[i]
-		if !testLetStatement(t, stmt, tt.expectedIdentifier) {
+	for _,tt:= range tests{
+		l := lexer.New(tt.input)
+		p := New(l)
+		program := p.ParseProgram()
+		checkParserErrors(t, p)
+		if program == nil {
+			t.Fatalf("ParseProgram() returned nil")
+		}
+		if len(program.Statements) != 1 {
+			t.Fatalf("Program.Statements does not contain 1 statements. got = %d", len(program.Statements))
+		}
+		stmt:= program.Statements[0]
+		if !testLetStatement(t,stmt,tt.expectedIdentifier){
+			return
+		}
+		val:= stmt.(*ast.LetStatement).Value
+		if !testLiteralExpression(t,val,tt.expectedValue){
 			return
 		}
 	}

@@ -194,8 +194,10 @@ func (p *Parser) parseLetStatement() *ast.LetStatement {
 	if !p.expectPeek(token.ASSIGN) {
 		return nil
 	}
+	p.NextToken()
+	stmt.Value = p.ParseExpression(LOWEST)
 
-	for !p.curTokenIs(token.SEMICOLON) {
+	if p.peekTokenIs(token.SEMICOLON) {
 		p.NextToken()
 	}
 	return stmt
@@ -221,11 +223,11 @@ func (p *Parser) peekTokenIs(t token.TokenType) bool {
 
 func (p *Parser) parseReturnStatement() *ast.ReturnStatement {
 	stmt := &ast.ReturnStatement{Token: p.curToken}
-	// if !p.expectPeek(token.IDENT) {
-	// 	return nil
-	// }
+
 	p.NextToken()
-	for !p.curTokenIs(token.SEMICOLON) {
+
+	stmt.ReturnValue = p.ParseExpression(LOWEST)
+	for p.peekTokenIs(token.SEMICOLON) {
 		p.NextToken()
 	}
 	return stmt
