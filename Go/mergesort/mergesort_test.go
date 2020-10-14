@@ -26,7 +26,6 @@ func TestInsertionSort(t *testing.T){
 
 	insertTests := []struct {
 		input1 []int
-		input2 []int
 		result []int
 	}{
 		{input1: []int{6, 3, 2,5,4, 1}, result: []int{1, 2, 3, 4, 5, 6}},
@@ -38,6 +37,25 @@ func TestInsertionSort(t *testing.T){
 		}
 	}
 
+}
+
+
+//go test -cpuprofile cpu.prof -memprofile mem.prof -bench .
+//go tool pprof cpu.prof
+func BenchmarkInsertionsort(b *testing.B){
+	mergeTests := []struct {
+		input1 []int
+		result []int
+	}{
+		{input1: []int{6, 3, 2,4, 5, 1}, result: []int{1, 2, 3, 4, 5, 6}},
+	}
+
+		for i := 0; i < b.N; i++ {
+		result := insertionSort(mergeTests[0].input1)
+		if reflect.DeepEqual(result, mergeTests[0].result) {
+			b.Errorf("Result not matching . Need %v . Got %v", mergeTests[0].result, result)
+		}
+    }
 }
 
 
