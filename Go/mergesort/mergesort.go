@@ -3,9 +3,12 @@ package main
 import (
 	"fmt"
 	"sort"
+
+	"github.com/pkg/profile"
 )
 
 func main() {
+	defer profile.Start().Stop()
 	fmt.Println("hello world")
 }
 
