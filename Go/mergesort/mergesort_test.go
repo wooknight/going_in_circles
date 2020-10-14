@@ -22,6 +22,25 @@ func TestMergesort(t *testing.T) {
 	}
 }
 
+func TestInsertionSort(t *testing.T){
+
+	insertTests := []struct {
+		input1 []int
+		input2 []int
+		result []int
+	}{
+		{input1: []int{6, 3, 2,5,4, 1}, result: []int{1, 2, 3, 4, 5, 6}},
+	}
+	for _, tt := range insertTests {
+		result := insertionSort(tt.input1)
+		if reflect.DeepEqual(result, tt.result) {
+			t.Errorf("Result not matching . Need %v . Got %v", tt.result, result)
+		}
+	}
+
+}
+
+
 //go test -cpuprofile cpu.prof -memprofile mem.prof -bench .
 //go tool pprof cpu.prof
 func BenchmarkMergesort(b *testing.B){

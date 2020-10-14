@@ -35,3 +35,15 @@ func mergesort(arr1, arr2 []int) (sortedarr []int) {
 		mergesort(arr2[:len(arr2)/2], arr2[len(arr2)/2+1:]),
 	)
 }
+
+func insertionSort(arr []int) []int {
+for key, val := range arr{
+	subarr:= arr[0:len(arr)-1]
+	for key1,val1 := range subarr{
+		if val > val1 {
+			arr[key] , subarr[key1]= val1,val
+		}
+	}
+}
+return arr
+}

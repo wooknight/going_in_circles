@@ -56,7 +56,7 @@ return (i%size)
 
 func insert ()int {
 	index := hashFunction(value,hash.Size)
-	element := hashNode (Value:value , Next : hash.Table(index))
+	element := hashNode {Value:value , Next : hash.Table(index)}
 	hash.Table[index] = &element
 	return index
 }
