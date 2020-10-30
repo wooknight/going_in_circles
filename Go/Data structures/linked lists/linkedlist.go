@@ -70,6 +70,7 @@ func LoadMyList() *MyBucketlist {
 		fmt.Errorf("Critical file error %v", err)
 		return bucketlist
 	}
+
 	file := csv.NewReader(f)
 	if err != nil {
 		fmt.Errorf("Critical file error %v", err)
