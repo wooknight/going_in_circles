@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+
 	"io"
 	"log"
 	"net"
@@ -9,23 +9,10 @@ import (
 
 func echo(conn net.Conn){
 	defer conn.Close()
-	b:=make([]byte ,512)
-	for{
-		size,err:= conn.Read(b[0:])
-		if err == io.EOF{
-			log.Println("Client disconnected")
-			break
-		}
-		if err!= nil{
-			fmt.Printf("Error %v",err)
-		}
-		log.Printf("Received %d bytes: %s\n",size,string(b))
-		log.Println("Writing data")
-		if _,err:=conn.Write(b[0:size]);err!=nil{
-			log.Fatal("Unable to write data")
-		}
-
+	if _,err:=io.Copy(conn,conn);err!=nil{
+		log.Fatalf("Unable to read/write data")
 	}
+
 }
 
 func main() {
