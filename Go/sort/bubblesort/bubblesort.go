@@ -16,10 +16,7 @@ func getInput (len int) []int{
 
 func bubblesort(arr []int) []int{
 	arrLen:=len(arr)-1
-	for {
-		if arrLen == 0{
-			break
-		}
+	for arrLen >0 {
 		for i:=0;i<arrLen;i++{
 			if arr[i]>arr[i+1]{
 				arr[i],arr[i+1]=arr[i+1],arr[i]
