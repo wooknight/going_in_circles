@@ -1,6 +1,9 @@
 package main
 
+// import "fmt"
+
 func quicksort(arr []int,lower , upper int){
+//	fmt.Printf("Inside quicksort - %v\n",arr)
 	if (upper - lower) > 0 {
 	pvt:=partition(arr,len(arr)-1)//last element
 	if pvt > 0 {

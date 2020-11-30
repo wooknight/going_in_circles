@@ -22,7 +22,7 @@ func TestMergesort(t *testing.T) {
 		sort.Ints(tt.result)
 
 		result := mergesort(tt.input1, tt.input2)
-		if reflect.DeepEqual(result, tt.result) {
+		if reflect.DeepEqual(result, tt.result) ==false {
 			t.Errorf("Result not matching . Need %v . Got %v", tt.result, result)
 		}
 	}
@@ -61,7 +61,7 @@ func BenchmarkInsertionsort(b *testing.B) {
 		copy(mergeTests[0].result, mergeTests[0].input1)
 		sort.Ints(mergeTests[0].result)
 		result := insertionSort(mergeTests[0].input1)
-		if reflect.DeepEqual(result, mergeTests[0].result) {
+		if reflect.DeepEqual(result, mergeTests[0].result) ==false {
 			b.Errorf("Result not matching . Need %v . Got %v", mergeTests[0].result, result)
 		}
 	}
@@ -87,7 +87,7 @@ func BenchmarkMergesort(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 
 		result := mergesort(mergeTests[0].input1, mergeTests[0].input2)
-		if reflect.DeepEqual(result, mergeTests[0].result) {
+		if reflect.DeepEqual(result, mergeTests[0].result) ==false {
 			b.Errorf("Result not matching . Need %v . Got %v", mergeTests[0].result, result)
 		}
 	}
