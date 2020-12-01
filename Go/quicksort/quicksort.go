@@ -9,9 +9,7 @@ func quicksort(arr []int,lower , upper int){
 	if pvt > 0 {
 		quicksort(arr[:pvt-1],0,pvt-1)
 	}
-	if pvt < len(arr)-1 {
 		quicksort(arr[:pvt+1],pvt+1,len(arr)-1)
-	}
 }
 
 }
