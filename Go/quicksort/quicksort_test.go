@@ -22,38 +22,37 @@ func TestQuicksort(t *testing.T) {
 	for _, tt := range testvalues {
 
 		quicksort(tt.input, 0, len(tt.input)-1)
-		fmt.Printf("Testing . Need %v \n%d\n. Got %v\n%d\n\n", tt.result,len(tt.result), tt.input,len(tt.input))
+		fmt.Printf("Testing . Need %v \n%d\n. Got %v\n%d\n\n", tt.result, len(tt.result), tt.input, len(tt.input))
 		if reflect.DeepEqual(tt.input, tt.result) == false {
 			t.Errorf("Result not matching . Need %v . Got %v", tt.result, tt.input)
 		}
 	}
 }
 
-func TestPartition(t *testing.T)  {
+func TestPartition(t *testing.T) {
 
 	testvalues := []struct {
-		input  []int
-		idx	, pivot int
+		input      []int
+		idx, pivot int
 	}{
 		{
-			input:  []int{61,  7, 10, 12, 16,4, 17} ,idx:2, pivot:2 ,
-		} ,
+			input: []int{61, 7, 10, 12, 16, 4, 17}, idx: 2, pivot: 2,
+		},
 		{
-			input:  []int{61,  7, 10, 12, 16,4, 17} ,idx:6,pivot:1,
-		} ,
+			input: []int{61, 7, 10, 12, 16, 4, 17}, idx: 6, pivot: 1,
+		},
 		{
-			input:  []int{61,  7, 10, 12, 16,4, 17} ,idx:1,pivot:7,
-		} ,
-	 }
+			input: []int{61, 7, 10, 12, 16, 4, 17}, idx: 1, pivot: 7,
+		},
+	}
 
-	for _,tt:= range testvalues{
-		pivot:=partition(tt.input,tt.idx)
+	for _, tt := range testvalues {
+		pivot := partition(tt.input, tt.idx)
 		if pivot != tt.pivot {
-			t.Errorf("Expected - %v\n\nGot %v \n %v\n",tt.pivot,pivot,tt.input)
+			t.Errorf("Expected - %v\n\nGot %v \n %v\n", tt.pivot, pivot, tt.input)
 		}
 	}
 }
-
 
 func BenchmarkQuicksort(b *testing.B) {
 
