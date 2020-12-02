@@ -14,9 +14,8 @@ func printStack() {
 
 func quicksort(arr []int) {
 	defer func() {
-		fmt.Println("Inside quicksort defer")
-
 		if r := recover(); r != nil {
+			fmt.Printf("\nInside quicksort defer\nFound an exception %v", r)
 			fmt.Printf("Arr value is %v \n%v", arr, r)
 		}
 	}()
