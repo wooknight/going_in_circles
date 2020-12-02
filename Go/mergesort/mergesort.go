@@ -11,23 +11,18 @@ func main() {
 	fmt.Println("hello world")
 }
 
-func mergesort(arr1, arr2 []int) []int {
-	if len(arr1) == 0 {
-		return arr2
-	} else if len(arr2) == 0 {
-		return arr1
+func merge_sort(arr []int32) []int32 {
+	if len(arr) <= 1 {
+		return arr
 	}
-	if len(arr1) <= 3 && len(arr2) <= 3 {
-		return merge(arr1, arr2)
-	}
-	arr1 = mergesort(arr1[:len(arr1)/2], arr1[len(arr1)/2+1:])
-	arr2 = mergesort(arr2[:len(arr2)/2], arr2[len(arr2)/2+1:])
+	arr1 := merge_sort(arr[:len(arr)/2])
+	arr2 := merge_sort(arr[len(arr)/2:len(arr)])
 	return merge(arr1, arr2)
 }
 
-func merge(arr1, arr2 []int) []int {
+func merge(arr1, arr2 []int32) []int32 {
 	totLen := len(arr1) + len(arr2)
-	sortedArr := make([]int, totLen)
+	sortedArr := make([]int32, totLen)
 	i := 0
 	j := 0
 	for k := 0; k < totLen; k++ {
