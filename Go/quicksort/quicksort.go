@@ -47,3 +47,42 @@ func partition(arr []int) int {
 	}
 	return pvt
 }
+
+
+func binarySearch(arr []int, target int) int{
+	mid:=len(arr)/2
+	low:=0
+	high := len(arr)-1
+	for low<=high{
+		if arr[low]==target {return low}
+		if arr[high]==target {return high}
+		if arr[mid]==target {return mid}
+		if (arr[mid]<target){
+			low=mid+1
+		}else{
+			high=mid-1
+		}
+		mid = low + (high - low)/2
+	}
+	return -1
+}
+
+func selectionSort(arr []int){
+	for i,_ := range arr{
+		minIdx,_:=findMin(arr[i:])
+		arr[i],arr[i+minIdx]=arr[minIdx+i],arr[i]
+	}
+}
+
+func findMin(arr []int) (int,int){
+	idx:=0
+	val:=arr[0]
+	for idx1,val1:=range arr{
+		if val > val1{
+			idx=idx1
+			val=val1
+		}
+	}
+	fmt.Printf("Found %d in array %v\n\n",val,arr)
+	return idx,val
+}
