@@ -22,12 +22,12 @@ func (p *set) getElems() []int{
 	return keys
 }
 
-func (p *set)setIntersection(set1 set) set{
+func (p *set)Intersection(set1 set) set{
 
 	resultSet = new (set)
-	for _, val := range p.getElems(){
-		if set1.contains(val){
-			resultSet.addToSet(val)
+	for key, _ := range p.hasher{
+		if set1.contains(key){
+			resultSet.addToSet(key)
 		}
 	}
 	return resultSet
@@ -40,7 +40,7 @@ func (p *set) contains(target int){
 	return true
 }
 
-func (p *set)union(set1 set) set {
+func (p *set)Union(set1 set) set {
 	resultSet = new (set)
 	for _,_val := range p.getElems(){
 		resultSet.addToSet(val)
@@ -49,5 +49,15 @@ func (p *set)union(set1 set) set {
 		resultSet.addToSet(val)
 	}
 
+	return resultSet
+}
+
+func (p *set) Difference(set1 set) set {
+	resultSet = new (set)
+	for key,_ := range p.hasher(){
+		if set1.contains(key)==false{
+			resultSet.addToSet(key)
+		}
+	}
 	return resultSet
 }
