@@ -18,9 +18,6 @@ func quicksort(arr []int) []int {
 
 func partition(arr []int) int {
 	greaterThanPvt := 0
-	if len(arr) <= 1 {
-		return greaterThanPvt
-	}
 	pvt := len(arr) - 1 //use the last element
 	for i := range arr {
 		if arr[i] < arr[pvt] {
