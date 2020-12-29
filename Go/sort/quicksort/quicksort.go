@@ -1,48 +1,36 @@
 package main
 
-import (
-	"fmt"
-	"os"
-	"runtime"
-)
+// "fmt"
+// "os"
+// "runtime"
 
-func printStack() {
-	var buf [8192]byte
-	n := runtime.Stack(buf[:], false)
-	os.Stdout.Write(buf[:n])
-}
-
-func quicksort(arr []int) {
-	defer func() {
-		if r := recover(); r != nil {
-			fmt.Printf("\nInside quicksort defer\nFound an exception %v", r)
-			fmt.Printf("Arr value is %v \n%v", arr, r)
+func quicksort(arr []int) []int {
+	if len(arr) <= 1 {
+		return arr
+	}
+	if len(arr)-1 > 0 {
+		pvt := partition(arr)
+		if pvt > 0 {
+			quicksort(arr[:pvt])
 		}
-	}()
-
-	if (len(arr) - 1) > 0 {
-		pvt := partition(arr) //last element
-		quicksort(arr[:pvt])
 		quicksort(arr[pvt:])
 	}
+
+	return arr
 }
 
 func partition(arr []int) int {
-	greater := 0
-	last := len(arr) - 1
-	if last <= 0 {
-		return greater
+	greaterThanPvt := 0
+	if len(arr) <= 1 {
+		return greaterThanPvt
 	}
+	pvt := len(arr) - 1
 	for i := range arr {
-		if arr[i] < arr[last] {
-			arr[i], arr[greater] = arr[greater], arr[i]
-			greater++
+		if arr[i] < arr[pvt] {
+			arr[i], arr[greaterThanPvt] = arr[greaterThanPvt], arr[i]
+			greaterThanPvt++
 		}
 	}
-	arr[last], arr[greater] = arr[greater], arr[last]
-
-	// if last != greater {
-	// 	fmt.Printf("Swapped %d in %d to %d in %d\n\n\n%v\n\n", arr[last], last, arr[greater], greater, arr)
-	// }
-	return greater
+	arr[pvt], arr[greaterThanPvt] = arr[greaterThanPvt], arr[pvt]
+	return greaterThanPvt
 }
