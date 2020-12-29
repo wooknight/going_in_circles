@@ -22,28 +22,27 @@ func quicksort(arr []int) {
 
 	if (len(arr) - 1) > 0 {
 		pvt := partition(arr) //last element
-		if pvt > 0 {
-			quicksort(arr[:pvt])
-		}
-		if pvt < (len(arr) - 1) {
-			quicksort(arr[:pvt+1])
-		}
+		quicksort(arr[:pvt])
+		quicksort(arr[pvt:])
 	}
 }
 
 func partition(arr []int) int {
-	pvt := 0
-	idx := len(arr) - 1
+	greater := 0
+	last := len(arr) - 1
+	if last <= 0 {
+		return greater
+	}
 	for i := range arr {
-		if arr[i] < arr[idx] {
-			arr[i], arr[pvt] = arr[pvt], arr[i]
-			pvt++
+		if arr[i] < arr[last] {
+			arr[i], arr[greater] = arr[greater], arr[i]
+			greater++
 		}
 	}
-	arr[idx], arr[pvt] = arr[pvt], arr[idx]
+	arr[last], arr[greater] = arr[greater], arr[last]
 
-	if idx != pvt {
-		fmt.Printf("Swapped %d in %d to %d in %d\n\n\n%v\n\n", arr[idx], idx, arr[pvt], pvt, arr)
-	}
-	return pvt
+	// if last != greater {
+	// 	fmt.Printf("Swapped %d in %d to %d in %d\n\n\n%v\n\n", arr[last], last, arr[greater], greater, arr)
+	// }
+	return greater
 }
