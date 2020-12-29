@@ -22,65 +22,28 @@ func quicksort(arr []int) {
 
 	if (len(arr) - 1) > 0 {
 		pvt := partition(arr) //last element
-		quicksort(arr[:pvt])
-		quicksort(arr[pvt:])
+		if pvt > 0 {
+			quicksort(arr[:pvt])
+		}
+		if pvt < (len(arr) - 1) {
+			quicksort(arr[:pvt+1])
+		}
 	}
 }
 
 func partition(arr []int) int {
-	greater := 0
-	last := len(arr) - 1
-	if last <=0 {return greater}
+	pvt := 0
+	idx := len(arr) - 1
 	for i := range arr {
-		if arr[i] < arr[last] {
-			arr[i], arr[greater] = arr[greater], arr[i]
-			greater++
+		if arr[i] < arr[idx] {
+			arr[i], arr[pvt] = arr[pvt], arr[i]
+			pvt++
 		}
 	}
-	arr[last], arr[greater] = arr[greater], arr[last]
+	arr[idx], arr[pvt] = arr[pvt], arr[idx]
 
-	// if last != greater {
-	// 	fmt.Printf("Swapped %d in %d to %d in %d\n\n\n%v\n\n", arr[last], last, arr[greater], greater, arr)
-	// }
-	return greater
-}
-
-
-func binarySearch(arr []int, target int) int{
-	mid:=len(arr)/2
-	low:=0
-	high := len(arr)-1
-	for low<=high{
-		if arr[low]==target {return low}
-		if arr[high]==target {return high}
-		if arr[mid]==target {return mid}
-		if (arr[mid]<target){
-			low=mid+1
-		}else{
-			high=mid-1
-		}
-		mid = low + (high - low)/2
+	if idx != pvt {
+		fmt.Printf("Swapped %d in %d to %d in %d\n\n\n%v\n\n", arr[idx], idx, arr[pvt], pvt, arr)
 	}
-	return -1
+	return pvt
 }
-
-func selectionSort(arr []int){
-	for i,_ := range arr{
-		minIdx,_:=findMin(arr[i:])
-		arr[i],arr[i+minIdx]=arr[minIdx+i],arr[i]
-	}
-}
-
-func findMin(arr []int) (int,int){
-	idx:=0
-	val:=arr[0]
-	for idx1,val1:=range arr{
-		if val > val1{
-			idx=idx1
-			val=val1
-		}
-	}
-	// fmt.Printf("Found %d in array %v\n\n",val,arr)
-	return idx,val
-}
-

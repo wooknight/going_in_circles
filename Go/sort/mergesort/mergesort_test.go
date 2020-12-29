@@ -18,8 +18,60 @@ func (s int32arr) Less(i, j int) bool {
 	return s[i] < s[j]
 }
 
-func TestMergesort(t *testing.T) {
+func TestDutchFlag(t *testing.T) {
+	/*
+			RRRGGGGBBBB
+		RGGGRBBB
+		BBBBBGGGGGRRRR
+		BRGBRGBRG
+		echo "RRRGGGGBBBB" | sed 's/\(.\)/"\1", /g' | pbcopy
+	*/
+	dutchTests := []struct {
+		input  []byte
+		result []byte
+	}{
+		// {
+		// 	input:  []byte{'R', 'R', 'R', 'G', 'G', 'G', 'G', 'B', 'B', 'B', 'B'},
+		// 	result: []byte{'R', 'R', 'R', 'G', 'G', 'G', 'G', 'B', 'B', 'B', 'B'},
+		// },
+		{
+			input:  []byte{'B', 'B', 'R', 'B', 'B', 'B', 'G', 'R', 'G', 'G', 'G', 'G', 'R', 'R', 'R', 'R'},
+			result: []byte{'R', 'R', 'R', 'R', 'R', 'R', 'G', 'G', 'G', 'G', 'G', 'B', 'B', 'B', 'B', 'B'},
+		},
+	}
+	for _, tt := range dutchTests {
+		result := dutchNationalFlag(tt.input)
+		if reflect.DeepEqual(result, tt.result) == false {
+			t.Errorf("\nResult not matching . \nNeed %v\n\nGot %v\n", tt.result, result)
+		}
 
+	}
+
+}
+func TestMergeTwoArrays(t *testing.T) {
+	mergeTests := []struct {
+		input1, input2 []int32
+		result         []int32
+	}{
+
+		{
+			input1: []int32{4, 7, 10, 12, 16, 17, 55, 60, 61},
+			input2: []int32{22, 30, 31, 39, 40, 51, 54, 55, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+			result: []int32{22, 30, 31, 39, 40, 51, 54, 55, 57, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+		},
+	}
+	for _, tt := range mergeTests {
+		copy(tt.input2[len(tt.input1):], tt.input1)
+		tt.result = merge_sort(tt.input2)
+		merger_first_into_second(tt.input1, tt.input2)
+		if reflect.DeepEqual(tt.input2, tt.result) == false {
+			t.Errorf("\nResult not matching . \nNeed %v\n\nGot %v\n", tt.result, tt.input2)
+		}
+	}
+
+}
+
+func TestMergesort(t *testing.T) {
 	mergeTests := []struct {
 		input  []int32
 		result []int32
