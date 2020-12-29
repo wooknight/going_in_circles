@@ -14,7 +14,6 @@ func TestQuicksort(t *testing.T) {
 		input  []int
 		result []int
 	}{
-
 		{
 			input:  []int{61, 4, 7, 10, 12, 16, 17, 60, 55},
 			result: []int{4, 7, 10, 12, 16, 17, 55, 60, 61},
