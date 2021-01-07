@@ -1,10 +1,20 @@
-package main
+package set
 
 import (
 	"fmt"
 )
 type set struct{
 	hasher map[int] bool
+}
+
+
+func (p *set) addArrToSet(arr []int ) {
+	//add to the hash table
+	for i,target := range arr {
+	if _,ok:= p.hasher[target]; !ok{
+		p.hasher[target]=true
+	}
+}
 }
 
 func (p *set) addToSet(val int ) {
@@ -25,7 +35,7 @@ func (p *set) getElems() []int{
 func (p *set)Intersection(set1 set) set{
 
 	resultSet = new (set)
-	for key, _ := range p.hasher{
+	for key := range p.hasher{
 		if set1.contains(key){
 			resultSet.addToSet(key)
 		}
@@ -42,11 +52,11 @@ func (p *set) contains(target int){
 
 func (p *set)Union(set1 set) set {
 	resultSet = new (set)
-	for _,_val := range p.getElems(){
-		resultSet.addToSet(val)
+	for key := range p.hasher{
+		resultSet.addToSet(key)
 	}
-	for _,_val := range set1.getElems(){
-		resultSet.addToSet(val)
+	for key := range set1.hasher{
+		resultSet.addToSet(key)
 	}
 
 	return resultSet
@@ -54,7 +64,7 @@ func (p *set)Union(set1 set) set {
 
 func (p *set) Difference(set1 set) set {
 	resultSet = new (set)
-	for key,_ := range p.hasher(){
+	for key := range p.hasher(){
 		if set1.contains(key)==false{
 			resultSet.addToSet(key)
 		}
