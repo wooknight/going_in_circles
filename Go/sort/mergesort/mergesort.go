@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-
+"runtime"
+"os"
 	"github.com/pkg/profile"
 )
 
@@ -11,18 +12,36 @@ func main() {
 	fmt.Println("hello world")
 }
 
-func merge_sort(arr []int32) []int32 {
-	if len(arr) <= 1 {
-		return arr
-	}
-	arr1 := merge_sort(arr[:len(arr)/2])
-	arr2 := merge_sort(arr[len(arr)/2:len(arr)])
-	return merge(arr1, arr2)
+func printStack() {
+	var buf [8192]byte
+	n := runtime.Stack(buf[:], false)
+	os.Stdout.Write(buf[:n])
 }
 
-func merge(arr1, arr2 []int32) []int32 {
+func merge_sort(arr []int) []int {
+	defer func() {
+		fmt.Println("Inside main defer")
+
+		if r := recover(); r != nil && r == "Aaankh lag gaya" {
+			printStack()
+			fmt.Println("I love kitties ")
+		}
+	}()
+
+	if len(arr) <= 1 {
+		return arr
+	}else if len(arr) <= 2{
+		if arr[0]>arr[1]{
+			return []int{arr[1],arr[0]}
+		}
+		return arr
+	}
+	return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+}
+
+func merge(arr1, arr2 []int) []int {
 	totLen := len(arr1) + len(arr2)
-	sortedArr := make([]int32, totLen)
+	sortedArr := make([]int, totLen)
 	i := 0
 	j := 0
 	for k := 0; k < totLen; k++ {
@@ -55,4 +74,29 @@ func insertionSort(arr []int) []int {
 		}
 	}
 	return arr
+}
+
+func quicksort(arr []int) []int {
+	if len(arr) <= 1 {
+		return arr
+	}
+
+	pvt := partition(arr)
+	quicksort(arr[:pvt])
+	quicksort(arr[pvt:])
+
+	return arr
+}
+
+func partition(arr []int) int {
+	greaterThanPvt := 0
+	pvt := len(arr) - 1 //use the last element
+	for i := range arr {
+		if arr[i] < arr[pvt] {
+			arr[i], arr[greaterThanPvt] = arr[greaterThanPvt], arr[i]
+			greaterThanPvt++
+		}
+	}
+	arr[pvt], arr[greaterThanPvt] = arr[greaterThanPvt], arr[pvt]
+	return greaterThanPvt
 }
