@@ -137,6 +137,8 @@ ramesh@Ramesh-Naidus-MacBook-Pro-2 linked lists (master)
 
 
 *** go tool pprof  ./linked\ lists /var/folders/l2/j6rstcd51ggcc8x8yqx4twz40000gp/T/profile555803327/cpu.pprof
+
+	grep func heapsort.go | awk '{print $2}' | awk -F"(" '{printf "func Test" $1 "(t *testing.T){\n"$1"\n}\n" }'  >> heapsort_test.go
 */
 func main() {
 	defer profile.Start().Stop()
