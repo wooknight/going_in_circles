@@ -38,11 +38,13 @@ func main (){
 	finish.label = "finish"
 	temp := new (stack)
 	temp.label = "temp"
-	start.push(27)
-	start.push(53)
-	start.push(42)
+	boo:=22
 
-	moveDisks(3,start,finish,temp)
+	for i := 1 ; i<= boo ; i++{
+		start.push(i)
+	}
+
+	moveDisks(boo,start,finish,temp)
 }
 
 func moveDisks(num int, start, finish, temp *stack){
