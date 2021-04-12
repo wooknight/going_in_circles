@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -18,7 +19,10 @@ func main() {
 
 	// printAllRepeats(7)
 	// printAllNonRepeats(2)
-	printAllSubsets(5)
+	// permute([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+	// printAllSubsets(9)
+
+	subsets([]int{9, 0, 3, 5, 7})
 }
 
 func searchIterative(root *tree, target int) (*tree, error) {
@@ -104,22 +108,64 @@ func pNRHelper(slate string, bag []int, num int) {
 	}
 }
 
-func printAllSubsets(num int) {
+func printAllSubsets(num int) [][]int {
 	arr := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-	pSubsetsHelper([]int{}, arr, num)
+	res := make([][]int, 0)
+	return pSubsetsHelper(res, arr, 0, []int{})
 }
 
-func pSubsetsHelper(slate []int, bag []int, num int) {
+func pSubsetsHelper(res [][]int, data []int, num int, slate []int) [][]int {
 	// fmt.Println(bag, slate)
-	if len(bag) == 0 || len(slate) == num {
+	if len(data) == num {
 		fmt.Println(slate)
-		return
+		return append(res, slate)
 	}
 	//exclude case
-	pSubsetsHelper(slate, bag[1:], num)
+	res = pSubsetsHelper(res, data, num+1, slate)
 	//include case
 	// newSlate := append(slate[:0:0], slate...)
 	// newSlate = append(newSlate, bag[0])
 	// pSubsetsHelper(newSlate, bag[1:], num)
-	pSubsetsHelper(append(slate, bag[0]), bag[1:], num)
+	return pSubsetsHelper(res, data, num+1, append(slate, data[num]))
+}
+
+//**IK Template*///
+
+func permute(nums []int) [][]int {
+	res := make([][]int, 0)
+	return permuteHelper(res, nums, 0, []int{})
+}
+
+func permuteHelper(res [][]int, nums []int, idx int, slate []int) [][]int {
+	if idx == len(nums) {
+		fmt.Println(slate)
+		return append(res, slate)
+	}
+	for i := idx; i < len(nums); i++ {
+
+		nums[idx], nums[i] = nums[i], nums[idx]
+		res = permuteHelper(res, nums, idx+1, append(slate, nums[idx]))
+		nums[idx], nums[i] = nums[i], nums[idx]
+
+	}
+	return res
+}
+
+func subsets(nums []int) [][]int {
+	res := make([][]int, 0)
+	res = subsetsHelper(nums, 0, []int{}, res)
+	return res
+}
+
+func subsetsHelper(nums []int, i int, slate []int, res [][]int) [][]int {
+	if i == len(nums) {
+		sort.Ints(slate)
+		res = append(res, slate)
+		return res
+	}
+	backupSlate := make([]int, len(slate)+1)
+	copy(backupSlate, slate)
+	res = subsetsHelper(nums, i+1, slate, res)
+	backupSlate = append(slate, nums[i])
+	return subsetsHelper(nums, i+1, backupSlate, res)
 }
