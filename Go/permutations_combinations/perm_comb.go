@@ -163,9 +163,6 @@ func subsetsHelper(nums []int, i int, slate []int, res [][]int) [][]int {
 		res = append(res, slate)
 		return res
 	}
-	backupSlate := make([]int, len(slate)+1)
-	copy(backupSlate, slate)
 	res = subsetsHelper(nums, i+1, slate, res)
-	backupSlate = append(slate, nums[i])
-	return subsetsHelper(nums, i+1, backupSlate, res)
+	return subsetsHelper(nums, i+1, append(slate, nums[i]), res)
 }
