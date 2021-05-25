@@ -7,6 +7,11 @@ import (
 	"os"
 )
 
+type TreeNode struct {
+	Val         int
+	Left, Right *TreeNode
+}
+
 func diskUsage(dir string, duInfo os.FileInfo) int {
 	var du int
 	if duInfo.IsDir() == false {
@@ -21,6 +26,24 @@ func diskUsage(dir string, duInfo os.FileInfo) int {
 	}
 	fmt.Printf("Size of directory %s - %d\n", dir, du)
 	return du
+}
+
+func sortedArrayToBST(arr []int) *TreeNode {
+	if len(arr) == 0 {
+		return nil
+	} 
+    mid := (len(arr)) / 2
+    t := &TreeNode{Val:arr[mid]}
+   
+	if mid > 0 {
+		t.Left = sortedArrayToBST(arr[:mid])
+	} 
+    if mid < len(arr)    {
+        t.Right = sortedArrayToBST(arr[mid+1:])
+	}
+    
+    return t
+
 }
 
 func main() {
