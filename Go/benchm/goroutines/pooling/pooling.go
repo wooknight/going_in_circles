@@ -7,6 +7,8 @@ import (
 	"sync"
 )
 
+var wg sync.WaitGroup
+
 func cook(recv chan string, wg *sync.WaitGroup, num int) {
 	// fmt.Println("Inside goroutine")
 	defer wg.Done()
@@ -18,8 +20,8 @@ func cook(recv chan string, wg *sync.WaitGroup, num int) {
 	}
 }
 
-func main() {
-	var wg sync.WaitGroup
+func fanoutSemaphore() {
+
 	emps := 1000
 	comm := make(chan string)
 	// fmt.Println("Inside main")
@@ -50,5 +52,30 @@ func main() {
 	close(comm)
 
 	wg.Wait()
+}
 
+func fanoutBounded() {
+	work := []string{"papel", "papel", 2000: "pussy"}
+	g := runtime.NumCPU()
+	ch := make(chan string, g)
+	wg.Add(g)
+	for emp := 0; emp < g; emp++ {
+		go func(emp int, wg *sync.WaitGroup) {
+			defer wg.Done()
+			for p := range ch {
+				fmt.Printf("employee %d: recv signal : %s \n", emp, p)
+			}
+			fmt.Printf("Received shutdown signal : emp %d\n", emp)
+		}(emp, &wg)
+	}
+	for _, wrk := range work {
+		ch <- wrk
+	}
+	close(ch)
+	wg.Wait()
+}
+
+func main() {
+	// fanoutSemaphore()
+	fanoutBounded()
 }
