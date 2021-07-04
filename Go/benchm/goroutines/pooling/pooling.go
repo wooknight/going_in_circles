@@ -1,10 +1,13 @@
 package main
 
 import (
+	"context"
 	"fmt"
+	"math/rand"
 	"runtime"
 	"strconv"
 	"sync"
+	"time"
 )
 
 var wg sync.WaitGroup
@@ -94,8 +97,26 @@ func drop() {
 	}
 	close(ch)
 }
+
+func cancel() {
+	ch := make(chan string, 1)
+	ctx, cancel := context.WithTimeout(context.Background(), time.Duration(150*time.Millisecond))
+	defer cancel()
+	go func() {
+		time.Sleep(time.Duration(rand.Intn(200)) * time.Millisecond)
+		ch <- "paper"
+	}()
+	select {
+	case d := <-ch:
+		fmt.Println("work complete ", d)
+	case <-ctx.Done():
+		fmt.Println("Work cancelled")
+	}
+
+}
 func main() {
 	// fanoutSemaphore()
 	// fanoutBounded()
-	drop()
+	// drop()
+	cancel()
 }
