@@ -55,7 +55,7 @@ func fanoutSemaphore() {
 }
 
 func fanoutBounded() {
-	work := []string{"papel", "papel", 2000: "pussy"}
+	work := []string{"papel", "papel", 2000: "paper"}
 	g := runtime.NumCPU()
 	ch := make(chan string, g)
 	wg.Add(g)
@@ -75,7 +75,27 @@ func fanoutBounded() {
 	wg.Wait()
 }
 
+func drop() {
+	work := []string{"papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", "papel", 2000: "paper"}
+	ch := make(chan string)
+	go func() {
+		for p := range ch {
+			fmt.Println("Done work ", p)
+		}
+		fmt.Println("Ending because channel closed")
+	}()
+	for _, val := range work {
+		select {
+		case ch <- val:
+			fmt.Println("Manager snet data ", val)
+		default:
+			fmt.Println("Manager dropped data", val)
+		}
+	}
+	close(ch)
+}
 func main() {
 	// fanoutSemaphore()
-	fanoutBounded()
+	// fanoutBounded()
+	drop()
 }
