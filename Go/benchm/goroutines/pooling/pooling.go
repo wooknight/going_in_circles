@@ -20,36 +20,35 @@ func cook(recv chan string, wg *sync.WaitGroup, num int) {
 
 func main() {
 	var wg sync.WaitGroup
+	emps := 1000
 	comm := make(chan string)
 	// fmt.Println("Inside main")
-	wg.Add(1001)
+	wg.Add(emps + 1)
 	// fmt.Println("Inside main")
 	go cook(comm, &wg, 0)
 	// time.Sleep(1000)
 	comm <- "I love Scooty"
-	for i := 0; i < 1000; i++ {
-		go cook(comm, &wg, i)
-		if i < 700 {
-			comm <- "Done with " + strconv.Itoa(i)
-		}
+	numCpu := runtime.NumCPU()
+	semaphores := make(chan bool, numCpu)
+	for i := 0; i < emps; i++ {
+		go func(wg *sync.WaitGroup, num int) {
+			defer wg.Done()
+			semaphores <- true
+			{
+				comm <- "sending from go routine" + strconv.Itoa(num)
+
+			}
+			<-semaphores
+		}(&wg, i)
+	}
+
+	for emps > 0 {
+		p := <-comm
+		fmt.Println(p)
+		emps--
 	}
 	close(comm)
+
 	wg.Wait()
-	fmt.Println("Starting anew")
-	ch := make(chan string)
-	numCpu := runtime.NumCPU()
-	wg.Add(numCpu)
-	for i := 0; i < numCpu; i++ {
-		go func(wg *sync.WaitGroup) {
-			defer wg.Done()
-			fmt.Println("Inside pool goroutine")
-			for p := range ch {
-				fmt.Println("Got data ", p)
-			}
-			fmt.Println("Shutting down")
-		}(&wg)
-	}
-	ch <- "Done with " + strconv.Itoa(numCpu)
-	close(ch)
-	wg.Wait()
+
 }
