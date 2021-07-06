@@ -4,6 +4,8 @@ import (
 	"testing"
 )
 
+//go test -run Con -v to match the Convery pattern
+
 const succeed = "\u2713"
 const failed = "\u2717"
 
