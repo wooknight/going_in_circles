@@ -24,7 +24,7 @@ func (d *device) Write(p []byte) (in int, err error) {
 func main() {
 	const grs = 5
 	var d device
-	l := log.New(&d, 5)
+	l := log.New(&d, grs)
 	//500 go routines writing to disk/ screen
 	for i := 0; i < grs; i++ {
 		go func(id int) {
