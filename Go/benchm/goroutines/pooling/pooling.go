@@ -99,7 +99,7 @@ func drop() {
 }
 
 func cancel() {
-	ch := make(chan string, 1)
+	ch := make(chan string, 1) // always a buffer of one else we will leak go routines when the parent quits and the child sends (and blocks) on a channel that nobody will receive on
 	ctx, cancel := context.WithTimeout(context.Background(), time.Duration(150*time.Millisecond))
 	defer cancel()
 	go func() {
@@ -114,6 +114,9 @@ func cancel() {
 	}
 
 }
+
+
+
 func main() {
 	// fanoutSemaphore()
 	// fanoutBounded()
