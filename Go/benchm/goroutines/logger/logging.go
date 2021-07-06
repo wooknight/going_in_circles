@@ -6,7 +6,7 @@ import (
 	"os/signal"
 	"time"
 
-	log "github.com/wooknight/GoingInCircles/Go/benchm/goroutines/logger/logge"
+	log "GoingInCircles/Go/benchm/goroutines/logger/logge"
 )
 
 type device struct {
