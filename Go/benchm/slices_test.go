@@ -32,7 +32,7 @@ func BenchmarkRowTraversal(b *testing.B) {
 	fa = a
 }
 
-//go test -bench Sprint -benchtime 3s
+//go test -run none -bench Sprint -benchtime 3s -benchmem
 var gs string
 
 func BenchmarkSprintf(b *testing.B) {

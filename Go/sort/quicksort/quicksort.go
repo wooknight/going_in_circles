@@ -1,5 +1,7 @@
 package main
 
+import "math/rand"
+
 // "fmt"
 // "os"
 // "runtime"
@@ -9,22 +11,20 @@ func quicksort(arr []int) []int {
 		return arr
 	}
 
-	pvt := partition(arr)
-	quicksort(arr[:pvt])
-	quicksort(arr[pvt:])
-
-	return arr
-}
-
-func partition(arr []int) int {
-	greaterThanPvt := 0
+	randIndex := rand.Intn(len(arr))
 	pvt := len(arr) - 1 //use the last element
-	for i := range arr {
+	arr[randIndex], arr[pvt] = arr[pvt], arr[randIndex]
+	greaterThanPvt := 0
+
+	for i:=0;i<len(arr);i++ {
 		if arr[i] < arr[pvt] {
 			arr[i], arr[greaterThanPvt] = arr[greaterThanPvt], arr[i]
 			greaterThanPvt++
 		}
 	}
 	arr[pvt], arr[greaterThanPvt] = arr[greaterThanPvt], arr[pvt]
-	return greaterThanPvt
+	quicksort(arr[:greaterThanPvt])
+	quicksort(arr[greaterThanPvt+1:])
+
+	return arr
 }

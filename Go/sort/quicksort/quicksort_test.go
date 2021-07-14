@@ -48,30 +48,30 @@ func TestQuicksort(t *testing.T) {
 	}
 }
 
-func TestPartition(t *testing.T) {
+// func TestPartition(t *testing.T) {
 
-	testvalues := []struct {
-		input      []int
-		idx, pivot int
-	}{
-		{
-			input: []int{61, 7, 10, 12, 16, 4, 17}, idx: 6, pivot: 5,
-		},
-		{
-			input: []int{61, 7, 10, 12, 16, 17, 4}, idx: 6, pivot: 0,
-		},
-		{
-			input: []int{61, 12, 16, 17, 4, 7, 10}, idx: 6, pivot: 2,
-		},
-	}
+// 	testvalues := []struct {
+// 		input      []int
+// 		idx, pivot int
+// 	}{
+// 		{
+// 			input: []int{61, 7, 10, 12, 16, 4, 17}, idx: 6, pivot: 5,
+// 		},
+// 		{
+// 			input: []int{61, 7, 10, 12, 16, 17, 4}, idx: 6, pivot: 0,
+// 		},
+// 		{
+// 			input: []int{61, 12, 16, 17, 4, 7, 10}, idx: 6, pivot: 2,
+// 		},
+// 	}
 
-	for _, tt := range testvalues {
-		pivot := partition(tt.input)
-		if pivot != tt.pivot {
-			t.Errorf("\n\nPartition Expected - %v\n\nGot %v \n %v\n", tt.pivot, pivot, tt.input)
-		}
-	}
-}
+// 	for _, tt := range testvalues {
+// 		pivot := partition(tt.input)
+// 		if pivot != tt.pivot {
+// 			t.Errorf("\n\nPartition Expected - %v\n\nGot %v \n %v\n", tt.pivot, pivot, tt.input)
+// 		}
+// 	}
+// }
 
 func BenchmarkQuicksort(b *testing.B) {
 
