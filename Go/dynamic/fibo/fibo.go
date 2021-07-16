@@ -59,22 +59,47 @@ func countSubsets(cnt, choose int) int {
 }
 
 func countSubsetsMemo(cnt, choose int) int {
-	memo := make(map[[2]int]int)
-	var countSubsetsMemoHelper func(cnt, choose int) int
-	memo[[2]int{1, 0}] = 1
-	memo[[2]int{1, 1}] = 1
+	memo := make([][]int, cnt+1)
+	for i := 0; i < cnt+1; i++ {
+		memo[i] = make([]int, choose+1)
+	}
 
+	var countSubsetsMemoHelper func(cnt, choose int) int
+	memo[1][0] = 1
+	memo[1][1] = 1
 	countSubsetsMemoHelper = func(cnt, choose int) int {
-		if cnt == choose {
+		if cnt == choose || cnt == 0 || choose == 0 {
+			memo[cnt][choose] = 1
+		}
+		if memo[cnt][choose] == 0 {
+			// memo[cnt-1][choose] = countSubsetsMemoHelper(cnt-1, choose)
+			// memo[cnt-1][choose-1] = countSubsetsMemoHelper(cnt-1, choose-1)
+			// memo[cnt][choose] = memo[cnt-1][choose] + memo[cnt-1][choose-1]
+			memo[cnt][choose] = countSubsetsMemoHelper(cnt-1, choose) + countSubsetsMemoHelper(cnt-1, choose-1)
+		}
+		return memo[cnt][choose]
+	}
+	return countSubsetsMemoHelper(cnt, choose)
+}
+
+func countSubsetsMemoMap(cnt, choose int) int {
+	memo := make(map[[2]int]int)
+	var countSubsetsMemoMapHelper func(cnt, choose int) int
+	memo[[2]int{0, 0}] = 1
+	memo[[2]int{1, 1}] = 1
+	countSubsetsMemoMapHelper = func(cnt, choose int) int {
+		if cnt == choose || cnt == 0 || choose == 0 {
 			memo[[2]int{cnt, choose}] = 1
-			return memo[[2]int{cnt, choose}]
 		}
 		if _, ok := memo[[2]int{cnt, choose}]; !ok {
-			memo[[2]int{cnt, choose}] = countSubsets(cnt-1, choose) + countSubsets(cnt-1, choose-1)
+			// memo[cnt-1][choose] = countSubsetsMemoHelper(cnt-1, choose)
+			// memo[cnt-1][choose-1] = countSubsetsMemoHelper(cnt-1, choose-1)
+			// memo[cnt][choose] = memo[cnt-1][choose] + memo[cnt-1][choose-1]
+			memo[[2]int{cnt, choose}] = countSubsetsMemoMapHelper(cnt-1, choose) + countSubsetsMemoMapHelper(cnt-1, choose-1)
 		}
 		return memo[[2]int{cnt, choose}]
 	}
-	return countSubsetsMemoHelper(cnt, choose)
+	return countSubsetsMemoMapHelper(cnt, choose)
 }
 
 func countSubsets2DMemo(cnt, choose int) int {

@@ -57,6 +57,14 @@ func BenchmarkCountSubsetsMemo(b *testing.B) {
 	fib = val
 }
 
+func BenchmarkCountSubsetsMemoMap(b *testing.B) {
+	var val int
+	for i := 0; i < b.N; i++ {
+		val = countSubsetsMemoMap(30, 13)
+	}
+	fib = val
+}
+
 func BenchmarkCountSubsets2DMemo(b *testing.B) {
 	var val int
 	for i := 0; i < b.N; i++ {
