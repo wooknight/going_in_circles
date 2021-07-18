@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"math"
+)
 
 func memofibo(n int) int {
 	memo := make(map[int]int)
@@ -43,7 +45,7 @@ func climbStairs(n int) int {
 		}
 		return climber(n-2) + climber(n-2)
 	}
-	fmt.Println(climber(n))
+	// fmt.Println(climber(n))
 	return climber(n)
 }
 
@@ -102,7 +104,7 @@ func countSubsetsMemoMap(cnt, choose int) int {
 	return countSubsetsMemoMapHelper(cnt, choose)
 }
 
-func countSubsets2DMemo(cnt, choose int) int {
+func countSubsetsPregen2DMemo(cnt, choose int) int {
 	if choose == 0 || cnt == choose {
 		return 1
 	}
@@ -137,4 +139,65 @@ func countSubsets2DMemo(cnt, choose int) int {
 	}
 	// fmt.Println(memo2D)
 	return helper(cnt, choose)
+}
+
+func countPaths(row, col int) int {
+	table := make([][]int, row+1)
+	for i := 0; i <= row; i++ {
+		table[i] = make([]int, col+1)
+	}
+	for i := 0; i <= col; i++ {
+		table[0][i] = 1
+	}
+	for i := 0; i <= row; i++ {
+		table[i][0] = 1
+	}
+	for i := 1; i <= row; i++ {
+		for j := 1; j <= col; j++ {
+			table[i][j] = table[i-1][j] + table[i][j-1]
+		}
+	}
+	// fmt.Printf("%+v\n\n", table)
+	return table[row-1][col-1]
+}
+
+//optimize for cost
+
+func min(x, y int) int {
+	if x < y {
+		return x
+	}
+	return y
+}
+
+func minCost(len int, costarray []int) int {
+	table := make([]int, len+2)
+	table[0] = 0
+	table[1] = costarray[0]
+	costarray = append(costarray, 0)
+	for i := 2; i <= len+1; i++ {
+		table[i] = costarray[i-1] + min(table[i-1], table[i-2])
+	}
+	return table[len+1]
+}
+
+func coinMinChange(amount int, coins []int) int {
+	table := make([]int, amount+1)
+	table[0] = 0
+	for i := 1; i < amount+1; i++ {
+		table[i] = int(math.MaxInt32)
+	}
+	for i := 1; i <= amount; i++ {
+		for _, c := range coins {
+			if i-c < 0 {
+				continue
+			}
+			if table[i-c] < table[i] {
+				table[i] = table[i-c]
+				table[i] = table[i] + 1
+			}
+		}
+	}
+
+	return table[amount]
 }

@@ -1,9 +1,12 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 var fib int
 
+//go test -bench . -benchtime 3s
 func BenchmarkMemofibo(b *testing.B) {
 	var n int
 	for i := 0; i < b.N; i++ {
@@ -20,6 +23,28 @@ func BenchmarkFibo(b *testing.B) {
 	fib = n
 }
 
+func TestMin(t *testing.T) {
+	x := min(2, 3)
+	if x != 2 {
+		t.Errorf("min (2,3) failed . Got %d", x)
+	}
+}
+
+func TestMinChange(t *testing.T) {
+	x := coinMinChange(10, []int{1, 5, 7})
+	if x != 2 {
+		t.Errorf("x:= coinMinChange(10,[]int{1,5,7}) . Got %d", x)
+	}
+}
+
+func TestMinCost(t *testing.T) {
+	x := minCost(10, []int{1, 100, 1, 1, 1, 100, 1, 1, 100, 1})
+	if x != 6 {
+		t.Errorf("minCost(10,[]int{1,100,1,1,1,100,1,1,100,1}) failed. Expected 6 . Got %d", x)
+	}
+
+}
+
 func TestCountsubsets(t *testing.T) {
 	fib = countSubsets(4, 2)
 	if fib != 6 {
@@ -34,17 +59,26 @@ func TestCountsubsetsMemo(t *testing.T) {
 	}
 }
 
-func TestCountsubsetsMemo2D(t *testing.T) {
-	fib = countSubsets2DMemo(4, 2)
+func TestCountpaths(t *testing.T) {
+	res := countPaths(3, 7)
+	if res != 28 {
+		t.Errorf("countPaths(3,7) was not 28 . Got %+v", res)
+	}
+	// fmt.Println(countPaths(3, 3))
+	// fmt.Println(countPaths(5, 5))
+}
+
+func TestCountsubsetsPregenMemo2D(t *testing.T) {
+	fib = countSubsetsPregen2DMemo(4, 2)
 	if fib != 6 {
-		t.Errorf("countSubsets2DMemo(4,2) ! = 6. Got %+v", fib)
+		t.Errorf("countSubsetsPregen2DMemo(4,2) ! = 6. Got %+v", fib)
 	}
 }
 
 func BenchmarkCountSubsetsNoMemo(b *testing.B) {
 	var val int
 	for i := 0; i < b.N; i++ {
-		val = countSubsets(30, 13)
+		val = countSubsets(40, 13)
 	}
 	fib = val
 }
@@ -52,7 +86,7 @@ func BenchmarkCountSubsetsNoMemo(b *testing.B) {
 func BenchmarkCountSubsetsMemo(b *testing.B) {
 	var val int
 	for i := 0; i < b.N; i++ {
-		val = countSubsetsMemo(30, 13)
+		val = countSubsetsMemo(40, 13)
 	}
 	fib = val
 }
@@ -60,15 +94,15 @@ func BenchmarkCountSubsetsMemo(b *testing.B) {
 func BenchmarkCountSubsetsMemoMap(b *testing.B) {
 	var val int
 	for i := 0; i < b.N; i++ {
-		val = countSubsetsMemoMap(30, 13)
+		val = countSubsetsMemoMap(40, 13)
 	}
 	fib = val
 }
 
-func BenchmarkCountSubsets2DMemo(b *testing.B) {
+func BenchmarkCountSubsetsPregen2DMemo(b *testing.B) {
 	var val int
 	for i := 0; i < b.N; i++ {
-		val = countSubsets2DMemo(30, 13)
+		val = countSubsetsPregen2DMemo(40, 13)
 	}
 	fib = val
 }
