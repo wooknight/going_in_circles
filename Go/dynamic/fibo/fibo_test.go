@@ -31,9 +31,20 @@ func TestMin(t *testing.T) {
 }
 
 func TestMinChange(t *testing.T) {
-	x := coinMinChange(10, []int{1, 5, 7})
-	if x != 2 {
-		t.Errorf("x:= coinMinChange(10,[]int{1,5,7}) . Got %d", x)
+	tests := []struct {
+		amount    int
+		coinArray []int
+		result    int
+	}{
+		{amount: 10, coinArray: []int{1, 5, 7}, result: 2},
+		{amount: 10000, coinArray: []int{1, 5, 10, 25}, result: 400},
+		{amount: 1000000, coinArray: []int{1, 5, 7}, result: 142858},
+	}
+	for _, tc := range tests {
+		x := coinMinChange(tc.amount, tc.coinArray)
+		if x != tc.result {
+			t.Errorf("Expected - %d for Input %+v for amount %d. Got %d", tc.result, tc.coinArray, tc.amount, x)
+		}
 	}
 }
 

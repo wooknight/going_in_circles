@@ -1,8 +1,9 @@
 package ast
 
 import (
-	"interpreter/token"
 	"testing"
+
+	"github.com/wooknight/GoingInCircles/Go/interpreter/token"
 )
 
 func TestString(t *testing.T) {
@@ -25,4 +26,3 @@ func TestString(t *testing.T) {
 		t.Errorf("program.String() wrong. got = %q", program.String())
 	}
 }
-

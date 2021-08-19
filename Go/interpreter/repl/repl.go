@@ -3,8 +3,8 @@ package repl
 import (
 	"bufio"
 	"fmt"
-	"interpreter/lexer"
-	"interpreter/parser"
+	"github.com/wooknight/GoingInCircles/Go/interpreter/lexer"
+	"github.com/wooknight/GoingInCircles/Go/interpreter/parser"
 	"io"
 )
 
