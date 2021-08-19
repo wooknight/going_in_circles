@@ -1,9 +1,10 @@
 package main
 
 import (
-	"GoingInCircles/Go/benchm/http/handlers"
 	"log"
 	"net/http"
+
+	"github.com/wooknight/GoingInCircles/Go/benchm/http/handlers"
 )
 
 func main() {

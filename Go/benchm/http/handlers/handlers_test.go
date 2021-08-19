@@ -1,11 +1,12 @@
 package handlers_test
 
 import (
-	"GoingInCircles/Go/benchm/http/handlers"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/wooknight/GoingInCircles/Go/benchm/http/handlers"
 )
 
 const succeed = "\u2713"
