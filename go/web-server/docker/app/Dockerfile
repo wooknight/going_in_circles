@@ -12,5 +12,3 @@ ADD ./ .
 RUN compile
 
 ENTRYPOINT APP
-
-wooknight/going_in_circles
