@@ -1,10 +1,13 @@
 package main
 
 import (
+	"log"
 	"net/http"
-	webhook "github.com/wooknight/GoingInCircles/Go/web-server/webhook"
+
+	"github.com/wooknight/GoingInCircles/Go/web-server/webhook"
 )
 
 func main() {
-	http.ListenAndServe(webhook.processData)
+	http.HandleFunc("/orders", webhook.ProcessData)
+	log.Fatal(http.ListenAndServe(":8000", nil))
 }

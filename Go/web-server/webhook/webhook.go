@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func processData(w http.ResponseWriter, r *http.Request) {
+func ProcessData(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 		fmt.Fprintf(w, "Nothing to see here\n")
@@ -16,7 +16,6 @@ func processData(w http.ResponseWriter, r *http.Request) {
 			fmt.Fprintf(w, "Encountered an error %+v", err)
 			return
 		}
-		fmt.Fprintf(w, "Post from site : %+v\n", r.PostForm)
 		f, h, err := r.FormFile("file")
 
 		if err != nil {
