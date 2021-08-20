@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/wooknight/GoingInCircles/Go/web-server/webhook"
+	"github.com/wooknight/going-in-circles/go/web-server/webhook"
 )
 
 func main() {

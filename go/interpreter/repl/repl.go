@@ -3,9 +3,10 @@ package repl
 import (
 	"bufio"
 	"fmt"
-	"github.com/wooknight/GoingInCircles/Go/interpreter/lexer"
-	"github.com/wooknight/GoingInCircles/Go/interpreter/parser"
 	"io"
+
+	"github.com/wooknight/going_in_circles/go/interpreter/lexer"
+	"github.com/wooknight/going_in_circles/go/interpreter/parser"
 )
 
 const PROMPT = ">>"
@@ -20,14 +21,14 @@ func Start(in io.Reader, out io.Writer) {
 		}
 		line := scanner.Text()
 		l := lexer.New(line)
-		p:=parser.New(l)
-		program:= p.ParseProgram()
-		if len(p.Errors())!=0{
-			printParserErrors(out,p.Errors())
+		p := parser.New(l)
+		program := p.ParseProgram()
+		if len(p.Errors()) != 0 {
+			printParserErrors(out, p.Errors())
 			continue
 		}
-		io.WriteString(out,program.String())
-		io.WriteString(out,"\n")
+		io.WriteString(out, program.String())
+		io.WriteString(out, "\n")
 	}
 
 }

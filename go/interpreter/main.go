@@ -5,7 +5,7 @@ import (
 	"os"
 	"os/user"
 
-	"github.com/wooknight/GoingInCircles/Go/interpreter/repl"
+	"github.com/wooknight/going_in_circles/go/interpreter/repl"
 )
 
 func main() {

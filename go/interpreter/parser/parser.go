@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/wooknight/GoingInCircles/Go/interpreter/ast"
-	"github.com/wooknight/GoingInCircles/Go/interpreter/lexer"
-	"github.com/wooknight/GoingInCircles/Go/interpreter/token"
+	"github.com/wooknight/going_in_circles/go/interpreter/ast"
+	"github.com/wooknight/going_in_circles/go/interpreter/lexer"
+	"github.com/wooknight/going_in_circles/go/interpreter/token"
 )
 
 const (

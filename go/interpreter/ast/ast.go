@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"strings"
 
-	"github.com/wooknight/GoingInCircles/Go/interpreter/token"
+	"github.com/wooknight/going_in_circles/go/interpreter/token"
 )
 
 type Node interface {

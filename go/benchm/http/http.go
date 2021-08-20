@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/wooknight/GoingInCircles/Go/benchm/http/handlers"
+	"github.com/wooknight/going_in_circles/go/benchm/http/handlers"
 )
 
 func main() {

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/wooknight/GoingInCircles/Go/interpreter/ast"
-	"github.com/wooknight/GoingInCircles/Go/interpreter/lexer"
+	"github.com/wooknight/going_in_circles/go/interpreter/ast"
+	"github.com/wooknight/going_in_circles/go/interpreter/lexer"
 )
 
 func TestOperatorPrecedenceParsing(t *testing.T) {
