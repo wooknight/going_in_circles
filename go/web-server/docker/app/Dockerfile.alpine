@@ -1,6 +1,12 @@
+##to build 
+###docker build -t docker-wb:alpine -f docker/app/Dockerfile.alpine .
+### to run 
+### docker run -it -p 8000:8000 docker-wb:alpine
+
 FROM golang:1.16-alpine as build
 
 # RUN apk update && apk upgrade && apk add --update alpine-sdk && apk add -no-cache git make cmake 
+##
 
 RUN mkdir /app
 
