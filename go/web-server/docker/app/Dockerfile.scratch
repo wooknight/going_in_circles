@@ -1,4 +1,4 @@
-FROM golang:1.16-alpine
+FROM golang:1.16-alpine as build
 
 # RUN apk update && apk upgrade && apk add --update alpine-sdk && apk add -no-cache git make cmake 
 
@@ -16,6 +16,10 @@ ADD ./ .
 
 
 RUN go build -o /web-server
+
+FROM alpine
+
+COPY --from=build /web-server /web-server 
 
 EXPOSE 8000
 
