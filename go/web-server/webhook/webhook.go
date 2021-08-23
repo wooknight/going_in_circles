@@ -27,8 +27,8 @@ type UptimeHandler struct {
 	Started time.Time
 }
 
-func NewUptimeHandler() UptimeHandler {
-	return UptimeHandler{Started: time.Now()}
+func NewUptimeHandler() *UptimeHandler {
+	return &UptimeHandler{Started: time.Now()}
 }
 
 func (h *UptimeHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
