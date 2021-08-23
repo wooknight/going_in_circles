@@ -8,6 +8,9 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/orders", webhook.ProcessData)
+	http.Handle("/orders", &webhook.SecretTokenHandler{
+		Next:      webhook.NewUptimeHandler(),
+		SecretJWT: "mongo",
+	})
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
