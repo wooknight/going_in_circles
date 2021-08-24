@@ -2,3 +2,4 @@
 *.json
 */pkg/*
 */cache/*
+*.gz
