@@ -8,6 +8,8 @@ import (
 	"net/http/httputil"
 	"os"
 	"time"
+
+	"github.com/wooknight/going_in_circles/go/web-server/mytemplate"
 )
 
 type SecretTokenHandler struct {
@@ -40,7 +42,8 @@ func (h *UptimeHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
 		// curl http://127.0.0.1:8000/orders
-		fmt.Fprintf(w, fmt.Sprintf("Current uptime: %s", time.Since(h.Started)))
+		mytemplate.PrintDB(w, fmt.Sprintf("Current uptime: %s", time.Since(h.Started)))
+
 	case "POST":
 		//curl  -v -i -X  POST -F "file=@README.md" http://0.0.0.0:8000/orders
 		if err := r.ParseForm(); err != nil {
