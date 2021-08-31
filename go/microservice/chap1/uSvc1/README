@@ -1,0 +1,15 @@
+This is the first microservice to be written dated Aug 30 2021 
+
+Will connect to mongo 
+
+Will have REST API endpoints
+
+Will be secure
+
+Will be OAUTH2 compliant 
+
+PROMETHEUS
+
+ISTIO 
+
+NGINX Load balancer

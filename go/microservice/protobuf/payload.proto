@@ -1,5 +1,0 @@
-message PictureData{
-    string sessionID = 1;
-    uint32 pageNumber=2;
-    uint32 pageSize=3;
-}
