@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"strings"
@@ -32,6 +33,7 @@ func GetURLS(urls []string) []string {
 		if n.Type == html.ElementNode && n.Data == "a" {
 			for _, a := range n.Attr {
 				if a.Key == "href" && strings.Contains(a.Val, "http") == true {
+					fmt.Println(a.Val)
 					urls = append(urls, a.Val)
 					break
 				}
@@ -67,6 +69,9 @@ func main() {
 	urls := make([]string, 0)
 	urls = GetURLS(urls)
 	fmt.Println("URL Count ", len(urls))
+	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
+		io.WriteString(w, time.Now().String())
+	})
 	http.HandleFunc("/fastest_mirror", func(w http.ResponseWriter, r *http.Request) {
 		response := FindFastest(urls)
 		respJson, _ := json.Marshal(response)
