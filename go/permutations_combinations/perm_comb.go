@@ -56,11 +56,9 @@ func searchRecursive(root *tree, target int) (*tree, error) {
 	if curr.val < target {
 		//right child
 		return searchRecursive(curr.right, target)
-	} else if curr.val > target {
+	} 
 		//left tree
-		return searchRecursive(curr.left, target)
-	}
-	return nil, nil
+	return searchRecursive(curr.left, target)
 }
 
 // func insert(root *treeval *tree){

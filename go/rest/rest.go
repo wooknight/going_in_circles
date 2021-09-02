@@ -38,7 +38,6 @@ func main() {
 		if n.Type == html.ElementNode && n.Data == "a" {
 			for _, c := range n.Attr {
 				if c.Key == "href" {
-					fmt.Println(c.Val)
 					urls = append(urls, c.Val)
 				}
 			}

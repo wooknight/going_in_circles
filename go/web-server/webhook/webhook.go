@@ -9,6 +9,7 @@ import (
 	"os"
 	"time"
 
+	"github.com/gorilla/mux"
 	"github.com/wooknight/going_in_circles/go/web-server/mytemplate"
 )
 
@@ -68,4 +69,13 @@ func (h *UptimeHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Upload complete")
 	}
 	//save info to database
+}
+
+func ArticleHandler(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	params := r.URL.Query()
+
+	w.WriteHeader(http.StatusOK)
+	fmt.Fprintf(w, "Category is %s\nID is %s\nparams num is %s\nDescription is %s\n", vars["category"], vars["id"], params["num"], params["desc"])
+
 }
