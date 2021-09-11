@@ -19,9 +19,14 @@ type SafeCount struct {
 	mu      sync.Mutex
 	attribs map[att]int
 }
+type SafeAttribCount struct {
+	mu      sync.Mutex
+	attribs map[string]int
+}
 
-func main() {
+func PrintAllHTTOAttributes() {
 	var counter SafeCount
+	var attribCounter SafeAttribCount
 	var wg sync.WaitGroup
 	resp, err := http.Get("https://www.debian.org/mirror/list")
 	if err != nil {
@@ -48,6 +53,7 @@ func main() {
 	}
 	AddUrls(doc)
 	counter.attribs = make(map[att]int)
+	attribCounter.attribs = make(map[string]int)
 	wg.Add(len(urls))
 	for i := 0; i < len(urls); i++ {
 
@@ -64,13 +70,15 @@ func main() {
 				fmt.Printf("Error while parsing %s  Error:%v\n", url, err)
 				return
 			}
-
 			var f func(h *html.Node)
 			f = func(h *html.Node) {
 				for _, a := range h.Attr {
 					counter.mu.Lock()
 					counter.attribs[att{attrType: fmt.Sprintf("%d", h.Type), data: h.Data, key: a.Key, val: a.Val}]++
 					counter.mu.Unlock()
+					attribCounter.mu.Lock()
+					attribCounter.attribs[a.Key]++
+					attribCounter.mu.Unlock()
 				}
 				for c := h.FirstChild; c != nil; c = c.NextSibling {
 					f(c)
@@ -81,5 +89,16 @@ func main() {
 		}(urls[i], &wg)
 	}
 	wg.Wait()
-	fmt.Println(counter.attribs)
+	for key, val := range counter.attribs {
+		fmt.Println("Key", key, "Value", val)
+	}
+	for key, val := range attribCounter.attribs {
+		fmt.Println("Key", key, "Value", val)
+	}
+
+}
+
+func main (){
+	// PrintAllHTTOAttributes()
+	conf, err := GetConfig()
 }
