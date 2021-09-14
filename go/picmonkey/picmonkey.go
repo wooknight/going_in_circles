@@ -38,66 +38,61 @@ var tagMap map[string]tag
 var inputTemplates []template
 var sortedTagNames []string
 
-//tag related structures for free text search
-const (
-	//ALBHABET_SIZE total characters in english alphabet
-	ALBHABET_SIZE = 26
-)
+//trie related structures for free text search
+const A2Z = 26
 
 var tagTrie *trie
 
 type trieNode struct {
-	childrens [ALBHABET_SIZE]*trieNode
-	isWordEnd bool
+	child     [A2Z]*trieNode
+	endOfWord bool
 }
 
 type trie struct {
 	root *trieNode
 }
 
-func initTrie() *trie {
+func NewTrie() *trie {
 	return &trie{
 		root: &trieNode{},
 	}
 }
 
 func (t *trie) insert(word string) {
-	wordLength := len(word)
 	current := t.root
-	for i := 0; i < wordLength; i++ {
+	for i := 0; i < len(word); i++ {
 		index := word[i] - 'a'
-		if current.childrens[index] == nil {
-			current.childrens[index] = &trieNode{}
+		if current.child[index] == nil {
+			current.child[index] = &trieNode{}
 		}
-		current = current.childrens[index]
+		current = current.child[index]
 	}
-	current.isWordEnd = true
+	current.endOfWord = true
 }
 
 func (t *trie) prefix(word string) []string {
 	tagList := make([]string, 0)
-	wordLength := len(word)
 	current := t.root
-	for i := 0; i < wordLength; i++ {
+	for i := 0; i < len(word); i++ {
 		index := word[i] - 'a'
-		if current.childrens[index] == nil {
+		if current.child[index] == nil {
 			return tagList
 		}
-		current = current.childrens[index]
+		current = current.child[index]
 	}
 	//now that we have the node i.e where the prefix points to, we now do a regular DFS to build the rest of the string
 	var dfs func(curNode *trieNode, slate string)
 	dfs = func(curNode *trieNode, slate string) {
-		if curNode.isWordEnd {
+		if curNode.endOfWord {
 			tagList = append(tagList, strings.ToTitle(slate))
 			return
 		}
 		if curNode == nil {
 			return
 		}
-		for i := 0; i < ALBHABET_SIZE; i++ {
-			if curNode.childrens[i] != nil {
-				dfs(curNode.childrens[i], slate+string(byte(i+'a')))
+		for i := 0; i < A2Z; i++ {
+			if curNode.child[i] != nil {
+				dfs(curNode.child[i], slate+string(byte(i+'a')))
 			}
 		}
 	}
@@ -148,7 +143,7 @@ func buildHashGraph() {
 		sortedTagNames = append(sortedTagNames, strings.ToLower(key))
 	}
 
-	tagTrie = initTrie()
+	tagTrie = NewTrie()
 	for i := 0; i < len(sortedTagNames); i++ {
 		tagTrie.insert(sortedTagNames[i])
 	}
@@ -188,7 +183,7 @@ func freeTextSearch(str string) (results []*template) {
 	for _, tagName := range tagTrie.prefix(str) {
 		results := GetTemplates(tagName)
 		for _, tmpl := range results {
-			log.Println("TAG", tagName, "Name", tmpl.name, "Tags ", tmpl.tags)
+			log.Println("freeTextSearch", tagName, "Name", tmpl.name, "Tags ", tmpl.tags)
 		}
 	}
 	return
