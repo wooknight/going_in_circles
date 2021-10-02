@@ -39,6 +39,7 @@ var inputTemplates []template
 var sortedTagNames []string
 
 //trie related structures for free text search
+//num of alphabets
 const A2Z = 26
 
 var tagTrie *trie
@@ -100,6 +101,8 @@ func (t *trie) prefix(word string) []string {
 	return tagList
 }
 
+///End of trie related stuff
+
 //cannot find a good way to sort the templates so storing them as an array of pointers ,
 //if this operation gets too expensive then it can always be changed into a dictionary
 func appendIfNotPresent(list_ptr []*template, template_ptr *template) []*template {
@@ -116,7 +119,7 @@ func appendIfNotPresent(list_ptr []*template, template_ptr *template) []*templat
 	return list_ptr
 }
 
-func buildHashGraph() {
+func initialize() {
 	//my structure is a hash map with tag as the key and the value being a struct that contains the ancestor and list of descendants
 	inputTemplates = make([]template, 2)
 	tagMap = make(map[string]tag)
@@ -126,6 +129,7 @@ func buildHashGraph() {
 	tagMap["Pets"] = tag{descendants: []string{"Rabbits", "Dogs"}}
 	tagMap["Dogs"] = tag{ancestor: "Pets"}
 	tagMap["Rabbits"] = tag{ancestor: "Pets"}
+	//the input templates are stored as a slice
 	inputTemplates[0] = template{name: "dog in a square", tags: []string{"Squares", "Dogs"}}
 	inputTemplates[1] = template{name: "rabbit in a rectangle", tags: []string{"Rabbits", "Rectangles"}}
 	for template_idx, tmpl := range inputTemplates {
@@ -142,7 +146,7 @@ func buildHashGraph() {
 	for key := range tagMap {
 		sortedTagNames = append(sortedTagNames, strings.ToLower(key))
 	}
-
+	//this trie is used only for text search
 	tagTrie = NewTrie()
 	for i := 0; i < len(sortedTagNames); i++ {
 		tagTrie.insert(sortedTagNames[i])
@@ -162,9 +166,6 @@ func GetTemplates(tag string) (results []*template) {
 		if visited[itm] {
 			continue
 		}
-		// if len(tagMap[itm].ancestor) > 0 {
-		// 	queue = append(queue, tagMap[itm].ancestor)
-		// }
 		if len(tagMap[itm].descendants) > 0 {
 			queue = append(queue, tagMap[itm].descendants...)
 		}
@@ -190,7 +191,7 @@ func freeTextSearch(str string) (results []*template) {
 }
 
 func main() {
-	buildHashGraph()
+	initialize()
 	results := GetTemplates("rectangles")
 	for _, tmpl := range results {
 		log.Println("Name", tmpl.name, "Tags ", tmpl.tags)
