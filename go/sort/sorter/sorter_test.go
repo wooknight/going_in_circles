@@ -11,18 +11,41 @@ const (
 	failed  = "\u2717"
 )
 
-func TestQuiksort(t *testing.T) {
+func TestQuiksortSlice(t *testing.T) {
 	testID := 0
 	t.Log("Given the need to test quicksort")
 	{
 		inp, sorted := getMillion()
-		quicksort(inp)
+		quicksortSlice(inp)
 		if reflect.DeepEqual(inp, sorted) != true {
 			{
 				t.Fatalf("\t%s\tTest %d:\t comparing", failed, testID)
 			}
 			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
 		}
+	}
+}
+
+
+func TestQuiksort(t *testing.T) {
+	testID := 1
+	t.Log("Given the need to test quicksort")
+	{
+		inp, sorted := getMillion()
+		quicksort(inp, 0, len(inp)-1)
+		if reflect.DeepEqual(inp, sorted) != true {
+			{
+				t.Fatalf("\t%s\tTest %d:\t comparing", failed, testID)
+			}
+			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
+		}
+	}
+}
+
+func BenchmarkQuicksortSlice(b *testing.B) {
+	inp, _ := getMillion()
+	for i := 0; i < b.N; i++ {
+		quicksortSlice(inp)
 	}
 }
 

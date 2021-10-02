@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"math/rand"
 	"sort"
 )
@@ -21,7 +22,7 @@ func getMillion() ([]int, []int) {
 	sort.Ints(sorted)
 	return results, sorted
 }
-func partition(arr []int) int {
+func partitionSlice(arr []int) int {
 	pivot := len(arr) - 1
 	lessThan := -1
 	for i := 0; i < pivot; i++ {
@@ -31,20 +32,45 @@ func partition(arr []int) int {
 		}
 	}
 	arr[lessThan+1], arr[pivot] = arr[pivot], arr[lessThan+1]
-	pivot = lessThan + 1
-	return pivot
+	return lessThan + 1
 }
 
-func quicksort(arr []int) {
+func quicksortSlice(arr []int) {
 	if len(arr) <= 1 {
 		return
 	}
-	p := partition(arr)
+	p := partitionSlice(arr)
 	// fmt.Println(arr, p)
 	if p > 0 {
-		quicksort(arr[:p])
+		quicksortSlice(arr[:p])
 	}
 	if p < len(arr)-1 {
-		quicksort(arr[p+1:])
+		quicksortSlice(arr[p+1:])
 	}
+}
+
+func partition(arr []int, start, end int) int {
+	pivot := end 
+	lt := start-1
+	for i := start; i < pivot; i++ {
+		if arr[i] <= arr[pivot] {
+			lt++
+			arr[lt], arr[i] = arr[i], arr[lt]
+		}
+	}
+	arr[lt+1], arr[pivot] = arr[pivot], arr[lt+1]
+	// fmt.Println(arr,"Start", start,"End", end,"Original Pvt", pivot,"New Pivot", lt+1, "Pvt value", arr[pivot])
+	return lt + 1
+}
+
+func quicksort(arr []int, start, end int) {
+	if start < end {
+		pvt := partition(arr, start, end)
+		quicksort(arr, start, pvt-1)
+		quicksort(arr, pvt+1, end)
+	}
+}
+
+func main() {
+	fmt.Println("Hello world")
 }
