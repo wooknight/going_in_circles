@@ -48,6 +48,12 @@ func BenchmarkQuicksortSlice(b *testing.B) {
 		quicksortSlice(inp)
 	}
 }
+func BenchmarkQuicksort(b *testing.B) {
+	inp, _ := getMillion()
+	for i := 0; i < b.N; i++ {
+		quicksort(inp,0,len(inp)-1)
+	}
+}
 
 // func TestSelectionSort() {
 // 	inp := getMillion()

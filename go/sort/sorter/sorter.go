@@ -12,7 +12,7 @@ const MAX_INT = int(^uint(0) >> 1)
 
 func getMillion() ([]int, []int) {
 	LEN := 1024 * 1024
-	// LEN = 10
+	LEN = 100000
 	results := make([]int, LEN)
 	sorted := make([]int, LEN)
 	for i := 0; i < LEN; i++ {
@@ -50,8 +50,8 @@ func quicksortSlice(arr []int) {
 }
 
 func partition(arr []int, start, end int) int {
-	pivot := end 
-	lt := start-1
+	pivot := end
+	lt := start - 1
 	for i := start; i < pivot; i++ {
 		if arr[i] <= arr[pivot] {
 			lt++
