@@ -57,7 +57,7 @@ func TestBubblesort(t *testing.T) {
 }
 
 func TestMergesortslice(t *testing.T) {
-	testID := 2
+	testID := 3
 	t.Log("Given the need to test slice mergesort")
 	{
 		inp, sorted := getMillion()
@@ -72,7 +72,7 @@ func TestMergesortslice(t *testing.T) {
 }
 
 func TestMergesort(t *testing.T) {
-	testID := 2
+	testID := 4
 	t.Log("Given the need to test mergesort")
 	{
 		inp, sorted := getMillion()
@@ -87,47 +87,44 @@ func TestMergesort(t *testing.T) {
 }
 
 func TestInsertionsort(t *testing.T) {
-	testID := 2
+	testID := 5
 	t.Log("Given the need to test insertion sort")
 	{
 		inp, sorted := getMillion()
 		insertionSort(inp)
 		if reflect.DeepEqual(inp, sorted) != true {
 			{
-				t.Fatalf("\t%s\tTest %d:\t comparing %v to %v", failed, testID, inp , sorted)
+				t.Fatalf("\t%s\tTest %d:\t comparing %v to %v", failed, testID, inp, sorted)
 			}
 			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
 		}
 	}
 }
 
-
 func TestSelectionsortslice(t *testing.T) {
-	testID := 2
+	testID := 6
 	t.Log("Given the need to test sliced selection sort")
 	{
 		inp, sorted := getMillion()
 		selectionSortSlice(inp)
 		if reflect.DeepEqual(inp, sorted) != true {
 			{
-				t.Fatalf("\t%s\tTest %d:\t comparing %v to %v", failed, testID, inp , sorted)
+				t.Fatalf("\t%s\tTest %d:\t comparing %v to %v", failed, testID, inp, sorted)
 			}
 			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
 		}
 	}
 }
 
-
-
 func TestSelectionsort(t *testing.T) {
-	testID := 3
+	testID := 7
 	t.Log("Given the need to test selection sort")
 	{
 		inp, sorted := getMillion()
 		selectionSort(inp)
 		if reflect.DeepEqual(inp, sorted) != true {
 			{
-				t.Fatalf("\t%s\tTest %d:\t comparing %v to %v", failed, testID, inp , sorted)
+				t.Fatalf("\t%s\tTest %d:\t comparing %v to %v", failed, testID, inp, sorted)
 			}
 			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
 		}
