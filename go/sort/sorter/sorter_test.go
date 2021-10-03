@@ -120,7 +120,7 @@ func TestSelectionsortslice(t *testing.T) {
 
 
 func TestSelectionsort(t *testing.T) {
-	testID := 2
+	testID := 3
 	t.Log("Given the need to test selection sort")
 	{
 		inp, sorted := getMillion()

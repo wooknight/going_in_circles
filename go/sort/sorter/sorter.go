@@ -84,10 +84,10 @@ func bubblesort(arr []int) {
 
 func insertionSort(arr []int) {
 	LEN := len(arr)
-	for i := 1; i < LEN; i++ {
+	for i := 0; i < LEN; i++ {
 		var j int
 		key := arr[i]
-		for j = i - 1; j > 0 && arr[j] > key; j-- {
+		for j = i - 1; j >= 0 && arr[j] > key; j-- {
 			arr[j+1] = arr[j] //shifting
 		}
 		arr[j+1] = key
@@ -119,20 +119,19 @@ func min(arr []int, start int) int {
 }
 
 func selectionSortSlice(arr []int) {
-	minIDX := minS(arr)
-	arr[0], arr[minIDX] = arr[minIDX], arr[0]
-
 	for i := 0; i < len(arr); i++ {
 		minIDX := minS(arr[i:])
 		arr[i], arr[minIDX+i] = arr[minIDX+i], arr[i]
 	}
 }
 
+func printSlice (arr []int){
+	for i:=0;i<len(arr);i++{
+		fmt.Println(arr[i:])
+	}
+}
 func selectionSort(arr []int) {
-	minIDX := min(arr, 0)
-	arr[0], arr[minIDX] = arr[minIDX], arr[0]
-
-	for i := 1; i < len(arr); i++ {
+	for i := 0; i < len(arr); i++ {
 		minIDX := min(arr, i)
 		arr[i], arr[minIDX] = arr[minIDX], arr[i]
 	}
@@ -144,7 +143,7 @@ func MergeSortSlice(arr []int) []int {
 		mid := len(arr) / 2
 		return merge(MergeSortSlice(arr[:mid]), MergeSortSlice(arr[mid+1:]))
 	}
-	fmt.Println(arr)
+	// fmt.Println(arr)
 	return arr
 }
 
@@ -170,7 +169,7 @@ func merge(arr1, arr2 []int) []int {
 			arr2Idx++
 		}
 	}
-	fmt.Println(arr1, arr2, myarr)
+	// fmt.Println(arr1, arr2, myarr)
 	return myarr
 }
 
@@ -180,10 +179,10 @@ func Mergesort(arr []int, start, end int) []int {
 		return merge(Mergesort(arr, start, mid), Mergesort(arr, mid+1, end))
 
 	}
-	fmt.Println(arr)
+	// fmt.Println(arr)
 	return arr
 }
 
 func main() {
-	fmt.Println("Hello world")
+	printSlice([]int{0,1,2,3,4,5,6,7,8,9})
 }
