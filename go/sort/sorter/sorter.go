@@ -94,7 +94,7 @@ func insertionSort(arr []int) {
 	}
 }
 
-func minS(arr []int) (int) {
+func minS(arr []int) int {
 	minIDX := 0
 	min := arr[0]
 	for i := 0; i < len(arr); i++ {
@@ -106,19 +106,22 @@ func minS(arr []int) (int) {
 	return minIDX
 }
 
-func min(arr []int, start int) (int) {
-	minIDX := 0
-	min := arr[0]
+func min(arr []int, start int) int {
+	minIDX := start
+	min := arr[start]
 	for i := start; i < len(arr); i++ {
 		if arr[i] < min {
 			min = arr[i]
-			minIDX = i 
+			minIDX = i
 		}
 	}
 	return minIDX
 }
 
 func selectionSortSlice(arr []int) {
+	minIDX := minS(arr)
+	arr[0], arr[minIDX] = arr[minIDX], arr[0]
+
 	for i := 0; i < len(arr); i++ {
 		minIDX := minS(arr[i:])
 		arr[i], arr[minIDX+i] = arr[minIDX+i], arr[i]
@@ -126,7 +129,10 @@ func selectionSortSlice(arr []int) {
 }
 
 func selectionSort(arr []int) {
-	for i := 0; i < len(arr); i++ {
+	minIDX := min(arr, 0)
+	arr[0], arr[minIDX] = arr[minIDX], arr[0]
+
+	for i := 1; i < len(arr); i++ {
 		minIDX := min(arr, i)
 		arr[i], arr[minIDX] = arr[minIDX], arr[i]
 	}
