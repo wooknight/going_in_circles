@@ -13,7 +13,7 @@ const (
 
 func TestQuiksortSlice(t *testing.T) {
 	testID := 0
-	t.Log("Given the need to test quicksort")
+	t.Log("Given the need to test quicksort using slices")
 	{
 		inp, sorted := getMillion()
 		quicksortSlice(inp)
@@ -25,7 +25,6 @@ func TestQuiksortSlice(t *testing.T) {
 		}
 	}
 }
-
 
 func TestQuiksort(t *testing.T) {
 	testID := 1
@@ -42,6 +41,52 @@ func TestQuiksort(t *testing.T) {
 	}
 }
 
+func TestBubblesort(t *testing.T) {
+	testID := 2
+	t.Log("Given the need to test bubblesort")
+	{
+		inp, sorted := getMillion()
+		bubblesort(inp)
+		if reflect.DeepEqual(inp, sorted) != true {
+			{
+				t.Fatalf("\t%s\tTest %d:\t comparing", failed, testID)
+			}
+			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
+		}
+	}
+}
+
+func TestMergesortslice(t *testing.T) {
+	testID := 2
+	t.Log("Given the need to test slice mergesort")
+	{
+		inp, sorted := getMillion()
+		arr := MergeSortSlice(inp)
+		if reflect.DeepEqual(arr, sorted) != true {
+			{
+				t.Fatalf("\t%s\tTest %d:\t comparing", failed, testID)
+			}
+			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
+		}
+	}
+}
+
+func TestMergesort(t *testing.T) {
+	testID := 2
+	t.Log("Given the need to test mergesort")
+	{
+		inp, sorted := getMillion()
+		arr := Mergesort(inp,0,len(inp))
+		if reflect.DeepEqual(arr, sorted) != true {
+			{
+				t.Fatalf("\t%s\tTest %d:\t comparing", failed, testID)
+			}
+			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
+		}
+	}
+}
+
+
 func BenchmarkQuicksortSlice(b *testing.B) {
 	inp, _ := getMillion()
 	for i := 0; i < b.N; i++ {
@@ -51,8 +96,16 @@ func BenchmarkQuicksortSlice(b *testing.B) {
 func BenchmarkQuicksort(b *testing.B) {
 	inp, _ := getMillion()
 	for i := 0; i < b.N; i++ {
-		quicksort(inp,0,len(inp)-1)
+		quicksort(inp, 0, len(inp)-1)
 	}
+}
+
+func BenchmarkBubblesort(b *testing.B) {
+	inp, _ := getMillion()
+	for i := 0; i < b.N; i++ {
+		bubblesort(inp)
+	}
+
 }
 
 // func TestSelectionSort() {

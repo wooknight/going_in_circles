@@ -6,13 +6,13 @@ import (
 	"sort"
 )
 
-const MAX_INT = int(^uint(0) >> 1)
+// const MAX_INT = int(^uint(0) >> 1)
 
-// const MAX_INT = 100
+const MAX_INT = 100
 
 func getMillion() ([]int, []int) {
 	LEN := 1024 * 1024
-	LEN = 100000
+	LEN = 10
 	results := make([]int, LEN)
 	sorted := make([]int, LEN)
 	for i := 0; i < LEN; i++ {
@@ -69,6 +69,75 @@ func quicksort(arr []int, start, end int) {
 		quicksort(arr, start, pvt-1)
 		quicksort(arr, pvt+1, end)
 	}
+}
+
+func bubblesort(arr []int) {
+	for i := 0; i < len(arr)-1; i++ {
+		for j := i; j < len(arr); j++ {
+			if arr[j] < arr[i] {
+				arr[i], arr[j] = arr[j], arr[i]
+			}
+		}
+	}
+}
+
+func insertionsortSlice(arr []int) {
+
+}
+func insertionSort(arr []int) {
+
+}
+func MergeSortSlice(arr []int) []int {
+	if len(arr) > 1 {
+		mid := len(arr) / 2
+		return merge(MergeSortSlice(arr[:mid]), MergeSortSlice(arr[mid+1:]))
+	}
+	fmt.Println(arr)
+	return arr
+}
+
+func merge(arr1, arr2 []int) []int {
+	arr1Idx := 0
+	arr2Idx := 0
+	totLen := len(arr1)+len(arr2)
+	myarr := make([]int, totLen)
+	for  k:=0;k<totLen;k++ {
+		if arr1Idx < len(arr1) && arr2Idx < len(arr2) {
+			if arr1[arr1Idx] < arr2[arr2Idx] {
+				myarr[k] = arr1[arr1Idx]
+				arr1Idx++
+			} else {
+				myarr[k] = arr2[arr2Idx]
+				arr2Idx++
+			}
+		} else if arr1Idx < len(arr1) {
+			myarr[k] = arr1[arr1Idx]
+			arr1Idx++
+		} else if arr2Idx < len(arr2) {
+			myarr[k] = arr2[arr2Idx]
+			arr2Idx++
+		}
+	}
+	fmt.Println(arr1, arr2, myarr)
+	return myarr
+}
+
+func Mergesort(arr []int, start, end int) []int {
+	if len(arr) == 1 || start >= end {
+		return arr
+	}else if len(arr) == 2{
+		if arr[0] > arr[1] {
+			return []int{arr[1],arr[0]}
+		}
+		return arr
+	}
+	if len(arr) > 1 && start < end {
+		mid := start + (end - start / 2)
+			return merge(Mergesort(arr, start ,  mid ), Mergesort(arr, mid+1, end))
+
+	}
+	fmt.Println(arr)
+	return arr
 }
 
 func main() {
