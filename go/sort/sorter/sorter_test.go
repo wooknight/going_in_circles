@@ -76,7 +76,7 @@ func TestMergesort(t *testing.T) {
 	t.Log("Given the need to test mergesort")
 	{
 		inp, sorted := getMillion()
-		arr := Mergesort(inp,0,len(inp))
+		arr := Mergesort(inp, 0, len(inp))
 		if reflect.DeepEqual(arr, sorted) != true {
 			{
 				t.Fatalf("\t%s\tTest %d:\t comparing", failed, testID)
@@ -86,7 +86,53 @@ func TestMergesort(t *testing.T) {
 	}
 }
 
+func TestInsertionsort(t *testing.T) {
+	testID := 2
+	t.Log("Given the need to test insertion sort")
+	{
+		inp, sorted := getMillion()
+		insertionSort(inp)
+		if reflect.DeepEqual(inp, sorted) != true {
+			{
+				t.Fatalf("\t%s\tTest %d:\t comparing %v to %v", failed, testID, inp , sorted)
+			}
+			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
+		}
+	}
+}
 
+
+func TestSelectionsortslice(t *testing.T) {
+	testID := 2
+	t.Log("Given the need to test sliced selection sort")
+	{
+		inp, sorted := getMillion()
+		selectionSortSlice(inp)
+		if reflect.DeepEqual(inp, sorted) != true {
+			{
+				t.Fatalf("\t%s\tTest %d:\t comparing %v to %v", failed, testID, inp , sorted)
+			}
+			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
+		}
+	}
+}
+
+
+
+func TestSelectionsort(t *testing.T) {
+	testID := 2
+	t.Log("Given the need to test selection sort")
+	{
+		inp, sorted := getMillion()
+		selectionSort(inp)
+		if reflect.DeepEqual(inp, sorted) != true {
+			{
+				t.Fatalf("\t%s\tTest %d:\t comparing %v to %v", failed, testID, inp , sorted)
+			}
+			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
+		}
+	}
+}
 func BenchmarkQuicksortSlice(b *testing.B) {
 	inp, _ := getMillion()
 	for i := 0; i < b.N; i++ {

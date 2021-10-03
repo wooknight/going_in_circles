@@ -7,6 +7,7 @@ import (
 )
 
 // const MAX_INT = int(^uint(0) >> 1)
+const MIN_INT = -1 * (int(^uint(0)>>1) - 1)
 
 const MAX_INT = 100
 
@@ -81,12 +82,57 @@ func bubblesort(arr []int) {
 	}
 }
 
-func insertionsortSlice(arr []int) {
-
-}
 func insertionSort(arr []int) {
+	LEN := len(arr)
+	for i := 1; i < LEN; i++ {
+		var j int
+		key := arr[i]
+		for j = i - 1; j > 0 && arr[j] > key; j-- {
+			arr[j+1] = arr[j] //shifting
+		}
+		arr[j+1] = key
+	}
+}
+
+func minS(arr []int) (int) {
+	minIDX := 0
+	min := arr[0]
+	for i := 0; i < len(arr); i++ {
+		if arr[i] < min {
+			min = arr[i]
+			minIDX = i
+		}
+	}
+	return minIDX
+}
+
+func min(arr []int, start int) (int) {
+	minIDX := 0
+	min := arr[0]
+	for i := start; i < len(arr); i++ {
+		if arr[i] < min {
+			min = arr[i]
+			minIDX = i 
+		}
+	}
+	return minIDX
+}
+
+func selectionSortSlice(arr []int) {
+	for i := 0; i < len(arr); i++ {
+		minIDX := minS(arr[i:])
+		arr[i], arr[minIDX+i] = arr[minIDX+i], arr[i]
+	}
+}
+
+func selectionSort(arr []int) {
+	for i := 0; i < len(arr); i++ {
+		minIDX := min(arr, i)
+		arr[i], arr[minIDX] = arr[minIDX], arr[i]
+	}
 
 }
+
 func MergeSortSlice(arr []int) []int {
 	if len(arr) > 1 {
 		mid := len(arr) / 2
@@ -99,9 +145,9 @@ func MergeSortSlice(arr []int) []int {
 func merge(arr1, arr2 []int) []int {
 	arr1Idx := 0
 	arr2Idx := 0
-	totLen := len(arr1)+len(arr2)
+	totLen := len(arr1) + len(arr2)
 	myarr := make([]int, totLen)
-	for  k:=0;k<totLen;k++ {
+	for k := 0; k < totLen; k++ {
 		if arr1Idx < len(arr1) && arr2Idx < len(arr2) {
 			if arr1[arr1Idx] < arr2[arr2Idx] {
 				myarr[k] = arr1[arr1Idx]
@@ -123,17 +169,9 @@ func merge(arr1, arr2 []int) []int {
 }
 
 func Mergesort(arr []int, start, end int) []int {
-	if len(arr) == 1 || start >= end {
-		return arr
-	}else if len(arr) == 2{
-		if arr[0] > arr[1] {
-			return []int{arr[1],arr[0]}
-		}
-		return arr
-	}
-	if len(arr) > 1 && start < end {
-		mid := start + (end - start / 2)
-			return merge(Mergesort(arr, start ,  mid ), Mergesort(arr, mid+1, end))
+	if len(arr) > 1 && start < end-1 {
+		mid := (start + end) / 2
+		return merge(Mergesort(arr, start, mid), Mergesort(arr, mid+1, end))
 
 	}
 	fmt.Println(arr)
