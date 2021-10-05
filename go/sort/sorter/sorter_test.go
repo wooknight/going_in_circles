@@ -56,30 +56,16 @@ func TestBubblesort(t *testing.T) {
 	}
 }
 
-func TestMergesortslice(t *testing.T) {
-	testID := 3
-	t.Log("Given the need to test slice mergesort")
-	{
-		inp, sorted := getMillion()
-		arr := MergeSortSlice(inp)
-		if reflect.DeepEqual(arr, sorted) != true {
-			{
-				t.Fatalf("\t%s\tTest %d:\t comparing", failed, testID)
-			}
-			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
-		}
-	}
-}
-
 func TestMergesort(t *testing.T) {
 	testID := 4
 	t.Log("Given the need to test mergesort")
 	{
 		inp, sorted := getMillion()
-		arr := Mergesort(inp, 0, len(inp))
+		t.Logf("\tTest %d:\tInput. %v", testID, inp)
+		arr := Mergesort(inp)
 		if reflect.DeepEqual(arr, sorted) != true {
 			{
-				t.Fatalf("\t%s\tTest %d:\t comparing", failed, testID)
+				t.Fatalf("\t%s\tTest %d:\t comparing Input %v to sorted %v", failed, testID, arr, sorted)
 			}
 			t.Logf("\t%s\tTest %d:\tcomparing.", success, testID)
 		}

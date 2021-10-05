@@ -125,8 +125,8 @@ func selectionSortSlice(arr []int) {
 	}
 }
 
-func printSlice (arr []int){
-	for i:=0;i<len(arr);i++{
+func printSlice(arr []int) {
+	for i := 0; i < len(arr); i++ {
 		fmt.Println(arr[i:])
 	}
 }
@@ -138,51 +138,44 @@ func selectionSort(arr []int) {
 
 }
 
-func MergeSortSlice(arr []int) []int {
-	if len(arr) > 1 {
-		mid := len(arr) / 2
-		return merge(MergeSortSlice(arr[:mid]), MergeSortSlice(arr[mid+1:]))
-	}
-	// fmt.Println(arr)
-	return arr
-}
-
 func merge(arr1, arr2 []int) []int {
-	arr1Idx := 0
-	arr2Idx := 0
 	totLen := len(arr1) + len(arr2)
-	myarr := make([]int, totLen)
+	sortedArr := make([]int, totLen)
+	i := 0
+	j := 0
 	for k := 0; k < totLen; k++ {
-		if arr1Idx < len(arr1) && arr2Idx < len(arr2) {
-			if arr1[arr1Idx] < arr2[arr2Idx] {
-				myarr[k] = arr1[arr1Idx]
-				arr1Idx++
-			} else {
-				myarr[k] = arr2[arr2Idx]
-				arr2Idx++
+		if i < len(arr1) && j < len(arr2){
+			if arr1[i]<arr2[j]{
+				sortedArr[k]=arr1[i]
+				i++
+			}else{
+				sortedArr[k]=arr2[j]
+				j++
 			}
-		} else if arr1Idx < len(arr1) {
-			myarr[k] = arr1[arr1Idx]
-			arr1Idx++
-		} else if arr2Idx < len(arr2) {
-			myarr[k] = arr2[arr2Idx]
-			arr2Idx++
-		}
+		}else if i < len(arr1) {
+			sortedArr[k] = arr1[i]
+			i++
+		} else if j < len(arr2) {
+				sortedArr[k]=arr2[j]
+				j++
+			}
 	}
-	// fmt.Println(arr1, arr2, myarr)
-	return myarr
+	return sortedArr
 }
 
-func Mergesort(arr []int, start, end int) []int {
-	if len(arr) > 1 && start < end-1 {
-		mid := (start + end) / 2
-		return merge(Mergesort(arr, start, mid), Mergesort(arr, mid+1, end))
 
+func Mergesort(arr []int) []int {
+	if len(arr) <= 1 {
+		return arr
+	}else if len(arr) == 2{
+		if arr[0]>arr[1]{
+			return []int{arr[1],arr[0]}
+		}
+		return arr
 	}
-	// fmt.Println(arr)
-	return arr
+	return merge(Mergesort(arr[:len(arr)/2]), Mergesort(arr[len(arr)/2:]))
 }
 
 func main() {
-	printSlice([]int{0,1,2,3,4,5,6,7,8,9})
+	printSlice([]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9})
 }
