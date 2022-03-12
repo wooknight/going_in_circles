@@ -5,9 +5,6 @@ import (
 	"strings"
 )
 
-func main (){
-	
-}
 
 func generateCase(str string) []string{
 	if len(str) > 1 {
@@ -24,7 +21,7 @@ func generateCase(str string) []string{
 			}
 
 			return append(strs1,strs2...)
-			
+
 		}else{
 			strs1:=generateCase(str[1:])
 			for idx,val:=range strs1{
