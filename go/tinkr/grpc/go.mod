@@ -1,4 +1,4 @@
-module github.com/wooknight/going_in_circles/go/tinkr/grpc/product_info
+module github.com/wooknight/going_in_circles/go/tinkr/grpc
 
 go 1.17
 
