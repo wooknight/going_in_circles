@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/gocolly/colly v1.2.0
 	github.com/gorilla/mux v1.8.0
+	github.com/gorilla/websocket v1.4.2
 	github.com/pkg/profile v1.6.0
 	go.mongodb.org/mongo-driver v1.7.2
 	golang.org/x/net v0.0.0-20210813160813-60bc85c4be6d
@@ -22,7 +23,6 @@ require (
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/protobuf v1.3.1 // indirect
 	github.com/golang/snappy v0.0.1 // indirect
-	github.com/gorilla/websocket v1.4.2 // indirect
 	github.com/kennygrant/sanitize v1.2.4 // indirect
 	github.com/klauspost/compress v1.9.5 // indirect
 	github.com/pkg/errors v0.9.1 // indirect

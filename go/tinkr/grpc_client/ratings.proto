@@ -1,0 +1,78 @@
+syntax="proto3";
+package speedrate;
+option go_package = "tinkr/grpc_client/ratings";
+
+
+// import "googleapis/go-genproto/latlng.proto";
+// import "google/protobuf/latlng.proto";
+import "google/protobuf/timestamp.proto";
+
+
+
+service rating {
+    rpc addRating(Rating) returns (RatingID);
+    rpc getRatings(UserID) returns (Ratings);
+}
+
+message LatLng {
+    // The latitude in degrees. It must be in the range [-90.0, +90.0].
+    double latitude = 1;
+  
+    // The longitude in degrees. It must be in the range [-180.0, +180.0].
+    double longitude = 2;
+  }
+
+message Company {
+    string ID = 1;
+    string name = 2;    
+    bytes logo = 3;
+    repeated Address hq = 4; 
+}
+
+message Rating{
+    RatingID id = 1;
+    string category=2;
+    enum feedback {
+        NEGATIVE = 0;
+        NEUTRAL = 1;
+        POSITIVE = 2;
+      }
+    feedback feedback_type=3;      
+    string textDesc=4;
+    string image=5;
+    string video=6;
+    enum data_type{
+        TEXT = 0;
+        PICTURE=1;
+        AUDIO=2;
+        VIDEO=3;
+    }
+    data_type rating_type = 7; 
+    UserID user = 8;
+    string business = 9; 
+    google.protobuf.Timestamp created_at=10;
+    google.protobuf.Timestamp updated_at =11;
+    LatLng rating_location = 12;
+}
+
+message Address {
+    string address_line1 = 3 ;
+    string address_line2 = 4 ;
+    string address_line3 = 5 ;
+    string city = 6 ;
+    string state_province = 7 ;
+    string country = 8;
+    LatLng location = 9;
+}
+
+message RatingID {
+    string value = 1;
+}
+
+message Ratings {    
+    repeated Rating values = 1;
+}
+
+message UserID {
+    string value = 1;
+}

@@ -1,0 +1,1324 @@
+(dlv) break /mergesort.merge*/
+(dlv) clearall
+Breakpoint 17 cleared at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22
+Breakpoint 20 cleared at 0x114dbc0 for github.com/wooknight/going_in_circles/go/sort/mergesort.partition() ./mergesort.go:91
+(dlv) break /mergesort.merge*/
+Breakpoint 23 set at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22
+Breakpoint 24 set at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21
+Breakpoint 25 set at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42
+(dlv) on 24 args
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22 (hits goroutine(20):1 total:1) (PC: 0x114cb0f)
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+    21:	func merge_sort(arr []int) []int {
+=>  22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+    26:				printStack()
+    27:				fmt.Println("I love kitties ")
+0: arr1 = error could not find symbol value for arr1
+1: "%+v" arr1 = error 1:7: expected 'EOF', found arr1
+2: "%x" arr1 = error 1:6: expected 'EOF', found arr1
+3: arr1 = error could not find symbol value for arr1
+exit
+(dlv) breakpoints
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+(dlv) break /mergesort.merge/
+Breakpoint 1 set at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22
+Breakpoint 2 set at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21
+Breakpoint 3 set at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(4):1 total:1) (PC: 0x114cef2)
+    16:		var buf [8192]byte
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+=>  21:	func merge_sort(arr []int) []int {
+    22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+    26:				printStack()
+(dlv) n 2
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:31 (PC: 0x114cf56)
+    26:				printStack()
+    27:				fmt.Println("I love kitties ")
+    28:			}
+    29:		}()
+    30:	
+=>  31:		if len(arr) <= 1 {
+    32:			return arr
+    33:		}else if len(arr) <= 2{
+    34:			if arr[0]>arr[1]{
+    35:				return []int{arr[1],arr[0]}
+    36:			}
+(dlv) list
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:31 (PC: 0x114cf56)
+    26:				printStack()
+    27:				fmt.Println("I love kitties ")
+    28:			}
+    29:		}()
+    30:	
+=>  31:		if len(arr) <= 1 {
+    32:			return arr
+    33:		}else if len(arr) <= 2{
+    34:			if arr[0]>arr[1]{
+    35:				return []int{arr[1],arr[0]}
+    36:			}
+(dlv) break +1
+Breakpoint 4 set at 0x114cf6b for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:32
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 1 (enabled) at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22 (0)
+Breakpoint 2 (enabled) at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (1)
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (0)
+Breakpoint 4 (enabled) at 0x114cf6b for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:32 (0)
+(dlv) on 4 print arr
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(4):2 total:2) (PC: 0x114cef2)
+    16:		var buf [8192]byte
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+=>  21:	func merge_sort(arr []int) []int {
+    22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+    26:				printStack()
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 1 (enabled) at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22 (0)
+Breakpoint 2 (enabled) at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (2)
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (0)
+Breakpoint 4 (enabled) at 0x114cf6b for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:32 (0)
+	print arr
+(dlv) clear 1
+Breakpoint 1 cleared at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(4):3 total:3) (PC: 0x114cef2)
+    16:		var buf [8192]byte
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+=>  21:	func merge_sort(arr []int) []int {
+    22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+    26:				printStack()
+(dlv) clear 2
+Breakpoint 2 cleared at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(4):1 total:1) (PC: 0x114d38f)
+    37:			return arr
+    38:		}
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+=>  42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+(dlv) break +2
+Breakpoint 5 set at 0x114d40c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (1)
+Breakpoint 4 (enabled) at 0x114cf6b for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:32 (0)
+	print arr
+Breakpoint 5 (enabled) at 0x114d40c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44 (0)
+(dlv) clear 4
+Breakpoint 4 cleared at 0x114cf6b for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:32
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44 (hits goroutine(4):1 total:1) (PC: 0x114d40c)
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+    42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+=>  44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+    48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (1)
+Breakpoint 5 (enabled) at 0x114d40c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44 (1)
+(dlv) on 5 print arr1 arr2
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(4):2 total:2) (PC: 0x114d38f)
+    37:			return arr
+    38:		}
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+=>  42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (2)
+Breakpoint 5 (enabled) at 0x114d40c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44 (1)
+	print arr1 arr2
+(dlv) toggle 5
+Breakpoint 5 toggled at 0x114d40c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(4):3 total:3) (PC: 0x114d38f)
+    37:			return arr
+    38:		}
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+=>  42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+(dlv) toggle 5
+Breakpoint 5 toggled at 0x114d40c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44 (hits goroutine(4):2 total:2) (PC: 0x114d40c)
+	arr1 arr2: (unreadable eval error: 1:6: expected 'EOF', found arr2)
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+    42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+=>  44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+    48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+(dlv) exit
+(dlv) breakpoints /mergesort.merge/
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+(dlv) break /mergesort.merge/
+Breakpoint 1 set at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22
+Breakpoint 2 set at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21
+Breakpoint 3 set at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):1 total:1) (PC: 0x114cef2)
+    16:		var buf [8192]byte
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+=>  21:	func merge_sort(arr []int) []int {
+    22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+    26:				printStack()
+(dlv) list 20
+Showing /Users/ramesh/Documents/Repos/go/src/going_in_circles/go/sort/mergesort/mergesort.go:20 (PC: 0x0)
+    15:	func printStack() {
+    16:		var buf [8192]byte
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+    21:	func merge_sort(arr []int) []int {
+    22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+(dlv) break +5
+Breakpoint 4 set at 0x114cdc7 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:26
+(dlv) clear 1
+Breakpoint 1 cleared at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):2 total:2) (PC: 0x114cef2)
+    16:		var buf [8192]byte
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+=>  21:	func merge_sort(arr []int) []int {
+    22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+    26:				printStack()
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):3 total:3) (PC: 0x114cef2)
+    16:		var buf [8192]byte
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+=>  21:	func merge_sort(arr []int) []int {
+    22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+    26:				printStack()
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 2 (enabled) at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (3)
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (0)
+Breakpoint 4 (enabled) at 0x114cdc7 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:26 (0)
+(dlv) on 4 args
+(dlv) on 3 args
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):4 total:4) (PC: 0x114cef2)
+    16:		var buf [8192]byte
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+=>  21:	func merge_sort(arr []int) []int {
+    22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+    26:				printStack()
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 2 (enabled) at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (4)
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (0)
+	args
+Breakpoint 4 (enabled) at 0x114cdc7 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:26 (0)
+	args
+(dlv) on 2 goroutines
+(dlv) on 2 goroutine
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge([]int len: 2, cap: 2, [...], []int len: 2, cap: 7, [...]) ./mergesort.go:42 (hits goroutine(34):1 total:1) (PC: 0x114d38f)
+    37:			return arr
+    38:		}
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+=>  42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 2 (enabled) at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (4)
+	goroutine
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (1)
+	args
+Breakpoint 4 (enabled) at 0x114cdc7 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:26 (0)
+	args
+(dlv) cond -hitpoint 2==10
+(dlv) cond 2 -hitpoint==10
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 2 (enabled) at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (4)
+	cond -hitpoint == 10
+	goroutine
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (1)
+	args
+Breakpoint 4 (enabled) at 0x114cdc7 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:26 (0)
+	args
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):5 total:5) (PC: 0x114cef2)
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):6 total:6) (PC: 0x114cef2)
+(dlv) cond -hitcount 2==10
+(dlv) cond 2 -hitcount 2==10
+(dlv) cond 2 -hitcount == 10
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):7 total:7) (PC: 0x114cef2)
+(dlv) help hitcount
+(dlv) help on
+Executes a command when a breakpoint is hit.
+
+	on <breakpoint name or id> <command>
+	on <breakpoint name or id> -edit
+	
+
+Supported commands: print, stack, goroutine, trace and cond. 
+To convert a breakpoint into a tracepoint use:
+	
+	on <breakpoint name or id> trace
+
+The command 'on <bp> cond <cond-arguments>' is equivalent to 'cond <bp> <cond-arguments>'.
+
+The command 'on x -edit' can be used to edit the list of commands executed when the breakpoint is hit.
+(dlv) help cond
+Set breakpoint condition.
+
+	condition <breakpoint name or id> <boolean expression>.
+	condition -hitcount <breakpoint name or id> <operator> <argument>.
+	condition -clear <breakpoint name or id>.
+
+Specifies that the breakpoint, tracepoint or watchpoint should break only if the boolean expression is true.
+
+See Documentation/cli/expr.md for a description of supported expressions.
+
+With the -hitcount option a condition on the breakpoint hit count can be set, the following operators are supported
+
+	condition -hitcount bp > n
+	condition -hitcount bp >= n
+	condition -hitcount bp < n
+	condition -hitcount bp <= n
+	condition -hitcount bp == n
+	condition -hitcount bp != n
+	condition -hitcount bp % n
+
+With the -clear option a condtion on the breakpoint can removed.
+	
+The '% n' form means we should stop at the breakpoint when the hitcount is a multiple of n.
+
+Examples:
+	cond 2 i == 10				breakpoint 2 will stop when variable i equals 10
+	cond name runtime.curg.goid == 5	breakpoint 'name' will stop only on goroutine 5
+	cond -clear 2				the condition on breakpoint 2 will be removed
+
+(dlv) condition 2 -hitcount == 2 
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):8 total:8) (PC: 0x114cef2)
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):9 total:9) (PC: 0x114cef2)
+(dlv) help cond
+Set breakpoint condition.
+
+	condition <breakpoint name or id> <boolean expression>.
+	condition -hitcount <breakpoint name or id> <operator> <argument>.
+	condition -clear <breakpoint name or id>.
+
+Specifies that the breakpoint, tracepoint or watchpoint should break only if the boolean expression is true.
+
+See Documentation/cli/expr.md for a description of supported expressions.
+
+With the -hitcount option a condition on the breakpoint hit count can be set, the following operators are supported
+
+	condition -hitcount bp > n
+	condition -hitcount bp >= n
+	condition -hitcount bp < n
+	condition -hitcount bp <= n
+	condition -hitcount bp == n
+	condition -hitcount bp != n
+	condition -hitcount bp % n
+
+With the -clear option a condtion on the breakpoint can removed.
+	
+The '% n' form means we should stop at the breakpoint when the hitcount is a multiple of n.
+
+Examples:
+	cond 2 i == 10				breakpoint 2 will stop when variable i equals 10
+	cond name runtime.curg.goid == 5	breakpoint 'name' will stop only on goroutine 5
+	cond -clear 2				the condition on breakpoint 2 will be removed
+
+(dlv) condi -hitcount 2 == 10
+(dlv) condition -hitcount 2 == 10
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge([]int len: 1, cap: 3, [...], []int len: 2, cap: 2, [...]) ./mergesort.go:42 (hits goroutine(34):2 total:2) (PC: 0x114d38f)
+    37:			return arr
+    38:		}
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+=>  42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+(dlv) disp
+(dlv) args
+arr1 = []int len: 1, cap: 3, [...]
+arr2 = []int len: 2, cap: 2, [...]
+~r0 = []int len: 18, cap: 824634873120, [...]
+(dlv) locals
+(no locals)
+(dlv) stack
+0  0x000000000114d38f in github.com/wooknight/going_in_circles/go/sort/mergesort.merge
+   at ./mergesort.go:42
+1  0x000000000114d28f in github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort
+   at ./mergesort.go:39
+2  0x000000000114d245 in github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort
+   at ./mergesort.go:39
+3  0x000000000114d245 in github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort
+   at ./mergesort.go:39
+4  0x000000000114eba8 in github.com/wooknight/going_in_circles/go/sort/mergesort.TestMergesort
+   at ./mergesort_test.go:105
+5  0x00000000010f13a3 in testing.tRunner
+   at /usr/local/go/src/testing/testing.go:1439
+6  0x00000000010f2c39 in testing.(*T).Run.func1
+   at /usr/local/go/src/testing/testing.go:1486
+7  0x0000000001069c41 in runtime.goexit
+   at /usr/local/go/src/runtime/asm_amd64.s:1571
+(dlv) print arg1
+(dlv) print arr1
+[]int len: 1, cap: 3, [17]
+(dlv) print arr1[0]
+17
+(dlv) print &arr1
+(*[]int)(0xbeef000000000000)
+(dlv) examinemem 0xbeef000000000000
+(dlv) help examinemem
+Examine raw memory at the given address.
+
+Examine memory:
+
+	examinemem [-fmt <format>] [-count|-len <count>] [-size <size>] <address>
+	examinemem [-fmt <format>] [-count|-len <count>] [-size <size>] -x <expression>
+
+Format represents the data format and the value is one of this list (default hex): bin(binary), oct(octal), dec(decimal), hex(hexadecimal), addr(address).
+Length is the number of bytes (default 1) and must be less than or equal to 1000.
+Address is the memory location of the target to examine. Please note '-len' is deprecated by '-count and -size'.
+Expression can be an integer expression or pointer value of the memory location to examine.
+
+For example:
+
+    x -fmt hex -count 20 -size 1 0xc00008af38
+    x -fmt hex -count 20 -size 1 -x 0xc00008af38 + 8
+    x -fmt hex -count 20 -size 1 -x &myVar
+    x -fmt hex -count 20 -size 1 -x myPtrVar
+(dlv) help examinemem -fmt hex -count 20 -size 1 0xbeef000000000000
+(dlv) x -fmt hex -count 20 -size 1 0xbeef000000000000
+(dlv) x -fmt hex -count 20 -size 1 &arr1
+(dlv) x -fmt hex -count 1 -size 1 &arr1
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge([]int len: 2, cap: 5, [...], []int len: 3, cap: 3, [...]) ./mergesort.go:42 (hits goroutine(34):3 total:3) (PC: 0x114d38f)
+    37:			return arr
+    38:		}
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+=>  42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 2 (enabled) at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (9)
+	cond -hitcount == 2
+	cond -hitcount == 10
+	goroutine
+Breakpoint 3 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (3)
+	args
+Breakpoint 4 (enabled) at 0x114cdc7 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:26 (0)
+	args
+(dlv) clear 3
+Breakpoint 3 cleared at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42
+(dlv) break m33 ./mergesort.go:42 
+Breakpoint m33 set at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42
+(dlv) condition m33 -hitcount == 10
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 2 (enabled) at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (9)
+	cond -hitcount == 2
+	cond -hitcount == 10
+	goroutine
+Breakpoint 4 (enabled) at 0x114cdc7 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:26 (0)
+	args
+Breakpoint m33 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (0)
+	cond -hitcount == 10
+(dlv) on 4 args
+(dlv) on 4 stack
+(dlv) on 4 locals
+(dlv) c
+> [m33] github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(34):1 total:1) (PC: 0x114d38f)
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21 (hits goroutine(34):10 total:10) (PC: 0x114cef2)
+(dlv) c
+> [m33] github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(34):2 total:2) (PC: 0x114d38f)
+(dlv) c
+> [m33] github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(34):3 total:3) (PC: 0x114d38f)
+(dlv) c
+> [m33] github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(34):4 total:4) (PC: 0x114d38f)
+(dlv) c
+> [m33] github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(34):5 total:5) (PC: 0x114d38f)
+(dlv) clearall
+Breakpoint 2 cleared at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21
+Breakpoint 4 cleared at 0x114cdc7 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:26
+Breakpoint m33 cleared at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42
+(dlv) break /mergesort.merge/
+Breakpoint 6 set at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22
+Breakpoint 7 set at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21
+Breakpoint 8 set at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42
+(dlv) clear 7
+Breakpoint 7 cleared at 0x114cef2 for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort() ./mergesort.go:21
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22 (hits goroutine(34):1 total:1) (PC: 0x114cb0f)
+    17:		n := runtime.Stack(buf[:], false)
+    18:		os.Stdout.Write(buf[:n])
+    19:	}
+    20:	
+    21:	func merge_sort(arr []int) []int {
+=>  22:		defer func() {
+    23:			fmt.Println("Inside main defer")
+    24:	
+    25:			if r := recover(); r != nil && r == "Aaankh lag gaya" {
+    26:				printStack()
+    27:				fmt.Println("I love kitties ")
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 6 (enabled) at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22 (1)
+Breakpoint 8 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (0)
+(dlv) clear 6
+Breakpoint 6 cleared at 0x114cb0f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort.func1() ./mergesort.go:22
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(34):1 total:1) (PC: 0x114d38f)
+    37:			return arr
+    38:		}
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+=>  42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+(dlv) args
+arr1 = []int len: 5, cap: 5, [...]
+arr2 = []int len: 5, cap: 5, [...]
+~r0 = []int len: 2, cap: 15, [...]
+(dlv) stack
+0  0x000000000114d38f in github.com/wooknight/going_in_circles/go/sort/mergesort.merge
+   at ./mergesort.go:42
+1  0x000000000114d28f in github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort
+   at ./mergesort.go:39
+2  0x000000000114d1af in github.com/wooknight/going_in_circles/go/sort/mergesort.merge_sort
+   at ./mergesort.go:39
+3  0x000000000114eba8 in github.com/wooknight/going_in_circles/go/sort/mergesort.TestMergesort
+   at ./mergesort_test.go:105
+4  0x00000000010f13a3 in testing.tRunner
+   at /usr/local/go/src/testing/testing.go:1439
+5  0x00000000010f2c39 in testing.(*T).Run.func1
+   at /usr/local/go/src/testing/testing.go:1486
+6  0x0000000001069c41 in runtime.goexit
+   at /usr/local/go/src/runtime/asm_amd64.s:1571
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(34):2 total:2) (PC: 0x114d38f)
+    37:			return arr
+    38:		}
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+=>  42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+(dlv) bp +2
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 8 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (2)
+(dlv) break +2
+Breakpoint 9 set at 0x114d40c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44
+(dlv) clear 9
+Breakpoint 9 cleared at 0x114d40c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:44
+(dlv) clear +6
+(dlv) break +6
+Breakpoint 10 set at 0x114d46c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48
+(dlv) 
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):1 total:1) (PC: 0x114d46c)
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) locals
+totLen = 3
+sortedArr = []int len: 3, cap: 3, [...]
+i = 0
+j = 0
+k = 0
+(dlv) args
+arr1 = []int len: 1, cap: 8, [...]
+arr2 = []int len: 2, cap: 7, [...]
+~r0 = []int len: 0, cap: 0, nil
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):2 total:2) (PC: 0x114d46c)
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):3 total:3) (PC: 0x114d46c)
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (hits goroutine(34):3 total:3) (PC: 0x114d38f)
+    37:			return arr
+    38:		}
+    39:		return merge(merge_sort(arr[:len(arr)/2]), merge_sort(arr[len(arr)/2:]))
+    40:	}
+    41:	
+=>  42:	func merge(arr1, arr2 []int) []int {
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):4 total:4) (PC: 0x114d46c)
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 8 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (3)
+Breakpoint 10 (enabled) at 0x114d46c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (4)
+(dlv) on 48 display -d totLen
+(dlv) on 10 display -d totLen
+(dlv) on 10 print totLen
+(dlv) on 10 locals
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):5 total:5) (PC: 0x114d46c)
+	totLen: 5
+	totLen: 5
+	sortedArr: []int len: 5, cap: 5, [...]
+	i: 1
+	j: 0
+	k: 1
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv)  bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Breakpoint 8 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (3)
+Breakpoint 10 (enabled) at 0x114d46c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (5)
+	locals
+	print totLen
+(dlv) on 8 trace
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):6 total:6) (PC: 0x114d46c)
+	totLen: 5
+	totLen: 5
+	sortedArr: []int len: 5, cap: 5, [...]
+	i: 2
+	j: 0
+	k: 2
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):7 total:7) (PC: 0x114d46c)
+	totLen: 5
+	totLen: 5
+	sortedArr: []int len: 5, cap: 5, [...]
+	i: 2
+	j: 1
+	k: 3
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):8 total:8) (PC: 0x114d46c)
+	totLen: 5
+	totLen: 5
+	sortedArr: []int len: 5, cap: 5, [...]
+	i: 2
+	j: 2
+	k: 4
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):9 total:9) (PC: 0x114d46c)
+	totLen: 3
+	totLen: 3
+	sortedArr: []int len: 3, cap: 3, [...]
+	i: 0
+	j: 0
+	k: 0
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):10 total:10) (PC: 0x114d46c)
+	totLen: 3
+	totLen: 3
+	sortedArr: []int len: 3, cap: 3, [...]
+	i: 0
+	j: 1
+	k: 1
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):11 total:11) (PC: 0x114d46c)
+	totLen: 3
+	totLen: 3
+	sortedArr: []int len: 3, cap: 3, [...]
+	i: 1
+	j: 1
+	k: 2
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):12 total:12) (PC: 0x114d46c)
+	totLen: 5
+	totLen: 5
+	sortedArr: []int len: 5, cap: 5, [...]
+	i: 0
+	j: 0
+	k: 0
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Tracepoint 8 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (5)
+Breakpoint 10 (enabled) at 0x114d46c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (12)
+	locals
+	print totLen
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):13 total:13) (PC: 0x114d46c)
+	totLen: 5
+	totLen: 5
+	sortedArr: []int len: 5, cap: 5, [...]
+	i: 0
+	j: 1
+	k: 1
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):14 total:14) (PC: 0x114d46c)
+	totLen: 5
+	totLen: 5
+	sortedArr: []int len: 5, cap: 5, [...]
+	i: 1
+	j: 1
+	k: 2
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):15 total:15) (PC: 0x114d46c)
+	totLen: 5
+	totLen: 5
+	sortedArr: []int len: 5, cap: 5, [...]
+	i: 2
+	j: 1
+	k: 3
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):16 total:16) (PC: 0x114d46c)
+	totLen: 5
+	totLen: 5
+	sortedArr: []int len: 5, cap: 5, [...]
+	i: 2
+	j: 2
+	k: 4
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):17 total:17) (PC: 0x114d46c)
+	totLen: 10
+	totLen: 10
+	sortedArr: []int len: 10, cap: 10, [...]
+	i: 0
+	j: 0
+	k: 0
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):18 total:18) (PC: 0x114d46c)
+	totLen: 10
+	totLen: 10
+	sortedArr: []int len: 10, cap: 10, [...]
+	i: 0
+	j: 1
+	k: 1
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):19 total:19) (PC: 0x114d46c)
+	totLen: 10
+	totLen: 10
+	sortedArr: []int len: 10, cap: 10, [...]
+	i: 1
+	j: 1
+	k: 2
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):20 total:20) (PC: 0x114d46c)
+	totLen: 10
+	totLen: 10
+	sortedArr: []int len: 10, cap: 10, [...]
+	i: 2
+	j: 1
+	k: 3
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):21 total:21) (PC: 0x114d46c)
+	totLen: 10
+	totLen: 10
+	sortedArr: []int len: 10, cap: 10, [...]
+	i: 3
+	j: 1
+	k: 4
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):22 total:22) (PC: 0x114d46c)
+	totLen: 10
+	totLen: 10
+	sortedArr: []int len: 10, cap: 10, [...]
+	i: 4
+	j: 1
+	k: 5
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) c
+> github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48 (hits goroutine(34):23 total:23) (PC: 0x114d46c)
+	totLen: 10
+	totLen: 10
+	sortedArr: []int len: 10, cap: 10, [...]
+	i: 5
+	j: 1
+	k: 6
+    43:		totLen := len(arr1) + len(arr2)
+    44:		sortedArr := make([]int, totLen)
+    45:		i := 0
+    46:		j := 0
+    47:		for k := 0; k < totLen; k++ {
+=>  48:			if i < len(arr1) && j < len(arr2){
+    49:				if arr1[i]<arr2[j]{
+    50:					sortedArr[k]=arr1[i]
+    51:					i++
+    52:				}else{
+    53:					sortedArr[k]=arr2[j]
+(dlv) clear 10
+Breakpoint 10 cleared at 0x114d46c for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:48
+(dlv) c
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+> goroutine(34): github.com/wooknight/going_in_circles/go/sort/mergesort.merge()
+(dlv) restart
+Process restarted with PID 4902
+(dlv) bp
+Breakpoint runtime-fatal-throw (enabled) at 0x10390e0 for runtime.throw() /usr/local/go/src/runtime/panic.go:982 (0)
+Breakpoint unrecovered-panic (enabled) at 0x10394a0 for runtime.fatalpanic() /usr/local/go/src/runtime/panic.go:1065 (0)
+	print runtime.curg._panic.arg
+Tracepoint 8 (enabled) at 0x114d38f for github.com/wooknight/going_in_circles/go/sort/mergesort.merge() ./mergesort.go:42 (0)
+(dlv) break /mergesort.merge
+exit
