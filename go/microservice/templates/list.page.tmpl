@@ -1,0 +1,38 @@
+{{template "base" .}}
+
+{{define "content"}}
+
+    <div id="page">
+        <div class="logo"></div>
+        <ul id="navigation">
+            <li><a href="">Item 1</a></li>
+            <li><a href="">Item 2</a></li>
+            <li><a href="">Item 3</a></li>
+            <li><a href="">Item 4</a></li>
+            <li><a href="">Item 5</a></li>
+        </ul>
+    </div>
+    <div id="page2">
+        <div class="logo1"></div>
+        <table id="tester">
+            <th><a href="">Item 1</a></th>
+            <th><a href="">Item 2</a></th>
+            <th><a href="">Item 3</a></th>
+            <th><a href="">Item 4</a></th>
+            <th><a href="">Item 5</a></th>
+            <th><a href="">Item 6</a></th>
+            <th><a href="">Item 7</a></th>
+            <th><a href="">Item 8</a></th>
+            <th><a href="">Item 9</a></th>
+            <th><a href="">Item 10</a></th>
+        </table>
+    </div>
+    <p>This came from the template {{index .StringMap "list"}}</p>
+    <p>
+        {{if ne (index .StringMap "remote_ip") ""}}
+            your remote IP is {{index .StringMap "remote_ip"}}
+        {{else}}
+            Dont have IP , please visit <a href="/business/add">
+        {{end}}
+    </p>
+{{end}}
