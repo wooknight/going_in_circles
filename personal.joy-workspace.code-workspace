@@ -11,6 +11,12 @@
 		},
 		{
 			"path": "../cracking_the_coding_interview"
+		},
+		{
+			"path": "../go-epi-judge"
+		},
+		{
+			"path": "../go-epi-solutions"
 		}
 	],
 	"settings": {
