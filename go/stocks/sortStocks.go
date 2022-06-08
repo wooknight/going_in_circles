@@ -3,14 +3,70 @@ package main
 import (
 	"container/heap"
 	"fmt"
-	// "fmt"
+
+	"github.com/piquette/finance-go/quote"
+)
+
+type capitalization int64
+
+const (
+	micro_cap capitalization = 300000000
+	small_cap                = 2000000000
+	mid_cap                  = 10000000000
+	large_cap                = 200000000000
+	mega_cap                 = 3000000000000
 )
 
 type company struct {
-	pe       float64
-	sales    int64
-	expenses int64
-	index    int
+	beta                         float64 // measuring volatility ; volatility of a stock / volatility of the market
+	ticker                       string
+	year                         int
+	curQuote                     finance.Quote
+	pe                           float64
+	sales                        int64
+	income, net_income, expenses int64
+	index                        int
+	market_cap                   float64
+	company_type 	capitalization
+	assets                       int64
+	liabilities                  int64
+	net_worth                    int64
+}
+
+func NewCompany(c *company) {
+	c.curQuote, err := quote.Get(c.ticker)
+	if err != nil {
+		// Uh-oh!
+		panic(err)
+	}
+	// All good.
+	fmt.Printf("%T \n %+v", q, q)
+
+	c.net_worth = c.assets - c.liabilities
+	c.net_income = c.income - c.expenses
+	c.company_type  = c.companySize()
+}
+
+func (c company) companySize() capitalization {
+	if c.market_cap <= micro_cap {
+		return micro_cap
+	} else if c.market_cap <= small_cap {
+		return small_cap
+	} else if c.market_cap <= mid_cap {
+		return mid_cap
+	} else if c.market_cap <= large_cap {
+		return large_cap
+	}
+
+	return mega_cap
+}
+
+func (c company) valuePE() bool {
+	return c.pe <= 20
+}
+
+func (c company) growthPE() bool {
+	return c.pe <= 40
 }
 
 type priorityqueue []*company

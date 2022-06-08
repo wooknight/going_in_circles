@@ -3,11 +3,13 @@ module github.com/wooknight/going_in_circles
 go 1.17
 
 require (
+	github.com/alexedwards/scs/v2 v2.5.0
 	github.com/go-chi/chi/v5 v5.0.7
 	github.com/gocolly/colly v1.2.0
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/websocket v1.4.2
 	github.com/justinas/nosurf v1.1.1
+	github.com/piquette/finance-go v1.0.0
 	github.com/pkg/profile v1.6.0
 	go.mongodb.org/mongo-driver v1.7.2
 	golang.org/x/net v0.0.0-20210813160813-60bc85c4be6d
@@ -16,7 +18,6 @@ require (
 
 require (
 	github.com/PuerkitoBio/goquery v1.7.1 // indirect
-	github.com/alexedwards/scs/v2 v2.5.0 // indirect
 	github.com/andybalholm/cascadia v1.2.0 // indirect
 	github.com/antchfx/htmlquery v1.2.3 // indirect
 	github.com/antchfx/xmlquery v1.3.6 // indirect
@@ -30,6 +31,7 @@ require (
 	github.com/klauspost/compress v1.9.5 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/saintfish/chardet v0.0.0-20120816061221-3af4cd4741ca // indirect
+	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/temoto/robotstxt v1.1.2 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.0.2 // indirect
