@@ -4,6 +4,8 @@ import (
 	"container/heap"
 	"fmt"
 
+	"github.com/piquette/finance-go"
+	"github.com/piquette/finance-go/equity"
 	"github.com/piquette/finance-go/quote"
 )
 
@@ -21,20 +23,19 @@ type company struct {
 	beta                         float64 // measuring volatility ; volatility of a stock / volatility of the market
 	ticker                       string
 	year                         int
-	curQuote                     finance.Quote
+	stkDetails                   finance.Equity
 	pe                           float64
 	sales                        int64
 	income, net_income, expenses int64
 	index                        int
-	market_cap                   float64
-	company_type 	capitalization
+	company_type 				 capitalization
 	assets                       int64
 	liabilities                  int64
 	net_worth                    int64
 }
 
 func NewCompany(c *company) {
-	c.curQuote, err := quote.Get(c.ticker)
+	c.stkDetails, err := equity.Get(c.ticker)
 	if err != nil {
 		// Uh-oh!
 		panic(err)
@@ -48,13 +49,13 @@ func NewCompany(c *company) {
 }
 
 func (c company) companySize() capitalization {
-	if c.market_cap <= micro_cap {
+	if capitalization(c.stkDetails.MarketCap) <= micro_cap {
 		return micro_cap
-	} else if c.market_cap <= small_cap {
+	} else if capitalization(c.stkDetails.MarketCap) <= small_cap {
 		return small_cap
-	} else if c.market_cap <= mid_cap {
+	} else if capitalization(c.stkDetails.MarketCap) <= mid_cap {
 		return mid_cap
-	} else if c.market_cap <= large_cap {
+	} else if capitalization(c.stkDetails.MarketCap) <= large_cap {
 		return large_cap
 	}
 

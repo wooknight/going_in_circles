@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/piquette/finance-go/quote"
+	"github.com/piquette/finance-go/equity"
 )
 
 // "BTC",	"ETH",	"DOGE",
@@ -75,7 +75,7 @@ var holdings = []string{
 
 func main() {
 	for _, val := range holdings {
-		q, err := quote.Get(val)
+		q, err := equity.Get(val)
 		if err != nil {
 			// Uh-oh!
 			panic(err)
