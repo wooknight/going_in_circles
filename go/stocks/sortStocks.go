@@ -6,7 +6,6 @@ import (
 
 	"github.com/piquette/finance-go"
 	"github.com/piquette/finance-go/equity"
-	"github.com/piquette/finance-go/quote"
 )
 
 type capitalization int64
@@ -20,32 +19,35 @@ const (
 )
 
 type company struct {
+	index int
+
 	beta                         float64 // measuring volatility ; volatility of a stock / volatility of the market
 	ticker                       string
 	year                         int
-	stkDetails                   finance.Equity
+	stkDetails                   *finance.Equity
 	pe                           float64
-	sales                        int64
-	income, net_income, expenses int64
-	index                        int
-	company_type 				 capitalization
-	assets                       int64
-	liabilities                  int64
-	net_worth                    int64
+	sales                        float64
+	income, net_income, expenses float64
+	company_type                 capitalization
+	equity, assets               float64 //equity <=> net_worth
+	liabilities                  float64
+
+	net_earnings, return_on_equity float64
+	bond_ratings                   string
 }
 
 func NewCompany(c *company) {
-	c.stkDetails, err := equity.Get(c.ticker)
+	var err error
+	c.stkDetails, err = equity.Get(c.ticker)
 	if err != nil {
 		// Uh-oh!
 		panic(err)
 	}
-	// All good.
-	fmt.Printf("%T \n %+v", q, q)
-
-	c.net_worth = c.assets - c.liabilities
+	c.equity = c.assets - c.liabilities
+	c.net_earnings = c.sales - c.expenses
 	c.net_income = c.income - c.expenses
-	c.company_type  = c.companySize()
+	c.company_type = c.companySize()
+	c.return_on_equity = c.net_earnings / (float64(c.stkDetails.SharesOutstanding) * c.stkDetails.Quote.Ask)
 }
 
 func (c company) companySize() capitalization {
