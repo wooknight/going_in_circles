@@ -98,7 +98,7 @@ func PrintAllHTTOAttributes() {
 
 }
 
-func main (){
+func main() {
 	// PrintAllHTTOAttributes()
 	conf, err := GetConfig()
 }

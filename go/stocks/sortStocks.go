@@ -18,27 +18,27 @@ const (
 	mega_cap                 = 3000000000000
 )
 
-type company struct {
-	index int
-
+type Company struct {
 	beta                         float64 // measuring volatility ; volatility of a stock / volatility of the market
 	ticker                       string
 	year                         int
 	stkDetails                   *finance.Equity
 	pe                           float64
 	sales                        float64
-	income, net_income, expenses float64
-	company_type                 capitalization
-	equity, assets               float64 //equity <=> net_worth
-	liabilities                  float64
+	income, net_income, expenses,net_equity float64
+	index                        int
+	company_type 				 capitalization
+	assets                       int64
+	liabilities                  int64
+	net_worth                    int64
+	current_ratio	float64
+	quick_ratio float64
+	roe , roa , sales_receivables , recievables  float64
 
-	net_earnings, return_on_equity float64
-	bond_ratings                   string
 }
 
-func NewCompany(c *company) {
-	var err error
-	c.stkDetails, err = equity.Get(c.ticker)
+func NewCompany(c *Company) {
+	c.stkDetails, err := equity.Get(c.ticker)
 	if err != nil {
 		// Uh-oh!
 		panic(err)
@@ -46,11 +46,20 @@ func NewCompany(c *company) {
 	c.equity = c.assets - c.liabilities
 	c.net_earnings = c.sales - c.expenses
 	c.net_income = c.income - c.expenses
-	c.company_type = c.companySize()
-	c.return_on_equity = c.net_earnings / (float64(c.stkDetails.SharesOutstanding) * c.stkDetails.Quote.Ask)
+	c.company_type  = c.companySize()
+	c.current_ratio = c.totalCurrentAssets / c.TotalCurrentLiabilities
+	c.quick_ratio = (c.assets - c.Inventory) / c.liabilities
+	c.sales_receivables = c.sales / c.recievables
+	c.roe = c.net_income/c.net_equity
+	c.roa = c.net_income/float64(c.assets)
+
 }
 
-func (c company) companySize() capitalization {
+func (c Company ) excitement(){
+	//need to get RSS feeds and parse for company news , new products , financial problems, bad earnings , govt problems, liabilities 
+}
+
+func (c Company) companySize() capitalization {
 	if capitalization(c.stkDetails.MarketCap) <= micro_cap {
 		return micro_cap
 	} else if capitalization(c.stkDetails.MarketCap) <= small_cap {
@@ -64,15 +73,59 @@ func (c company) companySize() capitalization {
 	return mega_cap
 }
 
-func (c company) valuePE() bool {
+func (c Company) valuePE() bool {
 	return c.pe <= 20
 }
 
-func (c company) growthPE() bool {
+func (c Company) growthPE() bool {
 	return c.pe <= 40
 }
 
-type priorityqueue []*company
+func (c Company) underValued() bool {
+	//company is profitable 
+	//net income rising by 10%
+	//company is in top 10% of the sector
+	//sales are up 10%
+	//increasing total assets
+	//increasing financial assets
+	// !(increasing inventory growth but flat sales)
+	//increasing equity
+	//price to net earnings
+	//trailing p/e
+	//forward p/e
+	//price to sales (1 < tgt < 4)
+	return c.stkDetails.PriceToBook < 2 
+}
+
+func (c Company) LongTermGrowth() bool {
+	//strong brand
+	//high barrier to entry aka moat
+	//R&D
+	//Company Mkt position
+	//Industry
+	//Economic prospects
+	//sales earnings 
+	//debt
+	//industry
+	//Economic prospects
+	return false	
+}
+
+func (c Company) IsSolvent()  bool{
+	return c.AssetsGrowing() && c.LiabilitiesInControl() && \
+	c.QuickRatio() && c.DebtToNetEquity() && c.WorkingCapital() 
+}
+
+func (c company) IsLiquid() bool {
+	return true
+}
+
+func (c company) IsCompanyProfitable() bool{
+	return c.ReturnOnEquity() >=  5.0 && c.ReturnOnAssets() >= 5 
+
+}
+
+type priorityqueue []*Company
 
 func (pq priorityqueue) Len() int {
 	return len(pq)
@@ -108,7 +161,7 @@ func (pq *priorityqueue) Pop() any {
 
 func main() {
 	i := 0
-	items := []company{
+	items := []Company{
 		{
 			pe:       12,
 			sales:    2000,
@@ -117,7 +170,7 @@ func main() {
 	}
 	pq := make(priorityqueue, len(items))
 	for _, com := range items {
-		pq[i] = &company{
+		pq[i] = &Company{
 			pe:    com.pe,
 			sales: com.sales,
 
