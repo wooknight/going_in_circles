@@ -30,21 +30,29 @@ func ProcessJson(data []byte) error {
 	if err != nil {
 		log.Fatal("Could not json unmarshall data", err)
 	}
-	for key := range stkData {
-		fmt.Println("Key =>", key, "Value =>")
-	}
-	fmt.Println("Key => cik ", "Value =>", stkData["cik"])
+	// for key := range stkData {
+	// 	fmt.Println("Key =>", key, "Value =>")
+	// }
+	// fmt.Println("Key => cik ", "Value =>", stkData["cik"])
 	dt, ok := stkData["facts"].(map[string]interface{})
 	if !ok {
 		fmt.Println(" Could not get facts Value")
+		return nil
 	}
 	us_gaap, ok := dt["us-gaap"].(map[string]interface{})
 	if !ok {
 		fmt.Println(" Could not get facts data us-gaap Value")
+		return nil
 	}
+
+	// {
+	// 	mystkLen, _ := json.Marshal(stkData)
+	// 	fmt.Println(len(us_gaap), len(string(mystkLen)))
+	// }
+
 	for key, val := range us_gaap {
 
-		if strings.Contains(key, "ncome") {
+		if strings.Contains(key, "NetIncomeLoss") {
 			dt, ok := val.(map[string]interface{})
 			if !ok {
 				fmt.Println(" Could not get income Value")
@@ -57,11 +65,13 @@ func ProcessJson(data []byte) error {
 			if !ok {
 				fmt.Println(" Could not get usd Value")
 			}
-			for key, val1 := range usd {
+			for idx := 0; idx < len(usd); idx++ {
+				val1 := usd[idx]
 				val2, _ := val1.(map[string]interface{})
 				yr := val2["fy"].(float64)
-				if int(yr) < time.Now().Year()-3 {
-					usd = append(usd[:key], usd[key+1:]...)
+				if int(yr) < time.Now().Year()-3 || val2["form"] != "10-K" {
+					usd = append(usd[:idx], usd[idx+1:]...)
+					idx--
 				}
 			}
 
@@ -69,10 +79,28 @@ func ProcessJson(data []byte) error {
 			delete(us_gaap, key)
 		}
 	}
-	fmt.Println(stkData)
+	by, err := json.Marshal(stkData)
+	if err != nil {
+		log.Fatal("Error while marshalling", err)
+	}
+
+	// {
+	// 	dt, ok := stkData["facts"].(map[string]interface{})
+	// 	if !ok {
+	// 		fmt.Println(" Could not get facts Value")
+	// 		return nil
+	// 	}
+	// 	us_gaap, ok := dt["us-gaap"].(map[string]interface{})
+	// 	if !ok {
+	// 		fmt.Println(" Could not get facts data us-gaap Value")
+	// 		return nil
+	// 	}
+	// 	fmt.Println("Len Checking ", len(us_gaap), len(by))
+	// }
+	fmt.Println(string(by))
 	return nil
 }
 
 func main() {
-	readFile("C:\\Users\\ram_n\\OneDrive\\Documents\\CIK0001045810.json")
+	readFile("CIK0001045810.json")
 }

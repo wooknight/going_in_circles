@@ -84,7 +84,7 @@ type Company struct {
 func NewCompany(c *Company) {
 	c.stkDetails, err = equity.Get(c.ticker)
 	if err != nil {
-		// Uh-oh!
+		// Uh-oh! cannt get the ticker details
 		panic(err)
 	}
 	// All good.
