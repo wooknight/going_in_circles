@@ -52,7 +52,8 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *config.TemplateData)
 
 func RenderTemplateTotal() (map[string]*template.Template, error) {
 	myTempls := map[string]*template.Template{}
-	pages, err := filepath.Glob("./templates/*.page.tmpl")
+	tmplatePath, _ := filepath.Abs("../..//templates")
+	pages, err := filepath.Glob(filepath.Join(tmplatePath, "/*.page.tmpl"))
 	if err != nil {
 		return myTempls, err
 	}
@@ -62,7 +63,7 @@ func RenderTemplateTotal() (map[string]*template.Template, error) {
 		if err != nil {
 			return myTempls, err
 		}
-		ts, err = ts.ParseGlob("./templates/*.layout.tmpl")
+		ts, err = ts.ParseGlob(filepath.Join(tmplatePath, "/*.layout.tmpl"))
 		if err != nil {
 			return myTempls, err
 		}
