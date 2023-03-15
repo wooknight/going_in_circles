@@ -31,7 +31,12 @@ func getTask(r io.Reader, args ...string) (string, error) {
 func main() {
 	if os.Getenv("TODO_FILENAME") != "" {
 		todoFileName = os.Getenv("TODO_FILENAME")
+
 	}
+	verbose := flag.Bool("verbose", false, "Print all info")
+	unfinished := flag.Bool("unfinished", false, "Print all except finished")
+	delete := flag.Int("del", -1, "delete i item in the list")
+
 	add := flag.Bool("add", false, "add task to the ToDo List")
 	list := flag.Bool("list", false, "list all tasks")
 	complete := flag.Int("complete", 0, "item to be completed")
@@ -42,6 +47,12 @@ func main() {
 		os.Exit(1)
 	}
 	switch {
+	case *delete > 0:
+		l.Remove(*delete)
+	case *unfinished:
+		fmt.Println(l.Verbose())
+	case *verbose:
+		fmt.Println(l.Unfinished())
 	case *list:
 		fmt.Print(l)
 	case *add:
@@ -55,7 +66,7 @@ func main() {
 			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)
 		}
-	case *complete > 0:
+	case *complete >= 0:
 		if err := l.Complete(*complete); err != nil {
 			fmt.Fprintln(os.Stderr, err)
 			os.Exit(1)

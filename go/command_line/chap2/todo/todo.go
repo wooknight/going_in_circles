@@ -86,6 +86,30 @@ func (l *List) Load(filename string) error {
 	return json.Unmarshal(file, l)
 }
 
+func (l *List) Verbose() string {
+	formatted := ""
+	for k, t := range *l {
+		prefix := "  "
+		if t.Completed {
+			prefix = "X "
+		}
+		formatted += fmt.Sprintf("%s%d: %s - %v %v %v\n", prefix, k+1, t.Task, t.CompletedOn, t.Created, t.Updated)
+	}
+	return formatted
+}
+
+func (l *List) Unfinished() string {
+	formatted := ""
+	for k, t := range *l {
+		prefix := "  "
+		if t.Completed {
+			continue
+		}
+		formatted += fmt.Sprintf("%s%d: %s\n", prefix, k+1, t.Task)
+	}
+	return formatted
+}
+
 func (l *List) String() string {
 	formatted := ""
 	for k, t := range *l {
