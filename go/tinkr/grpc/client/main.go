@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	conn, err := grpc.Dial(":8080")
+	conn, err := grpc.Dial(":8080", grpc.WithInsecure()	)
 	if err != nil {
 		log.Fatalf("could not connect to server on 8080 . Error : %v", err)
 	}
@@ -22,7 +22,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Could not create product .Err : %v", err)
 	}
-	m, err := c.GetProduct(ctx, &pb.ProductID{Value: r})
+	m, err := c.GetProduct(ctx, &pb.ProductID{Value: r.Value})
 	if err != nil {
 		log.Fatalf("Could not get product .Err : %v", err)
 	}

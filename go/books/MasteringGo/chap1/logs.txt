@@ -1,0 +1,12 @@
+INFO: 2022/10/30 22:52:31 readstdin.go:26: Starting the application...
+INFO: 2022/10/30 22:52:31 readstdin.go:27: Something noteworthy happened
+WARNING: 2022/10/30 22:52:31 readstdin.go:28: There is something you should know about
+ERROR: 2022/10/30 22:52:31 readstdin.go:29: Something went wrong
+INFO: 2022/10/30 22:57:07 readstdin.go:26: Starting the application...
+INFO: 2022/10/30 22:57:07 readstdin.go:27: Something noteworthy happened
+WARNING: 2022/10/30 22:57:07 There is something you should know about
+ERROR: 2022/10/30 22:57:07 readstdin.go:29: Something went wrong
+INFO: 2022/10/30 22:57:39 readstdin.go:26: Starting the application...
+INFO: 2022/10/30 22:57:39 readstdin.go:27: Something noteworthy happened
+WARNING: 2022/10/30 22:57:39 readstdin.go:28: There is something you should know about
+ERROR: 2022/10/30 22:57:39 readstdin.go:29: Something went wrong

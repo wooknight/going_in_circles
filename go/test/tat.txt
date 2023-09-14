@@ -1,0 +1,115 @@
+(dlv) break main.go:26
+Breakpoint 1 set at 0x10ad2c2 for main.CanEnd() ./main.go:26
+(dlv) break main.go:31
+Breakpoint 2 set at 0x10ad311 for main.CanEnd() ./main.go:31
+(dlv) c
+> main.CanEnd() ./main.go:26 (hits goroutine(1):1 total:1) (PC: 0x10ad2c2)
+    21:	    end:=len(arr)
+    22:	    
+    23:	    for startIdx<end{
+    24:	        if jmps % 2 == 1 {
+    25:	            startIdx = getMinOfGreater (arr , startIdx , arr[startIdx])
+=>  26:	            if startIdx == -1{
+    27:	                break
+    28:	            }
+    29:	        }else{
+    30:	            startIdx = getMaxofSmaller (arr , startIdx , arr[startIdx])
+    31:	            if startIdx == -1{
+(dlv) locals
+jmps = 1
+end = 5
+(dlv) p startIdx
+3
+(dlv) p i
+(dlv) n
+> main.CanEnd() ./main.go:35 (PC: 0x10ad2cc)
+    30:	            startIdx = getMaxofSmaller (arr , startIdx , arr[startIdx])
+    31:	            if startIdx == -1{
+    32:	                break
+    33:	            }            
+    34:	        }
+=>  35:	        jmps++
+    36:	    }
+    37:	        return startIdx == end -1 
+    38:	}
+    39:	
+    40:	func getMinOfGreater (arr []int, startIdx , val int) int {
+(dlv) n
+> main.CanEnd() ./main.go:23 (PC: 0x10ad24e)
+    18:	
+    19:	func CanEnd(arr []int,startIdx, val int) bool {
+    20:	    jmps := 1
+    21:	    end:=len(arr)
+    22:	    
+=>  23:	    for startIdx<end{
+    24:	        if jmps % 2 == 1 {
+    25:	            startIdx = getMinOfGreater (arr , startIdx , arr[startIdx])
+    26:	            if startIdx == -1{
+    27:	                break
+    28:	            }
+(dlv) n
+> main.CanEnd() ./main.go:24 (PC: 0x10ad25f)
+    19:	func CanEnd(arr []int,startIdx, val int) bool {
+    20:	    jmps := 1
+    21:	    end:=len(arr)
+    22:	    
+    23:	    for startIdx<end{
+=>  24:	        if jmps % 2 == 1 {
+    25:	            startIdx = getMinOfGreater (arr , startIdx , arr[startIdx])
+    26:	            if startIdx == -1{
+    27:	                break
+    28:	            }
+    29:	        }else{
+(dlv) n
+> main.CanEnd() ./main.go:30 (PC: 0x10ad2ce)
+    25:	            startIdx = getMinOfGreater (arr , startIdx , arr[startIdx])
+    26:	            if startIdx == -1{
+    27:	                break
+    28:	            }
+    29:	        }else{
+=>  30:	            startIdx = getMaxofSmaller (arr , startIdx , arr[startIdx])
+    31:	            if startIdx == -1{
+    32:	                break
+    33:	            }            
+    34:	        }
+    35:	        jmps++
+(dlv) n
+> main.CanEnd() ./main.go:31 (hits goroutine(1):1 total:1) (PC: 0x10ad311)
+    26:	            if startIdx == -1{
+    27:	                break
+    28:	            }
+    29:	        }else{
+    30:	            startIdx = getMaxofSmaller (arr , startIdx , arr[startIdx])
+=>  31:	            if startIdx == -1{
+    32:	                break
+    33:	            }            
+    34:	        }
+    35:	        jmps++
+    36:	    }
+(dlv) n
+> main.CanEnd() ./main.go:32 (PC: 0x10ad319)
+    27:	                break
+    28:	            }
+    29:	        }else{
+    30:	            startIdx = getMaxofSmaller (arr , startIdx , arr[startIdx])
+    31:	            if startIdx == -1{
+=>  32:	                break
+    33:	            }            
+    34:	        }
+    35:	        jmps++
+    36:	    }
+    37:	        return startIdx == end -1 
+(dlv) n
+> main.CanEnd() ./main.go:37 (PC: 0x10ad333)
+    32:	                break
+    33:	            }            
+    34:	        }
+    35:	        jmps++
+    36:	    }
+=>  37:	        return startIdx == end -1 
+    38:	}
+    39:	
+    40:	func getMinOfGreater (arr []int, startIdx , val int) int {
+    41:	    min := math.MaxInt
+    42:	    next:=-1
+(dlv) q

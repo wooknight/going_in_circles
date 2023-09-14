@@ -1,7 +1,11 @@
 package main
 
 import (
+	"compress/gzip"
+	"crypto/sha1"
+	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"sync"
@@ -98,7 +102,80 @@ func PrintAllHTTOAttributes() {
 
 }
 
-func main (){
+type wanker struct {
+	Name         string
+	Public_Repos int
+}
+
+func getGitHubInfo(login string) (string, int, error) {
+	url := fmt.Sprintf("https://api.github.com/users/%s", login)
+	resp, err := http.Get(url)
+	if err != nil {
+		log.Printf("Get called failed . Error = %v\n", err)
+		return "", 0, err
+	}
+	var r wanker
+	if resp.StatusCode != 200 {
+		log.Printf("Get called failed . Status code = %d\n", resp.StatusCode)
+		return "", 0, err
+
+	}
+	defer resp.Body.Close()
+	decode := json.NewDecoder(resp.Body)
+	if err = decode.Decode(&r); err != nil {
+		log.Printf("Decoding failed . Error : %v : Reply : %#v\n", err, r)
+		return "", 0, err
+	}
+	return r.Name, r.Public_Repos, nil
+}
+
+func getSha1(fileName string) (string, error) {
+	client := new(http.Client)
+	request, err := http.NewRequest(http.MethodGet, fileName, nil)
+	if err != nil {
+		log.Printf("could not create request  :%s . Error : %v", fileName, err)
+		return "", err
+	}
+	request.Header.Add("Accept-Encoding", "gzip")
+	resp, err := client.Do(request)
+	if err != nil {
+		log.Printf("could not open http file :%s . Error : %v", fileName, err)
+		return "", err
+	}
+	defer resp.Body.Close()
+	var reader io.ReadCloser
+	switch resp.Header.Get("Content-Encoding") {
+	case "gzip":
+		log.Printf("got Content-Encoding gzip\n")
+		reader, err = gzip.NewReader(resp.Body)
+		if err != nil {
+			log.Printf("could not open reader  . Error : %v", err)
+			return "", err
+		}
+		defer resp.Body.Close()
+	default:
+		log.Printf("could not get Content-Encoding \n")
+		reader = resp.Body
+
+	}
+	gunzipper, err := gzip.NewReader(reader)
+	if err != nil {
+		log.Printf("could not open zip. Error : %v", err)
+		return "", err
+	}
+
+	shaNew := sha1.New()
+	if _, err := io.Copy(shaNew, gunzipper); err != nil {
+		log.Printf("could not write to sha. Error : %v", err)
+		return "", err
+	}
+	sig := shaNew.Sum(nil)
+	return fmt.Sprintf("%x", sig), nil
+}
+
+func main() {
 	// PrintAllHTTOAttributes()
-	conf, err := GetConfig()
+	// conf, num, err := getGitHubInfo("wooknight")
+	sha1, err := getSha1("https://www.353solutions.com/c/znga/data/http.log.gz")
+	fmt.Println(sha1, err)
 }

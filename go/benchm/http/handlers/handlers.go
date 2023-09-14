@@ -3,6 +3,7 @@ package handlers
 import (
 	"encoding/json"
 	"encoding/xml"
+	"fmt"
 	"net/http"
 )
 
@@ -22,6 +23,7 @@ var u = struct {
 func SendJson(rw http.ResponseWriter, r *http.Request) {
 	rw.Header().Set("content-type", "application/json")
 	rw.WriteHeader(200)
+	fmt.Fprintf(rw, "%+v\n", rw)
 	json.NewEncoder(rw).Encode(&u)
 }
 
