@@ -15,7 +15,7 @@ import (
 func connect() {
 	userName := os.Getenv("USER") //testing123
 	password := os.Getenv("PW")   //6ftCi9eH*9WaYakF6ZA$6y#!$
-	fmt.Println(userName, password)
+	// fmt.Println(userName, password)
 	clientOptions := options.Client().ApplyURI(fmt.Sprintf("mongodb+srv://%s:%s@speedrate.rz0ap.mongodb.net/speedrate?retryWrites=true&w=majority", userName, password))
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -38,7 +38,7 @@ func connect() {
 		log.Fatal(err)
 	}
 	for cur.Next(context.TODO()) {
-		fmt.Println(cur,"---------------------------------")
+		fmt.Println(cur, "---------------------------------")
 	}
 	cur.Close(context.TODO())
 

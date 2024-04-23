@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"os"
+	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -58,8 +60,13 @@ func (h *UptimeHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		defer f.Close()
-		fName := "/tmp/" + h.Filename
-		out, err := os.Create(fName)
+		safeDir := "/tmp/"
+		absPath, err := filepath.Abs(filepath.Join(safeDir, h.Filename))
+		if err != nil || !strings.HasPrefix(absPath, safeDir) {
+			http.Error(w, "Invalid file name", http.StatusBadRequest)
+			return
+		}
+		out, err := os.Create(absPath)
 		if err != nil {
 			fmt.Fprintf(w, "Could not create file : %+v\n", err)
 			return
