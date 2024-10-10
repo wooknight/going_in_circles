@@ -2,12 +2,51 @@ package main
 
 import (
 	"fmt"
-	"log"
+	"io"
 	"os"
 	"os/signal"
 	"runtime"
+	"sync"
 	"time"
 )
+
+type Logger struct {
+	ch chan string
+	wg sync.WaitGroup
+}
+
+func NewLog(w io.Writer, cap int) *Logger {
+	lg := Logger{
+		ch: make(chan string, cap),
+	}
+	lg.wg.Add(1)
+	go func() {
+		defer lg.wg.Done()
+		for msg := range lg.ch {
+			fmt.Fprintln(w, msg)
+		}
+	}()
+	return &lg
+}
+func (l *Logger) Write(p []byte) (n int, err error) {
+	l.ch <- string(p)
+	return len(p), nil
+}
+
+func (l *Logger) Shutdown() {
+	close(l.ch)
+	l.wg.Wait()
+}
+
+func (l *Logger) Println(v string) {
+	select {
+	case l.ch <- v:
+		return
+	default:
+		fmt.Println("Dropping log message")
+	}
+
+}
 
 type device struct {
 	problem bool
@@ -25,11 +64,11 @@ func (d *device) Write(p []byte) (n int, err error) {
 func main() {
 	numCPU := runtime.NumCPU()
 	var d device
-	l := log.New(&d, "prefix", 0)
+	l := NewLog(&d, numCPU)
 	for i := 0; i < numCPU; i++ {
 		go func(id int) {
 			for {
-				l.Println("log something ", id)
+				l.Println(fmt.Sprintf("log something :%d", id))
 				time.Sleep(10 * time.Millisecond)
 			}
 		}(i)
@@ -41,6 +80,7 @@ func main() {
 	signal.Notify(sigChan, os.Interrupt)
 	for {
 		<-sigChan
+		//ignoreing data race issues here
 		d.problem = !d.problem
 	}
 }
