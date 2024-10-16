@@ -13,7 +13,7 @@ var numbers []int
 func init() {
 	rand.New(rand.NewSource(time.Now().UnixNano()))
 	numbers = generateList(1e7)
-	fmt.Printf("processing %d numbers using %d goruotines\n", len(numbers), len(numbers))
+	fmt.Printf("processing %d numbers using %d goruotines\n", len(numbers), runtime.NumCPU())
 }
 func BenchmarkSequential(b *testing.B) {
 	for i := 0; i < b.N; i++ {
@@ -27,6 +27,12 @@ func BenchmarkConcurrent(b *testing.B) {
 	}
 }
 
+func BenchmarkConcurrentChannel(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		addConcurrentChannel(runtime.NumCPU(), numbers)
+	}
+}
+
 func BenchmarkSequentialAgain(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		add(numbers)
@@ -36,6 +42,12 @@ func BenchmarkSequentialAgain(b *testing.B) {
 func BenchmarkConcurrentAgain(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		addConcurrent(runtime.NumCPU(), numbers)
+	}
+}
+
+func BenchmarkConcurrentChannelAgain(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		addConcurrentChannel(runtime.NumCPU(), numbers)
 	}
 }
 
