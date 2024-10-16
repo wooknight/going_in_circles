@@ -24,6 +24,7 @@ func main() {
 		group:    "chootiya",
 	}
 	fmt.Printf("User = %v", user)
+	addElem()
 }
 
 func addElem(list map[string]admin, itm admin) bool {
