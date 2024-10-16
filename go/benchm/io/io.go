@@ -1,3 +1,8 @@
+// All material is licensed under the Apache License Version 2.0, January 2004
+// http://www.apache.org/licenses/LICENSE-2.0
+
+// Understanding your workload is critically important in understanding
+// if something can be made concurrent and how complex it is to perform.
 package main
 
 import (
@@ -12,20 +17,21 @@ import (
 
 func main() {
 	docs := generateList(1e3)
+
 	fmt.Println(find("Go", docs))
 	fmt.Println(findConcurrent(runtime.NumCPU(), "Go", docs))
 }
 
-func generateList(n int) []string {
-	docs := make([]string, n)
-	for i := 0; i < n; i++ {
+func generateList(totalDocs int) []string {
+	docs := make([]string, totalDocs)
+	for i := 0; i < totalDocs; i++ {
 		docs[i] = "test.xml"
 	}
 	return docs
 }
 
 func read(doc string) ([]item, error) {
-	time.Sleep(time.Millisecond * 100) // simulate blocking file read
+	time.Sleep(time.Millisecond) // Simulate blocking disk read.
 	var d document
 	if err := xml.Unmarshal([]byte(file), &d); err != nil {
 		return nil, err
@@ -33,52 +39,56 @@ func read(doc string) ([]item, error) {
 	return d.Channel.Items, nil
 }
 
-func find(target string, docs []string) int {
-	var count int
+func find(topic string, docs []string) int {
+	var found int
 	for _, doc := range docs {
 		items, err := read(doc)
 		if err != nil {
 			continue
 		}
 		for _, item := range items {
-			if strings.Contains(item.Description, target) {
-				count++
+			if strings.Contains(item.Description, topic) {
+				found++
 			}
 		}
 	}
-	return count
+	return found
 }
 
-func findConcurrent(goroutines int, target string, docs []string) int {
-	var count int64
+func findConcurrent(goroutines int, topic string, docs []string) int {
+	var found int64
+
 	var wg sync.WaitGroup
 	wg.Add(goroutines)
+
 	ch := make(chan string, len(docs))
+
 	for g := 0; g < goroutines; g++ {
 		go func() {
-			var c int
+			var lFound int64
 			for doc := range ch {
 				items, err := read(doc)
 				if err != nil {
-
 					continue
 				}
 				for _, item := range items {
-					if strings.Contains(item.Description, target) {
-						c++
+					if strings.Contains(item.Description, topic) {
+						lFound++
 					}
 				}
 			}
-			atomic.AddInt64(&count, int64(c))
+			atomic.AddInt64(&found, lFound)
 			wg.Done()
 		}()
 	}
+
 	for _, doc := range docs {
 		ch <- doc
 	}
 	close(ch)
+
 	wg.Wait()
-	return int(count)
+	return int(found)
 }
 
 var file = `<?xml version="1.0" encoding="UTF-8"?>
