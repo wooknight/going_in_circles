@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 	"time"
@@ -82,6 +83,7 @@ func checkWord(word string) (bool, error) {
 }
 
 func main() {
+
 	var err error
 	// Load the map back
 	cache, err = loadMapFromFile(filePath)
@@ -91,6 +93,41 @@ func main() {
 	}
 	// fmt.Println("Loaded data:", cache)
 
+	//terminal()
+
+	http.HandleFunc("/wordler", func(w http.ResponseWriter, r *http.Request) {
+		// Parse query parameters
+		bannedString := r.URL.Query().Get("banned")
+		curStr := r.URL.Query().Get("current")
+		if len(bannedString) == 0 || len(curStr) == 0 {
+			w.WriteHeader(http.StatusBadRequest)
+			fmt.Fprintln(w, "no parameters")
+			return
+		}
+		bytes, err := base64.StdEncoding.DecodeString(curStr)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			fmt.Fprintln(w, "Error decoding current:", err)
+			return
+		}
+		if len(bytes) != 5 {
+			fmt.Fprintln(w, "no parameters")
+			w.WriteHeader(http.StatusBadRequest)
+			return
+		}
+		slate := [5]byte{bytes[0], bytes[1], bytes[2], bytes[3], bytes[4]}
+		wordle([]byte(bannedString), slate, w)
+		saveMapToFile(filePath, cache)
+		w.WriteHeader(http.StatusOK)
+	})
+
+	port := ":8765"
+	if err := http.ListenAndServe(port, nil); err != nil {
+		fmt.Printf("Error starting server: %s\n", err)
+	}
+}
+
+func terminal() bool {
 	bannedString := flag.String("banned", "", "list of characters banned")
 	curStr := flag.String("current", "", "current string in base 64")
 	flag.Parse()
@@ -99,18 +136,18 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Decode the Base64 string into a byte slice
 	bytes, err := base64.StdEncoding.DecodeString(*curStr)
 	if err != nil {
 		fmt.Println("Error decoding environment variable:", err)
-		return
+		return true
 	}
 	slate := [5]byte{bytes[0], bytes[1], bytes[2], bytes[3], bytes[4]}
-	wordle([]byte(*bannedString), slate)
+	wordle([]byte(*bannedString), slate, os.Stdout)
 	saveMapToFile(filePath, cache)
+	return false
 }
 
-func wordle(banned []byte, slate [5]byte) {
+func wordle(banned []byte, slate [5]byte, w io.Writer) {
 	for i := 0; i < 5; i++ {
 		if slate[i] >= byte('a') && slate[i] <= byte('z') {
 			continue
@@ -120,13 +157,13 @@ func wordle(banned []byte, slate [5]byte) {
 				continue
 			}
 			slate[i] = byte(strt)
-			wordle(banned, slate)
+			wordle(banned, slate, w)
 		}
 	}
 	valid, err := checkWord(string(slate[:]))
 	if err != nil {
-		fmt.Fprint(os.Stderr, err.Error())
+		fmt.Fprintln(os.Stderr, err.Error())
 	} else if valid {
-		fmt.Println(string(slate[:]))
+		fmt.Fprintln(w, string(slate[:]))
 	}
 }
