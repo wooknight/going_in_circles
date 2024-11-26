@@ -3,7 +3,6 @@ package main
 import (
 	"bytes"
 	"encoding/base64"
-	"encoding/json"
 	"flag"
 	"fmt"
 	"io"
@@ -12,49 +11,7 @@ import (
 	"time"
 )
 
-var cache map[string]string
-
-const filePath = "data.json"
-
-func saveMapToFile(filePath string, data map[string]string) error {
-	// Open the file for writing
-	file, err := os.Create(filePath)
-	if err != nil {
-		return fmt.Errorf("failed to create file: %v", err)
-	}
-	defer file.Close()
-
-	// Serialize the map to JSON and write to the file
-	encoder := json.NewEncoder(file)
-	if err := encoder.Encode(data); err != nil {
-		return fmt.Errorf("failed to encode map: %v", err)
-	}
-	return nil
-}
-func loadMapFromFile(filePath string) (map[string]string, error) {
-	data := make(map[string]string)
-
-	// Open the file for reading
-
-	file, err := os.Open(filePath)
-	if err != nil {
-		fmt.Println("file does not exist")
-		return data, nil
-	}
-	defer file.Close()
-
-	// Decode the JSON into a map
-	decoder := json.NewDecoder(file)
-	if err := decoder.Decode(&data); err != nil {
-		return nil, fmt.Errorf("failed to decode map: %v", err)
-	}
-	return data, nil
-}
-
 func checkWord(word string) (bool, error) {
-	if valid, ok := cache[word]; ok {
-		return valid == "true", nil
-	}
 	for {
 		url := fmt.Sprintf("https://api.dictionaryapi.dev/api/v2/entries/en/%s", word)
 		req, _ := http.NewRequest("GET", url, nil)
@@ -71,27 +28,16 @@ func checkWord(word string) (bool, error) {
 		}
 		// If the status code is 200, the word is valid
 		if resp.StatusCode == http.StatusOK {
-			cache[word] = "true"
 			return true, nil
 		}
 		// If not, it's not a valid word
 		if resp.StatusCode == http.StatusNotFound {
-			cache[word] = "false"
 			return false, nil
 		}
 	}
 }
 
 func main() {
-
-	var err error
-	// Load the map back
-	cache, err = loadMapFromFile(filePath)
-	if err != nil {
-		fmt.Println("Error loading map:", err)
-		return
-	}
-	// fmt.Println("Loaded data:", cache)
 
 	//terminal()
 
@@ -110,15 +56,13 @@ func main() {
 			fmt.Fprintln(w, "Error decoding current:", err)
 			return
 		}
-		if len(bytes) != 5 {
-			fmt.Fprintln(w, "no parameters")
+		if len(bytes) < 5 {
 			w.WriteHeader(http.StatusBadRequest)
+			fmt.Fprintln(w, "no parameters - current : ", string(bytes), " length : ", len(bytes))
 			return
 		}
 		slate := [5]byte{bytes[0], bytes[1], bytes[2], bytes[3], bytes[4]}
 		wordle([]byte(bannedString), slate, w)
-		saveMapToFile(filePath, cache)
-		w.WriteHeader(http.StatusOK)
 	})
 
 	port := ":8765"
@@ -143,7 +87,6 @@ func terminal() bool {
 	}
 	slate := [5]byte{bytes[0], bytes[1], bytes[2], bytes[3], bytes[4]}
 	wordle([]byte(*bannedString), slate, os.Stdout)
-	saveMapToFile(filePath, cache)
 	return false
 }
 
