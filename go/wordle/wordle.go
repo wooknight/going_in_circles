@@ -83,10 +83,10 @@ func main() {
 			fmt.Fprintln(w, "Error decoding current:", err)
 			return
 		}
-		bytes = []byte(html.EscapeString(string(bytes)))
+
 		if len(bytes) < 5 {
 			w.WriteHeader(http.StatusBadRequest)
-			fmt.Fprintln(w, "no parameters - current : ", string(bytes), " length : ", len(bytes))
+			fmt.Fprintln(w, "no parameters - current : ", html.EscapeString(string(bytes)), " length : ", len(bytes))
 			return
 		}
 		slate := [5]byte{bytes[0], bytes[1], bytes[2], bytes[3], bytes[4]}
