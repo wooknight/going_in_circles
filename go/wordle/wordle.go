@@ -11,6 +11,13 @@ import (
 	"time"
 )
 
+const WORD_LENGTH = 5
+
+// declaring the variable which is an ASCII value of A
+const A byte = 'A'
+
+var wordleWords string
+
 func checkWord(word string) (bool, error) {
 	for {
 		url := fmt.Sprintf("https://api.dictionaryapi.dev/api/v2/entries/en/%s", word)
@@ -37,12 +44,31 @@ func checkWord(word string) (bool, error) {
 	}
 }
 
+func check(str string, present []chrPresent) {
+	for i, ch := range str {
+		if _, ok := present[i][int8(ch)]; ok {
+			return
+		}
+	}
+	if ok, err := checkWord(str); ok && err == nil {
+		fmt.Println(str, "is a valid Wordle word")
+	}
+}
+
+type chrPresent map[int8]bool
+
 func main() {
 
 	//terminal()
 
 	http.HandleFunc("/wordler", func(w http.ResponseWriter, r *http.Request) {
 		// Parse query parameters
+		notValid := make([]chrPresent, WORD_LENGTH)
+
+		mMap := make(chrPresent)
+		mMap['M'] = true
+		notValid[3] = mMap
+
 		bannedString := r.URL.Query().Get("banned")
 		curStr := r.URL.Query().Get("current")
 		if len(bannedString) == 0 || len(curStr) == 0 {
@@ -62,7 +88,7 @@ func main() {
 			return
 		}
 		slate := [5]byte{bytes[0], bytes[1], bytes[2], bytes[3], bytes[4]}
-		wordle([]byte(bannedString), slate, w)
+		wordle([]byte(bannedString), slate, notValid, w)
 	})
 
 	port := ":8765"
@@ -90,7 +116,7 @@ func terminal() bool {
 	return false
 }
 
-func wordle(banned []byte, slate [5]byte, w io.Writer) {
+func wordle(banned []byte, slate [5]byte, notValid []chrPresent, w io.Writer) {
 	for i := 0; i < 5; i++ {
 		if slate[i] >= byte('a') && slate[i] <= byte('z') {
 			continue
@@ -100,13 +126,8 @@ func wordle(banned []byte, slate [5]byte, w io.Writer) {
 				continue
 			}
 			slate[i] = byte(strt)
-			wordle(banned, slate, w)
+			wordle(banned, slate, notValid, w)
 		}
 	}
-	valid, err := checkWord(string(slate[:]))
-	if err != nil {
-		fmt.Fprintln(os.Stderr, err.Error())
-	} else if valid {
-		fmt.Fprintln(w, string(slate[:]))
-	}
+	check(string(slate[:]), notValid)
 }
