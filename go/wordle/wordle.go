@@ -5,6 +5,7 @@ import (
 	"encoding/base64"
 	"flag"
 	"fmt"
+	"html"
 	"io"
 	"net/http"
 	"os"
@@ -82,6 +83,7 @@ func main() {
 			fmt.Fprintln(w, "Error decoding current:", err)
 			return
 		}
+		bytes = []byte(html.EscapeString(string(bytes)))
 		if len(bytes) < 5 {
 			w.WriteHeader(http.StatusBadRequest)
 			fmt.Fprintln(w, "no parameters - current : ", string(bytes), " length : ", len(bytes))
