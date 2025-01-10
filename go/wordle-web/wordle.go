@@ -67,8 +67,8 @@ func main() {
 		notValid := make([]chrPresent, WORD_LENGTH)
 
 		mMap := make(chrPresent)
-		mMap['M'] = true
-		notValid[3] = mMap
+		mMap['Y'] = true
+		notValid[2] = mMap
 
 		bannedString := r.URL.Query().Get("banned")
 		curStr := r.URL.Query().Get("current")
