@@ -41,8 +41,26 @@ func checkWord(word string) (bool, error) {
 }
 
 func check(str string, present []chrPresent) {
+
 	for i, ch := range str {
 		if _, ok := present[i][int8(ch)]; ok {
+			return
+		}
+	}
+	chrsToCheckFor := make(chrPresent)
+	for _, mapper := range present {
+		for key := range mapper {
+			chrsToCheckFor[key] = false
+		}
+
+	}
+	for _, ch := range str {
+		if _, ok := chrsToCheckFor[int8(ch)]; ok {
+			chrsToCheckFor[int8(ch)] = true
+		}
+	}
+	for _, exists := range chrsToCheckFor {
+		if !exists {
 			return
 		}
 	}
@@ -55,16 +73,15 @@ type chrPresent map[int8]bool
 
 func main() {
 	chrMapPos := make(map[int]byte)
-	chrMapPos[3] = 'E'
-	chrMapPos[4] = 'R'
-
-	chrsNotPresent := []byte("ETUIOASFGK")
+	chrMapPos[2] = 'I'
+	chrsNotPresent := []byte("ERTUPASDHK")
 
 	notValid := make([]chrPresent, WORD_LENGTH)
 
-	mMap := make(chrPresent)
-	mMap['Y'] = true
-	notValid[2] = mMap
+	cMap := make(chrPresent)
+	cMap['C'] = true
+	notValid[0] = cMap
+	notValid[3] = cMap
 
 	slate := []byte{}
 	var gen func(int, []byte)
