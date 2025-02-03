@@ -1,0 +1,4 @@
+## Jack Henry Tasks
+```dataview
+task from "1-projects/Jack Henry/Jack Henry ToDo" where !completed and  !contains(text, "cancelled")
+```

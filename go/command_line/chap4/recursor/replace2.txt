@@ -1,0 +1,4 @@
+## SLHA Tasks
+```dataview
+task from "1-projects/Jack Henry/SLHA/SLHA ToDo" where !completed and  !contains(text, "cancelled")
+```

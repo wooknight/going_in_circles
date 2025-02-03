@@ -16,6 +16,7 @@ func main() {
 	fmt.Fprintln(os.Stdout, "Welcome to the todo app")
 	for {
 		command := bufio.NewScanner(os.Stdin)
+		command.Split(bufio.ScanLines)
 		command.Scan()
 		inp := strings.Split(command.Text(), " ")
 		if len(inp) == 0 {

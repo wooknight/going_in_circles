@@ -73,15 +73,15 @@ type chrPresent map[int8]bool
 
 func main() {
 	chrMapPos := make(map[int]byte)
-	chrMapPos[2] = 'I'
-	chrsNotPresent := []byte("ERTUPASDHK")
+	chrMapPos[1] = 'D'
+	chrMapPos[3] = 'E'
+	chrsNotPresent := []byte("AI")
 
 	notValid := make([]chrPresent, WORD_LENGTH)
 
 	cMap := make(chrPresent)
-	cMap['C'] = true
-	notValid[0] = cMap
-	notValid[3] = cMap
+	cMap['U'] = true
+	notValid[4] = cMap
 
 	slate := []byte{}
 	var gen func(int, []byte)

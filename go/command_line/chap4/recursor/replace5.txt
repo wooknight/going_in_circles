@@ -1,0 +1,4 @@
+## Personal Todo
+```dataview
+task from "1-projects/Todo" where !completed and  !contains(text, "cancelled")
+```
