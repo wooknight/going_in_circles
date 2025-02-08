@@ -74,7 +74,7 @@ func readRecursively(root string, call func(string) error) error {
 }
 
 func main() {
-	root := flag.String("root", ".", "The directory to start recursing")
+	root := flag.String("root", "/Users/ramesh/Documents/obsidian/obsidian", "The directory to start recursing")
 	flag.Parse()
 
 	readRecursively(*root, processFile)
