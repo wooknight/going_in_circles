@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embed"
 	_ "embed"
 	"flag"
 	"fmt"
@@ -10,20 +11,24 @@ import (
 	"strings"
 )
 
-//go:embed replace1.txt
-var replace1 string
+//go:embed rules/*.txt
+var rulesFS embed.FS
 
-//go:embed replace2.txt
-var replace2 string
-
-//go:embed replace3.txt
-var replace3 string
-
-//go:embed replace4.txt
-var replace4 string
-
-//go:embed replace5.txt
-var replace5 string
+func getRules() ([]string, error) {
+	var rules []string
+	entries, err := rulesFS.ReadDir("rules")
+	if err != nil {
+		return nil, fmt.Errorf("reading rules: %w", err)
+	}
+	for _, entry := range entries {
+		rule, err := rulesFS.ReadFile("rules/" + entry.Name())
+		if err != nil {
+			return nil, fmt.Errorf("reading rule %s: %w", entry.Name(), err)
+		}
+		rules = append(rules, string(rule))
+	}
+	return rules, nil
+}
 
 // processFile reads a file, replaces the dataview block if found, and writes the file back.
 func processFile(path string) error {
@@ -32,16 +37,17 @@ func processFile(path string) error {
 	if err != nil {
 		return fmt.Errorf("reading file: %w", err)
 	}
-
 	// Convert file content to a string.
 	content := string(data)
-
+	rules, err := getRules()
+	if err != nil {
+		return fmt.Errorf("getting rules: %w", err)
+	}
+	replacedContent := content
 	// Replace all occurrences of the dataview block.
-	replacedContent := strings.ReplaceAll(content, replace1, "")
-	replacedContent = strings.ReplaceAll(replacedContent, replace2, "")
-	replacedContent = strings.ReplaceAll(replacedContent, replace3, "")
-	replacedContent = strings.ReplaceAll(replacedContent, replace4, "")
-	replacedContent = strings.ReplaceAll(replacedContent, replace5, "")
+	for _, rule := range rules {
+		replacedContent = strings.ReplaceAll(replacedContent, rule, "")
+	}
 	// If no changes were made, no need to rewrite the file.
 	if replacedContent == content {
 		return nil
@@ -74,7 +80,7 @@ func readRecursively(root string, call func(string) error) error {
 }
 
 func main() {
-	root := flag.String("root", "/Users/ramesh/Documents/obsidian/obsidian", "The directory to start recursing")
+	root := flag.String("root", "/Users/ramesh/Documents/obsidian/obsidian/2-areas/journal/daily", "The directory to start recursing")
 	flag.Parse()
 
 	readRecursively(*root, processFile)
