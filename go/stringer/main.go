@@ -1,6 +1,7 @@
 package main
 
 //https://last9.io/blog/golang-stringer-tool/
+//stringer --type StatusCode --trimprefix status
 import "fmt"
 
 type StatusCode int
