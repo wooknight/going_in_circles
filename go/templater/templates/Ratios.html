@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ratios Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { width: 100%!;(string=Ratios) border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Ratios Report</h2>
+    <table>
+	<tr><th>Symbol</th><th>Date</th><th>Calendar Year</th><th>Period</th><th>Current Ratio</th><th>Quick Ratio</th><th>Cash Ratio</th><th>Days Of Sales Outstanding</th><th>Days Of Inventory Outstanding</th><th>Operating Cycle</th><th>Days Of Payables Outstanding</th><th>Cash Conversion Cycle</th><th>Gross Profit Margin</th><th>Operating Profit Margin</th><th>Pretax Profit Margin</th><th>Net Profit Margin</th><th>Effective Tax Rate</th><th>Return On Assets</th><th>Return On Equity</th><th>Return On Capital Employed</th><th>Net Income Per E B T</th><th>Ebt Per Ebit</th><th>Ebit Per Revenue</th><th>Debt Ratio</th><th>Debt Equity Ratio</th><th>Long Term Debt To Capitalization</th><th>Total Debt To Capitalization</th><th>Interest Coverage</th><th>Cash Flow To Debt Ratio</th><th>Company Equity Multiplier</th><th>Receivables Turnover</th><th>Payables Turnover</th><th>Inventory Turnover</th><th>Fixed Asset Turnover</th><th>Asset Turnover</th><th>Operating Cash Flow Per Share</th><th>Free Cash Flow Per Share</th><th>Cash Per Share</th><th>Payout Ratio</th><th>Operating Cash Flow Sales Ratio</th><th>Free Cash Flow Operating Cash Flow Ratio</th><th>Cash Flow Coverage Ratios</th><th>Short Term Coverage Ratios</th><th>Capital Expenditure Coverage Ratio</th><th>Dividend Paid And Capex Coverage Ratio</th><th>Dividend Payout Ratio</th><th>Price Book Value Ratio</th><th>Price To Book Ratio</th><th>Price To Sales Ratio</th><th>Price Earnings Ratio</th><th>Price To Free Cash Flows Ratio</th><th>Price To Operating Cash Flows Ratio</th><th>Price Cash Flow Ratio</th><th>Price Earnings To Growth Ratio</th><th>Price Sales Ratio</th><th>Dividend Yield</th><th>Enterprise Value Multiple</th><th>Price Fair Value</th>
+</tr>        {{range .}}
+        <tr>
+		<td>{{.Symbol}}</td><td>{{.Date}}</td><td>{{.CalendarYear}}</td><td>{{.Period}}</td><td>${{.CurrentRatio}}</td><td>${{.QuickRatio}}</td><td>${{.CashRatio}}</td><td>${{.DaysOfSalesOutstanding}}</td><td>${{.DaysOfInventoryOutstanding}}</td><td>${{.OperatingCycle}}</td><td>${{.DaysOfPayablesOutstanding}}</td><td>${{.CashConversionCycle}}</td><td>${{.GrossProfitMargin}}</td><td>${{.OperatingProfitMargin}}</td><td>${{.PretaxProfitMargin}}</td><td>${{.NetProfitMargin}}</td><td>${{.EffectiveTaxRate}}</td><td>${{.ReturnOnAssets}}</td><td>${{.ReturnOnEquity}}</td><td>${{.ReturnOnCapitalEmployed}}</td><td>${{.NetIncomePerEBT}}</td><td>${{.EbtPerEbit}}</td><td>${{.EbitPerRevenue}}</td><td>${{.DebtRatio}}</td><td>${{.DebtEquityRatio}}</td><td>${{.LongTermDebtToCapitalization}}</td><td>${{.TotalDebtToCapitalization}}</td><td>${{.InterestCoverage}}</td><td>${{.CashFlowToDebtRatio}}</td><td>${{.CompanyEquityMultiplier}}</td><td>${{.ReceivablesTurnover}}</td><td>${{.PayablesTurnover}}</td><td>${{.InventoryTurnover}}</td><td>${{.FixedAssetTurnover}}</td><td>${{.AssetTurnover}}</td><td>${{.OperatingCashFlowPerShare}}</td><td>${{.FreeCashFlowPerShare}}</td><td>${{.CashPerShare}}</td><td>${{.PayoutRatio}}</td><td>${{.OperatingCashFlowSalesRatio}}</td><td>${{.FreeCashFlowOperatingCashFlowRatio}}</td><td>${{.CashFlowCoverageRatios}}</td><td>${{.ShortTermCoverageRatios}}</td><td>${{.CapitalExpenditureCoverageRatio}}</td><td>${{.DividendPaidAndCapexCoverageRatio}}</td><td>${{.DividendPayoutRatio}}</td><td>${{.PriceBookValueRatio}}</td><td>${{.PriceToBookRatio}}</td><td>${{.PriceToSalesRatio}}</td><td>${{.PriceEarningsRatio}}</td><td>${{.PriceToFreeCashFlowsRatio}}</td><td>${{.PriceToOperatingCashFlowsRatio}}</td><td>${{.PriceCashFlowRatio}}</td><td>${{.PriceEarningsToGrowthRatio}}</td><td>${{.PriceSalesRatio}}</td><td>${{.DividendYield}}</td><td>${{.EnterpriseValueMultiple}}</td><td>${{.PriceFairValue}}</td>
+</tr>
+        {{end}}
+    </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income Statement Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { width: 100%!;(string=Income Statement) border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Income Statement Report</h2>
+    <table>
+	<tr><th>Date</th><th>Symbol</th><th>Reported Currency</th><th>C I K</th><th>Filling Date</th><th>Accepted Date</th><th>Calendar Year</th><th>Period</th><th>Revenue</th><th>Cost Of Revenue</th><th>Gross Profit</th><th>Gross Profit Ratio</th><th>Research And Development Expenses</th><th>General And Administrative Expenses</th><th>Selling And Marketing Expenses</th><th>Selling General And Administrative Expenses</th><th>Other Expenses</th><th>Operating Expenses</th><th>Cost And Expenses</th><th>Interest Income</th><th>Interest Expense</th><th>Depreciation And Amortization</th><th>Ebitda</th><th>Ebitda Ratio</th><th>Operating Income</th><th>Operating Income Ratio</th><th>Total Other Income Expenses Net</th><th>Income Before Tax</th><th>Income Before Tax Ratio</th><th>Income Tax Expense</th><th>Net Income</th><th>Net Income Ratio</th><th>E P S</th><th>E P S Diluted</th><th>Weighted Average Shs Out</th><th>Weighted Average Shs Out Dil</th><th>Link</th><th>Final Link</th>
+</tr>        {{range .}}
+        <tr>
+		<td>{{.Date}}</td><td>{{.Symbol}}</td><td>{{.ReportedCurrency}}</td><td>{{.CIK}}</td><td>{{.FillingDate}}</td><td>{{.AcceptedDate}}</td><td>{{.CalendarYear}}</td><td>{{.Period}}</td><td>${{.Revenue}}</td><td>${{.CostOfRevenue}}</td><td>${{.GrossProfit}}</td><td>${{.GrossProfitRatio}}</td><td>${{.ResearchAndDevelopmentExpenses}}</td><td>${{.GeneralAndAdministrativeExpenses}}</td><td>${{.SellingAndMarketingExpenses}}</td><td>${{.SellingGeneralAndAdministrativeExpenses}}</td><td>${{.OtherExpenses}}</td><td>${{.OperatingExpenses}}</td><td>${{.CostAndExpenses}}</td><td>${{.InterestIncome}}</td><td>${{.InterestExpense}}</td><td>${{.DepreciationAndAmortization}}</td><td>${{.Ebitda}}</td><td>${{.EbitdaRatio}}</td><td>${{.OperatingIncome}}</td><td>${{.OperatingIncomeRatio}}</td><td>${{.TotalOtherIncomeExpensesNet}}</td><td>${{.IncomeBeforeTax}}</td><td>${{.IncomeBeforeTaxRatio}}</td><td>${{.IncomeTaxExpense}}</td><td>${{.NetIncome}}</td><td>${{.NetIncomeRatio}}</td><td>${{.EPS}}</td><td>${{.EPSDiluted}}</td><td>${{.WeightedAverageShsOut}}</td><td>${{.WeightedAverageShsOutDil}}</td><td>{{.Link}}</td><td>{{.FinalLink}}</td>
+</tr>
+        {{end}}
+    </table>
+</body>
+</html>

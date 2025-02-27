@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cash Flow Statement Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { width: 100%!;(string=Cash Flow Statement) border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Cash Flow Statement Report</h2>
+    <table>
+	<tr><th>Date</th><th>Symbol</th><th>Reported Currency</th><th>Cik</th><th>Filling Date</th><th>Accepted Date</th><th>Calendar Year</th><th>Period</th><th>Net Income</th><th>Depreciation And Amortization</th><th>Deferred Income Tax</th><th>Stock Based Compensation</th><th>Change In Working Capital</th><th>Accounts Receivables</th><th>Inventory</th><th>Accounts Payables</th><th>Other Working Capital</th><th>Other Non Cash Items</th><th>Net Cash Provided By Operating Activities</th><th>Investments In Property Plant And Equipment</th><th>Acquisitions Net</th><th>Purchases Of Investments</th><th>Sales Maturities Of Investments</th><th>Other Investing Activities</th><th>Net Cash Used For Investing Activities</th><th>Debt Repayment</th><th>Common Stock Issued</th><th>Common Stock Repurchased</th><th>Dividends Paid</th><th>Other Financing Activities</th><th>Net Cash Used Provided By Financing Activities</th><th>Effect Of Forex Changes On Cash</th><th>Net Change In Cash</th><th>Cash At End Of Period</th><th>Cash At Beginning Of Period</th><th>Operating Cash Flow</th><th>Capital Expenditure</th><th>Free Cash Flow</th><th>Link</th><th>Final Link</th>
+</tr>        {{range .}}
+        <tr>
+		<td>{{.Date}}</td><td>{{.Symbol}}</td><td>{{.ReportedCurrency}}</td><td>{{.Cik}}</td><td>{{.FillingDate}}</td><td>{{.AcceptedDate}}</td><td>{{.CalendarYear}}</td><td>{{.Period}}</td><td>${{.NetIncome}}</td><td>${{.DepreciationAndAmortization}}</td><td>${{.DeferredIncomeTax}}</td><td>${{.StockBasedCompensation}}</td><td>${{.ChangeInWorkingCapital}}</td><td>${{.AccountsReceivables}}</td><td>${{.Inventory}}</td><td>${{.AccountsPayables}}</td><td>${{.OtherWorkingCapital}}</td><td>${{.OtherNonCashItems}}</td><td>${{.NetCashProvidedByOperatingActivities}}</td><td>${{.InvestmentsInPropertyPlantAndEquipment}}</td><td>${{.AcquisitionsNet}}</td><td>${{.PurchasesOfInvestments}}</td><td>${{.SalesMaturitiesOfInvestments}}</td><td>${{.OtherInvestingActivities}}</td><td>${{.NetCashUsedForInvestingActivities}}</td><td>${{.DebtRepayment}}</td><td>${{.CommonStockIssued}}</td><td>${{.CommonStockRepurchased}}</td><td>${{.DividendsPaid}}</td><td>${{.OtherFinancingActivities}}</td><td>${{.NetCashUsedProvidedByFinancingActivities}}</td><td>${{.EffectOfForexChangesOnCash}}</td><td>${{.NetChangeInCash}}</td><td>${{.CashAtEndOfPeriod}}</td><td>${{.CashAtBeginningOfPeriod}}</td><td>${{.OperatingCashFlow}}</td><td>${{.CapitalExpenditure}}</td><td>${{.FreeCashFlow}}</td><td>{{.Link}}</td><td>{{.FinalLink}}</td>
+</tr>
+        {{end}}
+    </table>
+</body>
+</html>

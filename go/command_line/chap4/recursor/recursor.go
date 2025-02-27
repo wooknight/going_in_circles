@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 )
@@ -84,4 +85,12 @@ func main() {
 	flag.Parse()
 
 	readRecursively(*root, processFile)
+	//run the fix for setToday
+
+	cmd := exec.Command("bash", "-c", "/Users/ramesh/Documents/obsidian/obsidian/2-areas/journal/setToday.sh")
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		fmt.Println("Error:", err)
+	}
+	fmt.Println("Output:", string(output))
 }

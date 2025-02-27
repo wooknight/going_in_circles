@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balance Sheet Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { width: 100%!;(string=Balance Sheet) border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Balance Sheet Report</h2>
+    <table>
+	<tr><th>Date</th><th>Symbol</th><th>Reported Currency</th><th>C I K</th><th>Filling Date</th><th>Accepted Date</th><th>Calendar Year</th><th>Period</th><th>Cash And Cash Equivalents</th><th>Short Term Investments</th><th>Cash And Short Term Investments</th><th>Net Receivables</th><th>Inventory</th><th>Other Current Assets</th><th>Total Current Assets</th><th>Property Plant Equipment Net</th><th>Goodwill</th><th>Intangible Assets</th><th>Goodwill And Intangible Assets</th><th>Long Term Investments</th><th>Tax Assets</th><th>Other Non Current Assets</th><th>Total Non Current Assets</th><th>Other Assets</th><th>Total Assets</th><th>Account Payables</th><th>Short Term Debt</th><th>Tax Payables</th><th>Deferred Revenue</th><th>Other Current Liabilities</th><th>Total Current Liabilities</th><th>Long Term Debt</th><th>Deferred Revenue Non Current</th><th>Deferred Tax Liabilities Non Current</th><th>Other Non Current Liabilities</th><th>Total Non Current Liabilities</th><th>Other Liabilities</th><th>Capital Lease Obligations</th><th>Total Liabilities</th><th>Preferred Stock</th><th>Common Stock</th><th>Retained Earnings</th><th>Accumulated Other Comprehensive Income Loss</th><th>Other Total Stockholders Equity</th><th>Total Stockholders Equity</th><th>Total Equity</th><th>Total Liabilities And Stockholders Equity</th><th>Minority Interest</th><th>Total Liabilities And Total Equity</th><th>Total Investments</th><th>Total Debt</th><th>Net Debt</th><th>Link</th><th>Final Link</th>
+</tr>        {{range .}}
+        <tr>
+		<td>{{.Date}}</td><td>{{.Symbol}}</td><td>{{.ReportedCurrency}}</td><td>{{.CIK}}</td><td>{{.FillingDate}}</td><td>{{.AcceptedDate}}</td><td>{{.CalendarYear}}</td><td>{{.Period}}</td><td>${{.CashAndCashEquivalents}}</td><td>${{.ShortTermInvestments}}</td><td>${{.CashAndShortTermInvestments}}</td><td>${{.NetReceivables}}</td><td>${{.Inventory}}</td><td>${{.OtherCurrentAssets}}</td><td>${{.TotalCurrentAssets}}</td><td>${{.PropertyPlantEquipmentNet}}</td><td>${{.Goodwill}}</td><td>${{.IntangibleAssets}}</td><td>${{.GoodwillAndIntangibleAssets}}</td><td>${{.LongTermInvestments}}</td><td>${{.TaxAssets}}</td><td>${{.OtherNonCurrentAssets}}</td><td>${{.TotalNonCurrentAssets}}</td><td>${{.OtherAssets}}</td><td>${{.TotalAssets}}</td><td>${{.AccountPayables}}</td><td>${{.ShortTermDebt}}</td><td>${{.TaxPayables}}</td><td>${{.DeferredRevenue}}</td><td>${{.OtherCurrentLiabilities}}</td><td>${{.TotalCurrentLiabilities}}</td><td>${{.LongTermDebt}}</td><td>${{.DeferredRevenueNonCurrent}}</td><td>${{.DeferredTaxLiabilitiesNonCurrent}}</td><td>${{.OtherNonCurrentLiabilities}}</td><td>${{.TotalNonCurrentLiabilities}}</td><td>${{.OtherLiabilities}}</td><td>${{.CapitalLeaseObligations}}</td><td>${{.TotalLiabilities}}</td><td>${{.PreferredStock}}</td><td>${{.CommonStock}}</td><td>${{.RetainedEarnings}}</td><td>${{.AccumulatedOtherComprehensiveIncomeLoss}}</td><td>${{.OtherTotalStockholdersEquity}}</td><td>${{.TotalStockholdersEquity}}</td><td>${{.TotalEquity}}</td><td>${{.TotalLiabilitiesAndStockholdersEquity}}</td><td>${{.MinorityInterest}}</td><td>${{.TotalLiabilitiesAndTotalEquity}}</td><td>${{.TotalInvestments}}</td><td>${{.TotalDebt}}</td><td>${{.NetDebt}}</td><td>{{.Link}}</td><td>{{.FinalLink}}</td>
+</tr>
+        {{end}}
+    </table>
+</body>
+</html>

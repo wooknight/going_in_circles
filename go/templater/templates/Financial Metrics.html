@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Financial Metrics Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { width: 100%!;(string=Financial Metrics) border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Financial Metrics Report</h2>
+    <table>
+	<tr><th>Symbol</th><th>Date</th><th>Calendar Year</th><th>Period</th><th>Revenue Per Share</th><th>Net Income Per Share</th><th>Operating Cash Flow Per Share</th><th>Free Cash Flow Per Share</th><th>Cash Per Share</th><th>Book Value Per Share</th><th>Tangible Book Value Per Share</th><th>Shareholders Equity Per Share</th><th>Interest Debt Per Share</th><th>Market Cap</th><th>Enterprise Value</th><th>Pe Ratio</th><th>Price To Sales Ratio</th><th>Pocf Ratio</th><th>Pfcf Ratio</th><th>Pb Ratio</th><th>Ptb Ratio</th><th>Ev To Sales</th><th>Enterprise Value Over E B I T D A</th><th>Ev To Operating Cash Flow</th><th>Ev To Free Cash Flow</th><th>Earnings Yield</th><th>Free Cash Flow Yield</th><th>Debt To Equity</th><th>Debt To Assets</th><th>Net Debt To E B I T D A</th><th>Current Ratio</th><th>Interest Coverage</th><th>Income Quality</th><th>Dividend Yield</th><th>Payout Ratio</th><th>Sales General And Administrative To Revenue</th><th>Research And Development To Revenue</th><th>Intangibles To Total Assets</th><th>Capex To Operating Cash Flow</th><th>Capex To Revenue</th><th>Capex To Depreciation</th><th>Stock Based Compensation To Revenue</th><th>Graham Number</th><th>Roic</th><th>Return On Tangible Assets</th><th>Graham Net Net</th><th>Working Capital</th><th>Tangible Asset Value</th><th>Net Current Asset Value</th><th>Invested Capital</th><th>Average Receivables</th><th>Average Payables</th><th>Average Inventory</th><th>Days Sales Outstanding</th><th>Days Payables Outstanding</th><th>Days Of Inventory On Hand</th><th>Receivables Turnover</th><th>Payables Turnover</th><th>Inventory Turnover</th><th>Roe</th><th>Capex Per Share</th>
+</tr>        {{range .}}
+        <tr>
+		<td>{{.Symbol}}</td><td>{{.Date}}</td><td>{{.CalendarYear}}</td><td>{{.Period}}</td><td>${{.RevenuePerShare}}</td><td>${{.NetIncomePerShare}}</td><td>${{.OperatingCashFlowPerShare}}</td><td>${{.FreeCashFlowPerShare}}</td><td>${{.CashPerShare}}</td><td>${{.BookValuePerShare}}</td><td>${{.TangibleBookValuePerShare}}</td><td>${{.ShareholdersEquityPerShare}}</td><td>${{.InterestDebtPerShare}}</td><td>${{.MarketCap}}</td><td>${{.EnterpriseValue}}</td><td>${{.PeRatio}}</td><td>${{.PriceToSalesRatio}}</td><td>${{.PocfRatio}}</td><td>${{.PfcfRatio}}</td><td>${{.PbRatio}}</td><td>${{.PtbRatio}}</td><td>${{.EvToSales}}</td><td>${{.EnterpriseValueOverEBITDA}}</td><td>${{.EvToOperatingCashFlow}}</td><td>${{.EvToFreeCashFlow}}</td><td>${{.EarningsYield}}</td><td>${{.FreeCashFlowYield}}</td><td>${{.DebtToEquity}}</td><td>${{.DebtToAssets}}</td><td>${{.NetDebtToEBITDA}}</td><td>${{.CurrentRatio}}</td><td>${{.InterestCoverage}}</td><td>${{.IncomeQuality}}</td><td>${{.DividendYield}}</td><td>${{.PayoutRatio}}</td><td>${{.SalesGeneralAndAdministrativeToRevenue}}</td><td>${{.ResearchAndDevelopmentToRevenue}}</td><td>${{.IntangiblesToTotalAssets}}</td><td>${{.CapexToOperatingCashFlow}}</td><td>${{.CapexToRevenue}}</td><td>${{.CapexToDepreciation}}</td><td>${{.StockBasedCompensationToRevenue}}</td><td>${{.GrahamNumber}}</td><td>${{.Roic}}</td><td>${{.ReturnOnTangibleAssets}}</td><td>${{.GrahamNetNet}}</td><td>${{.WorkingCapital}}</td><td>${{.TangibleAssetValue}}</td><td>${{.NetCurrentAssetValue}}</td><td>${{.InvestedCapital}}</td><td>${{.AverageReceivables}}</td><td>${{.AveragePayables}}</td><td>${{.AverageInventory}}</td><td>${{.DaysSalesOutstanding}}</td><td>${{.DaysPayablesOutstanding}}</td><td>${{.DaysOfInventoryOnHand}}</td><td>${{.ReceivablesTurnover}}</td><td>${{.PayablesTurnover}}</td><td>${{.InventoryTurnover}}</td><td>${{.Roe}}</td><td>${{.CapexPerShare}}</td>
+</tr>
+        {{end}}
+    </table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stock Data Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        table { width: 100%!;(string=Stock Data) border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h2>Stock Data Report</h2>
+    <table>
+	<tr><th>Symbol</th><th>Free Float</th><th>Float Shares</th><th>Outstanding Shares</th><th>Date</th>
+</tr>        {{range .}}
+        <tr>
+		<td>{{.Symbol}}</td><td>${{.FreeFloat}}</td><td>${{.FloatShares}}</td><td>${{.OutstandingShares}}</td><td>{{.Date}}</td>
+</tr>
+        {{end}}
+    </table>
+</body>
+</html>
