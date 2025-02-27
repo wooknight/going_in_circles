@@ -1,6 +1,6 @@
 [user]
-	email = rameshnaidu@gmail.com
-	name = Ramesh Naidu
+	email = <EMAIL>
+	name = <FULL NAME>
 [http]
     postBuffer = 524288000
 
