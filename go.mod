@@ -8,27 +8,23 @@ require (
 	github.com/bwmarrin/go-alone v0.0.0-20190806015146-742bb55d1631
 	github.com/go-chi/chi/v5 v5.0.8
 	github.com/gomodule/redigo v1.8.9
-	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/websocket v1.5.0
 	github.com/jackc/pgconn v1.14.0
 	github.com/jackc/pgx/v5 v5.5.4
 	github.com/justinas/nosurf v1.1.1
-	github.com/microcosm-cc/bluemonday v1.0.23
 	github.com/pkg/profile v1.7.0
-	github.com/russross/blackfriday/v2 v2.1.0
 	github.com/unidoc/unipdf/v3 v3.64.0
 	github.com/vanng822/go-premailer v1.20.1
 	github.com/xhit/go-simple-mail/v2 v2.13.0
 	go.mongodb.org/mongo-driver v1.11.2
 	go.uber.org/zap v1.10.0
-	golang.org/x/crypto v0.31.0
-	golang.org/x/net v0.33.0
+	golang.org/x/crypto v0.35.0
+	golang.org/x/net v0.36.0
 )
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.1 // indirect
 	github.com/andybalholm/cascadia v1.3.1 // indirect
-	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/felixge/fgprof v0.9.3 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
@@ -64,9 +60,9 @@ require (
 	go.uber.org/atomic v1.4.0 // indirect
 	go.uber.org/multierr v1.1.0 // indirect
 	golang.org/x/image v0.18.0 // indirect
-	golang.org/x/sync v0.10.0 // indirect
-	golang.org/x/sys v0.28.0 // indirect
-	golang.org/x/text v0.21.0 // indirect
+	golang.org/x/sync v0.11.0 // indirect
+	golang.org/x/sys v0.30.0 // indirect
+	golang.org/x/text v0.22.0 // indirect
 	golang.org/x/xerrors v0.0.0-20231012003039-104605ab7028 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
