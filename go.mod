@@ -1,6 +1,6 @@
 module github.com/wooknight/going_in_circles
 
-go 1.19
+go 1.23.0
 
 require (
 	github.com/alexedwards/scs/redisstore v0.0.0-20230327161757-10d4299e3b24
@@ -11,7 +11,7 @@ require (
 	github.com/gorilla/websocket v1.5.0
 	github.com/jackc/pgconn v1.14.0
 	github.com/jackc/pgx/v5 v5.5.4
-	github.com/justinas/nosurf v1.1.1
+	github.com/justinas/nosurf v1.2.0
 	github.com/pkg/profile v1.7.0
 	github.com/unidoc/unipdf/v3 v3.64.0
 	github.com/vanng822/go-premailer v1.20.1
