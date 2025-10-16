@@ -13,9 +13,14 @@ const WORD_LENGTH = 5
 const A byte = 'A'
 
 var wordleWords string
+var wordCount int
 
 func checkWord(word string) (bool, error) {
 	for {
+		wordCount++
+		if (wordCount % 1000) == 0 {
+			fmt.Printf("processed %d words . Currently processing %s", wordCount, word)
+		}
 		url := fmt.Sprintf("https://api.dictionaryapi.dev/api/v2/entries/en/%s", word)
 		req, _ := http.NewRequest("GET", url, nil)
 
@@ -73,17 +78,15 @@ type chrPresent map[int8]bool
 
 func main() {
 	chrMapPos := make(map[int]byte)
-	chrMapPos[0] = 'S'
-	chrMapPos[2] = 'A'
+	chrMapPos[1] = 'A'
 	chrMapPos[3] = 'T'
-	chrsNotPresent := []byte("ERUIOPDKLCN")
+
+	chrsNotPresent := []byte("AEUIOPSDN")
 
 	notValid := make([]chrPresent, WORD_LENGTH)
-
-	cMap := make(chrPresent)
-	cMap['T'] = true
-	notValid[4] = cMap
-	notValid[1] = cMap
+	nMap := make(chrPresent)
+	nMap['T'] = true
+	notValid[0] = nMap
 	slate := []byte{}
 	var gen func(int, []byte)
 	gen = func(pos int, slate []byte) {
