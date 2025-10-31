@@ -14,13 +14,19 @@ const A byte = 'A'
 
 var wordleWords string
 var wordCount int
+var mapWords map[string]bool
 
 func checkWord(word string) (bool, error) {
 	for {
-		wordCount++
 		if (wordCount % 1000) == 0 {
-			fmt.Printf("processed %d words . Currently processing %s", wordCount, word)
+			fmt.Printf("processed %d words . Currently processing %s\r", wordCount, word)
 		}
+		wordCount++
+
+		if _, ok := mapWords[word]; ok {
+			return false, nil
+		}
+		mapWords[word] = true
 		url := fmt.Sprintf("https://api.dictionaryapi.dev/api/v2/entries/en/%s", word)
 		req, _ := http.NewRequest("GET", url, nil)
 
@@ -70,23 +76,26 @@ func check(str string, present []chrPresent) {
 		}
 	}
 	if ok, err := checkWord(str); ok && err == nil {
-		fmt.Println(str, "is a valid Wordle word")
+		fmt.Printf("\n\n %sis a valid Wordle word\n\n", str)
 	}
 }
 
 type chrPresent map[int8]bool
 
 func main() {
+	mapWords = make(map[string]bool)
 	chrMapPos := make(map[int]byte)
-	chrMapPos[1] = 'A'
-	chrMapPos[3] = 'T'
+	chrMapPos[0] = 'A'
 
-	chrsNotPresent := []byte("AEUIOPSDN")
+	chrsNotPresent := []byte("EUIDM")
 
 	notValid := make([]chrPresent, WORD_LENGTH)
-	nMap := make(chrPresent)
-	nMap['T'] = true
-	notValid[0] = nMap
+	oMap := make(chrPresent)
+	oMap['O'] = true
+	notValid[2] = oMap
+	rMap := make(chrPresent)
+	rMap['R'] = true
+	notValid[1] = rMap
 	slate := []byte{}
 	var gen func(int, []byte)
 	gen = func(pos int, slate []byte) {
