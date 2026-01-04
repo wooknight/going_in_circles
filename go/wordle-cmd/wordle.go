@@ -19,7 +19,7 @@ var mapWords map[string]bool
 func checkWord(word string) (bool, error) {
 	for {
 		if (wordCount % 1000) == 0 {
-			fmt.Printf("processed %d words . Currently processing %s\r", wordCount, word)
+			fmt.Printf("processed %d words . Currently processing %s . %c is the %d letter \r", wordCount, word, word[0], (word[0]-'A')+1)
 		}
 		wordCount++
 
@@ -76,7 +76,7 @@ func check(str string, present []chrPresent) {
 		}
 	}
 	if ok, err := checkWord(str); ok && err == nil {
-		fmt.Printf("\n\n %sis a valid Wordle word\n\n", str)
+		fmt.Printf("\n%s is a valid Wordle word\n", str)
 	}
 }
 
@@ -85,17 +85,14 @@ type chrPresent map[int8]bool
 func main() {
 	mapWords = make(map[string]bool)
 	chrMapPos := make(map[int]byte)
-	chrMapPos[0] = 'A'
-
-	chrsNotPresent := []byte("EUIDM")
+	chrMapPos[1] = 'I'
+	chrMapPos[3] = 'A'
+	chrsNotPresent := []byte("EUPDLCVNM")
 
 	notValid := make([]chrPresent, WORD_LENGTH)
-	oMap := make(chrPresent)
-	oMap['O'] = true
-	notValid[2] = oMap
-	rMap := make(chrPresent)
-	rMap['R'] = true
-	notValid[1] = rMap
+	mMap := make(chrPresent)
+	mMap['S'] = true
+	notValid[3] = mMap
 	slate := []byte{}
 	var gen func(int, []byte)
 	gen = func(pos int, slate []byte) {
