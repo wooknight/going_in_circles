@@ -12,6 +12,10 @@ import (
 	"strings"
 )
 
+//git log --since="31 day ago" --name-only --pretty=format: | sort -u   | grep -v '.obsidian'  | grep -v assets   | awk '{print "[[" $0 "]]"}'   > "/Users/ramesh/Documents/obsidian/obsidian/2-areas/reviews/Monthly Reviews.md"
+//git log --since="7 day ago" --name-only --pretty=format: | sort -u   | grep -v '.obsidian'  | grep -v assets   | awk '{print "[[" $0 "]]"}'   > "/Users/ramesh/Documents/obsidian/obsidian/2-areas/reviews/Monthly Reviews.md"
+//git log --since="365 day ago" --name-only --pretty=format: | sort -u   | grep -v '.obsidian'  | grep -v assets   | awk '{print "[[" $0 "]]"}'   > "/Users/ramesh/Documents/obsidian/obsidian/2-areas/reviews/Monthly Reviews.md"
+
 //go:embed rules/*.txt
 var rulesFS embed.FS
 
