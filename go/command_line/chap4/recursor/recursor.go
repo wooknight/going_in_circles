@@ -12,9 +12,9 @@ import (
 	"strings"
 )
 
-//git log --since="31 day ago" --name-only --pretty=format: | sort -u   | grep -v '.obsidian'  | grep -v assets   | awk '{print "[[" $0 "]]"}'   > "/Users/ramesh/Documents/obsidian/obsidian/2-areas/reviews/Monthly Reviews.md"
-//git log --since="7 day ago" --name-only --pretty=format: | sort -u   | grep -v '.obsidian'  | grep -v assets   | awk '{print "[[" $0 "]]"}'   > "/Users/ramesh/Documents/obsidian/obsidian/2-areas/reviews/Monthly Reviews.md"
-//git log --since="365 day ago" --name-only --pretty=format: | sort -u   | grep -v '.obsidian'  | grep -v assets   | awk '{print "[[" $0 "]]"}'   > "/Users/ramesh/Documents/obsidian/obsidian/2-areas/reviews/Monthly Reviews.md"
+//git log --since="31 day ago" --name-only --pretty=format: | sort -u   | grep -v '.obsidian'  | grep -v assets   | awk '{print "[[" $0 "]]"}'   > "/Users/ramesh/Documents/obsidian/2-areas/reviews/Monthly Reviews.md"
+//git log --since="7 day ago" --name-only --pretty=format: | sort -u   | grep -v '.obsidian'  | grep -v assets   | awk '{print "[[" $0 "]]"}'   > "/Users/ramesh/Documents/obsidian/2-areas/reviews/Monthly Reviews.md"
+//git log --since="365 day ago" --name-only --pretty=format: | sort -u   | grep -v '.obsidian'  | grep -v assets   | awk '{print "[[" $0 "]]"}'   > "/Users/ramesh/Documents/obsidian/2-areas/reviews/Monthly Reviews.md"
 
 //go:embed rules/*.txt
 var rulesFS embed.FS
@@ -85,13 +85,13 @@ func readRecursively(root string, call func(string) error) error {
 }
 
 func main() {
-	root := flag.String("root", "/Users/ramesh/Documents/obsidian/obsidian/2-areas/journal/daily", "The directory to start recursing")
+	root := flag.String("root", "/Users/ramesh/Documents/obsidian/2-areas/journal/daily", "The directory to start recursing")
 	flag.Parse()
 
 	readRecursively(*root, processFile)
 	//run the fix for setToday
 
-	cmd := exec.Command("bash", "-c", "/Users/ramesh/Documents/obsidian/obsidian/2-areas/journal/setToday.sh")
+	cmd := exec.Command("bash", "-c", "/Users/ramesh/Documents/obsidian/2-areas/journal/setToday.sh")
 	output, err := cmd.CombinedOutput()
 	if err != nil {
 		fmt.Println("Error:", err)
