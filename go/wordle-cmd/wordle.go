@@ -86,14 +86,25 @@ func main() {
 	mapWords = make(map[string]bool)
 	chrMapPos := make(map[int]byte)
 	chrMapPos[0] = 'C'
-	chrMapPos[4] = 'E'
-	chrsNotPresent := []byte("UIOASDHVE")
+	chrMapPos[1] = 'U'
+	chrMapPos[4] = 'Y'
+	chrsNotPresent := []byte("ETIOPASDHLBM")
 
 	notValid := make([]chrPresent, WORD_LENGTH)
+	notValid[0] = make(chrPresent)
+	// notValid[0]['A'] = true
+	// notValid[0]['I'] = true
 	notValid[1] = make(chrPresent)
-	notValid[1]['L'] = true
+	// notValid[1]['E'] = true
+	// notValid[1]['I'] = true
 	notValid[2] = make(chrPresent)
-	notValid[2]['L'] = true
+	// notValid[2]['I'] = true
+	// notValid[2]['A'] = true
+	notValid[3] = make(chrPresent)
+	// notValid[3]['C'] = true
+	// notValid[3]['U'] = true
+	notValid[4] = make(chrPresent)
+	// notValid[4]['U'] = true
 	slate := []byte{}
 	var gen func(int, []byte)
 	gen = func(pos int, slate []byte) {
@@ -113,4 +124,5 @@ func main() {
 		}
 	}
 	gen(0, slate)
+	fmt.Printf("\nTotal words processed: %d\n-------------------\n", wordCount)
 }
