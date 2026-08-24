@@ -8,7 +8,7 @@ require (
 	github.com/bwmarrin/go-alone v0.0.0-20190806015146-742bb55d1631
 	github.com/go-chi/chi/v5 v5.2.4
 	github.com/gomodule/redigo v1.8.9
-	github.com/gorilla/websocket v1.5.0
+	github.com/gorilla/websocket v1.5.3
 	github.com/jackc/pgconn v1.14.0
 	github.com/jackc/pgx/v5 v5.9.2
 	github.com/justinas/nosurf v1.2.0
