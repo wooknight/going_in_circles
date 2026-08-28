@@ -1,11 +1,14 @@
 package main
 
 import (
+	"bufio"
 	"bytes"
 	"fmt"
-	"net/http"
-	"time"
+	"os"
+	"strings"
 )
+
+const dictionaryPath = "/usr/share/dict/words"
 
 const WORD_LENGTH = 5
 
@@ -14,36 +17,43 @@ const A byte = 'A'
 
 var wordleWords string
 var wordCount int
+var dictionary map[string]bool
 
-func checkWord(word string) (bool, error) {
-	for {
-		if (wordCount % 1000) == 0 {
-			fmt.Printf("processed %d words . Currently processing %s . %c is the %d letter \r", wordCount, word, word[0], (word[0]-'A')+1)
-		}
-		wordCount++
-
-		url := fmt.Sprintf("https://api.dictionaryapi.dev/api/v2/entries/en/%s", word)
-		req, _ := http.NewRequest("GET", url, nil)
-
-		client := &http.Client{}
-		resp, err := client.Do(req)
-		if err != nil {
-			return false, err
-		}
-		defer resp.Body.Close()
-		if resp.StatusCode == http.StatusTooManyRequests {
-			time.Sleep(1 * time.Second)
-			continue
-		}
-		// If the status code is 200, the word is valid
-		if resp.StatusCode == http.StatusOK {
-			return true, nil
-		}
-		// If not, it's not a valid word
-		if resp.StatusCode == http.StatusNotFound {
-			return false, nil
+func isUpperAlpha(s string) bool {
+	for i := 0; i < len(s); i++ {
+		if s[i] < 'A' || s[i] > 'Z' {
+			return false
 		}
 	}
+	return true
+}
+
+func loadDictionary() error {
+	file, err := os.Open(dictionaryPath)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+
+	dictionary = make(map[string]bool)
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		word := strings.ToUpper(strings.TrimSpace(scanner.Text()))
+		if len(word) != WORD_LENGTH || !isUpperAlpha(word) {
+			continue
+		}
+		dictionary[word] = true
+	}
+	return scanner.Err()
+}
+
+func checkWord(word string) (bool, error) {
+	if (wordCount % 1000) == 0 {
+		fmt.Printf("processed %d words . Currently processing %s . %c is the %d letter \r", wordCount, word, word[0], (word[0]-'A')+1)
+	}
+	wordCount++
+
+	return dictionary[word], nil
 }
 
 func check(str string, present []chrPresent) {
@@ -78,10 +88,15 @@ func check(str string, present []chrPresent) {
 type chrPresent map[int8]bool
 
 func main() {
+	if err := loadDictionary(); err != nil {
+		fmt.Printf("failed to load dictionary from %s: %v\n", dictionaryPath, err)
+		os.Exit(1)
+	}
+
 	chrMapPos := make(map[int]byte)
-	chrMapPos[1] = 'O'
-	chrMapPos[3] = 'I'
-	chrsNotPresent := []byte("EUASDCV")
+	chrMapPos[3] = 'U'
+	chrMapPos[4] = 'T'
+	chrsNotPresent := []byte("EIOPASD")
 
 	notValid := make([]chrPresent, WORD_LENGTH)
 	notValid[0] = make(chrPresent)
@@ -91,14 +106,11 @@ func main() {
 	// notValid[1]['O'] = true
 	// notValid[1]['I'] = true
 	notValid[2] = make(chrPresent)
-	notValid[2]['O'] = true
-	notValid[2]['I'] = true
-	notValid[2]['M'] = true
 	notValid[3] = make(chrPresent)
 	// notValid[3]['O'] = true
 	// notValid[3]['U'] = true
 	notValid[4] = make(chrPresent)
-	notValid[4]['T'] = true
+	// notValid[4]['T'] = true
 	slate := []byte{}
 	var gen func(int, []byte)
 	gen = func(pos int, slate []byte) {
