@@ -1,0 +1,7 @@
+## ACH Tasks
+```dataview
+task from "1-projects/Jack Henry/Ach/Ach ToDo" where !completed and  !contains(text, "cancelled") AND (  
+!start  
+OR start <= date(this.file.name)  
+)
+```

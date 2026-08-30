@@ -1,0 +1,13 @@
+## Personal Todo
+```dataview
+TASK
+FROM "1-projects/Todo" OR "1-projects/Finance" OR "1-projects/Math" OR "1-projects/Software"
+WHERE
+    !completed
+    AND !contains(lower(text), "cancelled")
+    AND !regexmatch(
+        "1-projects/Finance/(screener|holdings)|Investment Checklist|Seesel - BMP checklist",
+        file.path
+    )
+    AND (start and start <= date(this.file.name))
+```
