@@ -1,0 +1,5 @@
+
+## Personal Todo
+```dataview
+task from "1-projects/Todo" or "1-projects/Finance" or "1-projects/Math" or "1-projects/Software" where !completed and  !contains(text, "cancelled") and !contains(file.path, "1-projects/Finance/screener")and !contains(file.path, "1-projects/Finance/holdings") and !contains(file.path, "Investment Checklist")and !contains(file.path, "1-projects/Finance/Seesel - BMP checklist") 
+```

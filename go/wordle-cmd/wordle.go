@@ -19,6 +19,10 @@ var wordleWords string
 var wordCount int
 var dictionary map[string]bool
 
+func toUpperByte(b byte) byte {
+	return byte(strings.ToUpper(string(b))[0])
+}
+
 func isUpperAlpha(s string) bool {
 	for i := 0; i < len(s); i++ {
 		if s[i] < 'A' || s[i] > 'Z' {
@@ -94,9 +98,21 @@ func main() {
 	}
 
 	chrMapPos := make(map[int]byte)
-	chrMapPos[3] = 'U'
-	chrMapPos[4] = 'T'
-	chrsNotPresent := []byte("EIOPASD")
+	chrMapPos[1] = toUpperByte('o')
+	chrMapPos[2] = toUpperByte('i')
+	chrMapPos[4] = toUpperByte('T')
+	chrsNotPresent := []byte("EUPADN")
+	for key, ch := range chrsNotPresent {
+		chrsNotPresent[key] = toUpperByte(ch)
+	}
+	fmt.Printf("chrMapPos: %v\n", chrMapPos)
+	for _, ch := range chrsNotPresent {
+
+		if ch < 'A' || ch > 'Z' {
+			fmt.Printf("Invalid character in chrsNotPresent: %c\n", ch)
+			os.Exit(1)
+		}
+	}
 
 	notValid := make([]chrPresent, WORD_LENGTH)
 	notValid[0] = make(chrPresent)
