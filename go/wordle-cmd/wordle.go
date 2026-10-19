@@ -98,10 +98,9 @@ func main() {
 	}
 
 	chrMapPos := make(map[int]byte)
-	chrMapPos[0] = toUpperByte('U')
-	chrMapPos[1] = toUpperByte('N')
-	chrMapPos[3] = toUpperByte('A')
-	chrsNotPresent := []byte("ETIDJRBG")
+	chrMapPos[1] = toUpperByte('A')
+	chrMapPos[4] = toUpperByte('E')
+	chrsNotPresent := []byte("RUIPKLSDHCNM")
 	for key, ch := range chrsNotPresent {
 		chrsNotPresent[key] = toUpperByte(ch)
 	}
@@ -118,17 +117,15 @@ func main() {
 	notValid[0] = make(chrPresent)
 	notValid[0]['A'] = true
 	notValid[1] = make(chrPresent)
-	notValid[1]['U'] = true
+	// notValid[1]['D'] = true
 	// notValid[1]['I'] = true
 	notValid[2] = make(chrPresent)
-	notValid[2]['N'] = true
+	notValid[2]['G'] = true
 	notValid[3] = make(chrPresent)
-	// notValid[3]['O'] = true
+	notValid[3]['G'] = true
 	// notValid[3]['U'] = true
 	notValid[4] = make(chrPresent)
-	notValid[4]['U'] = true
-	notValid[4]['A'] = true
-	notValid[4]['N'] = true
+	// notValid[4]['D'] = true
 	slate := []byte{}
 	var gen func(int, []byte)
 	gen = func(pos int, slate []byte) {
